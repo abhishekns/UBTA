@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.Cache" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.Cache" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Net.Cache.HttpRequestCachePolicy" type="t:System.Net.Cache.HttpRequestCachePolicy" />
+  <xs:complexType name="System.Net.Cache.HttpRequestCachePolicy">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_MaxStale">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_MaxStale_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.TimeSpan" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_MaxAge">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_MaxAge_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.TimeSpan" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_CacheSyncDate">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_CacheSyncDate_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.DateTime" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="level_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Cache.HttpRequestCacheLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Cache.HttpRequestCacheLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="cacheAgeControl_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Cache.HttpCacheAgeControl" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Cache.HttpCacheAgeControl" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ageOrFreshOrStale_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="cacheAgeControl_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Cache.HttpCacheAgeControl" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Cache.HttpCacheAgeControl" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="maxAge_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="freshOrStale_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="cacheSyncDate_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.DateTime" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="cacheAgeControl_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Cache.HttpCacheAgeControl" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Cache.HttpCacheAgeControl" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="maxAge_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="freshOrStale_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cacheSyncDate_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.DateTime" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_MinFresh">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_MinFresh_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.TimeSpan" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.Cache.RequestCachePolicy" type="t:System.Net.Cache.RequestCachePolicy" />
+  <xs:complexType name="System.Net.Cache.RequestCachePolicy">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="level_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Cache.RequestCacheLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Cache.RequestCacheLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Level">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Level_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.Cache.RequestCacheLevel" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.Cache.HttpCacheAgeControl" type="t:System.Net.Cache.HttpCacheAgeControl" />
+  <xs:simpleType name="System.Net.Cache.HttpCacheAgeControl">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Cache.RequestCacheLevel" type="t:System.Net.Cache.RequestCacheLevel" />
+  <xs:simpleType name="System.Net.Cache.RequestCacheLevel">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Cache.HttpRequestCacheLevel" type="t:System.Net.Cache.HttpRequestCacheLevel" />
+  <xs:simpleType name="System.Net.Cache.HttpRequestCacheLevel">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+</xs:schema>

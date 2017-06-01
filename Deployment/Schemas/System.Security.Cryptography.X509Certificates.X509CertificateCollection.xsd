@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates.X509CertificateCollection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates.X509CertificateCollection" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Security.Cryptography.X509Certificates.X509CertificateCollection+X509CertificateEnumerator" type="t:System.Security.Cryptography.X509Certificates.X509CertificateCollection+X509CertificateEnumerator" />
+  <xs:complexType name="System.Security.Cryptography.X509Certificates.X509CertificateCollection+X509CertificateEnumerator">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="mappings">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509CertificateCollection" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

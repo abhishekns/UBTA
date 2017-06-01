@@ -1,0 +1,1500 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/Microsoft.Win32" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/Microsoft.Win32" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="Microsoft.Win32.TimerElapsedEventHandler" type="t:Microsoft.Win32.TimerElapsedEventHandler" />
+  <xs:complexType name="Microsoft.Win32.TimerElapsedEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:Microsoft.Win32.TimerElapsedEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:Microsoft.Win32.TimerElapsedEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:Microsoft.Win32.TimerElapsedEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:Microsoft.Win32.TimerElapsedEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.TimerElapsedEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.TimerElapsedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.TimerElapsedEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.TimerElapsedEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.TimerElapsedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.TimerElapsedEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.UserPreferenceChangingEventHandler" type="t:Microsoft.Win32.UserPreferenceChangingEventHandler" />
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangingEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:Microsoft.Win32.UserPreferenceChangingEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:Microsoft.Win32.UserPreferenceChangingEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:Microsoft.Win32.UserPreferenceChangingEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:Microsoft.Win32.UserPreferenceChangingEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangingEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangingEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangingEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangingEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangingEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangingEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.UserPreferenceChangedEventHandler" type="t:Microsoft.Win32.UserPreferenceChangedEventHandler" />
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangedEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:Microsoft.Win32.UserPreferenceChangedEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:Microsoft.Win32.UserPreferenceChangedEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:Microsoft.Win32.UserPreferenceChangedEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:Microsoft.Win32.UserPreferenceChangedEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangedEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangedEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangedEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangedEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.UserPreferenceChangedEventArgs" type="t:Microsoft.Win32.UserPreferenceChangedEventArgs" />
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangedEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="category">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.UserPreferenceCategory" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:Microsoft.Win32.UserPreferenceCategory" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Category">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Category_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:Microsoft.Win32.UserPreferenceCategory" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SessionSwitchEventHandler" type="t:Microsoft.Win32.SessionSwitchEventHandler" />
+  <xs:complexType name="Microsoft.Win32.SessionSwitchEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:Microsoft.Win32.SessionSwitchEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:Microsoft.Win32.SessionSwitchEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:Microsoft.Win32.SessionSwitchEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:Microsoft.Win32.SessionSwitchEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionSwitchEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.SessionSwitchEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionSwitchEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionSwitchEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.SessionSwitchEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionSwitchEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SessionEndingEventArgs" type="t:Microsoft.Win32.SessionEndingEventArgs" />
+  <xs:complexType name="Microsoft.Win32.SessionEndingEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="set_Cancel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Reason">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Reason_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:Microsoft.Win32.SessionEndReasons" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="reason">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionEndReasons" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:Microsoft.Win32.SessionEndReasons" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Cancel">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Cancel_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SystemEvents" type="t:Microsoft.Win32.SystemEvents" />
+  <xs:complexType name="Microsoft.Win32.SystemEvents">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="remove_UserPreferenceChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_PaletteChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_PowerModeChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.PowerModeChangedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_SessionEnded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionEndedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_PaletteChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_UserPreferenceChanging">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_SessionEnding">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionEndingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_TimeChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_SessionSwitch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionSwitchEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_SessionEnding">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionEndingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InvokeOnEventsThread">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="method">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Delegate" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_DisplaySettingsChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_TimerElapsed">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.TimerElapsedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_DisplaySettingsChanging">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_EventsThreadShutdown">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_InstalledFontsChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_DisplaySettingsChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="KillTimer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="timerId">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_InstalledFontsChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_UserPreferenceChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_UserPreferenceChanging">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.UserPreferenceChangingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_LowMemory">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_SessionSwitch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionSwitchEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_TimeChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateTimer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="interval">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="CreateTimer_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.IntPtr" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_TimerElapsed">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.TimerElapsedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_EventsThreadShutdown">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_LowMemory">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_DisplaySettingsChanging">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_SessionEnded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionEndedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_PowerModeChanged">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.PowerModeChangedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PowerModeChanged" type="t:Microsoft.Win32.PowerModeChangedEventHandler.Invoke" />
+      <xs:element name="SessionEnded" type="t:Microsoft.Win32.SessionEndedEventHandler.Invoke" />
+      <xs:element name="SessionEnding" type="t:Microsoft.Win32.SessionEndingEventHandler.Invoke" />
+      <xs:element name="SessionSwitch" type="t:Microsoft.Win32.SessionSwitchEventHandler.Invoke" />
+      <xs:element name="TimerElapsed" type="t:Microsoft.Win32.TimerElapsedEventHandler.Invoke" />
+      <xs:element name="UserPreferenceChanged" type="t:Microsoft.Win32.UserPreferenceChangedEventHandler.Invoke" />
+      <xs:element name="UserPreferenceChanging" type="t:Microsoft.Win32.UserPreferenceChangingEventHandler.Invoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SessionEndingEventHandler" type="t:Microsoft.Win32.SessionEndingEventHandler" />
+  <xs:complexType name="Microsoft.Win32.SessionEndingEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:Microsoft.Win32.SessionEndingEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:Microsoft.Win32.SessionEndingEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:Microsoft.Win32.SessionEndingEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:Microsoft.Win32.SessionEndingEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndingEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.SessionEndingEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndingEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndingEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.SessionEndingEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndingEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SessionEndedEventArgs" type="t:Microsoft.Win32.SessionEndedEventArgs" />
+  <xs:complexType name="Microsoft.Win32.SessionEndedEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Reason">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Reason_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:Microsoft.Win32.SessionEndReasons" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="reason">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionEndReasons" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:Microsoft.Win32.SessionEndReasons" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.UserPreferenceCategory" type="t:Microsoft.Win32.UserPreferenceCategory" />
+  <xs:simpleType name="Microsoft.Win32.UserPreferenceCategory">
+    <xs:restriction base="u:System.String">
+      <xs:enumeration value="Accessibility" />
+      <xs:enumeration value="Color" />
+      <xs:enumeration value="Desktop" />
+      <xs:enumeration value="General" />
+      <xs:enumeration value="Icon" />
+      <xs:enumeration value="Keyboard" />
+      <xs:enumeration value="Menu" />
+      <xs:enumeration value="Mouse" />
+      <xs:enumeration value="Policy" />
+      <xs:enumeration value="Power" />
+      <xs:enumeration value="Screensaver" />
+      <xs:enumeration value="Window" />
+      <xs:enumeration value="Locale" />
+      <xs:enumeration value="VisualStyle" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Microsoft.Win32.PowerModes" type="t:Microsoft.Win32.PowerModes" />
+  <xs:simpleType name="Microsoft.Win32.PowerModes">
+    <xs:restriction base="u:System.String">
+      <xs:enumeration value="Resume" />
+      <xs:enumeration value="StatusChange" />
+      <xs:enumeration value="Suspend" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Microsoft.Win32.UserPreferenceChangingEventArgs" type="t:Microsoft.Win32.UserPreferenceChangingEventArgs" />
+  <xs:complexType name="Microsoft.Win32.UserPreferenceChangingEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="category">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.UserPreferenceCategory" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:Microsoft.Win32.UserPreferenceCategory" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Category">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Category_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:Microsoft.Win32.UserPreferenceCategory" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.TimerElapsedEventArgs" type="t:Microsoft.Win32.TimerElapsedEventArgs" />
+  <xs:complexType name="Microsoft.Win32.TimerElapsedEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="timerId">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_TimerId">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_TimerId_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.IntPtr" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SessionSwitchReason" type="t:Microsoft.Win32.SessionSwitchReason" />
+  <xs:simpleType name="Microsoft.Win32.SessionSwitchReason">
+    <xs:restriction base="u:System.String">
+      <xs:enumeration value="ConsoleConnect" />
+      <xs:enumeration value="ConsoleDisconnect" />
+      <xs:enumeration value="RemoteConnect" />
+      <xs:enumeration value="RemoteDisconnect" />
+      <xs:enumeration value="SessionLogon" />
+      <xs:enumeration value="SessionLogoff" />
+      <xs:enumeration value="SessionLock" />
+      <xs:enumeration value="SessionUnlock" />
+      <xs:enumeration value="SessionRemoteControl" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Microsoft.Win32.SessionEndReasons" type="t:Microsoft.Win32.SessionEndReasons" />
+  <xs:simpleType name="Microsoft.Win32.SessionEndReasons">
+    <xs:restriction base="u:System.String">
+      <xs:enumeration value="Logoff" />
+      <xs:enumeration value="SystemShutdown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Microsoft.Win32.PowerModeChangedEventHandler" type="t:Microsoft.Win32.PowerModeChangedEventHandler" />
+  <xs:complexType name="Microsoft.Win32.PowerModeChangedEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:Microsoft.Win32.PowerModeChangedEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:Microsoft.Win32.PowerModeChangedEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:Microsoft.Win32.PowerModeChangedEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:Microsoft.Win32.PowerModeChangedEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.PowerModeChangedEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.PowerModeChangedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.PowerModeChangedEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.PowerModeChangedEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.PowerModeChangedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.PowerModeChangedEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SessionSwitchEventArgs" type="t:Microsoft.Win32.SessionSwitchEventArgs" />
+  <xs:complexType name="Microsoft.Win32.SessionSwitchEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Reason">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Reason_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:Microsoft.Win32.SessionSwitchReason" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="reason">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.SessionSwitchReason" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:Microsoft.Win32.SessionSwitchReason" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SessionEndedEventHandler" type="t:Microsoft.Win32.SessionEndedEventHandler" />
+  <xs:complexType name="Microsoft.Win32.SessionEndedEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:Microsoft.Win32.SessionEndedEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:Microsoft.Win32.SessionEndedEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:Microsoft.Win32.SessionEndedEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:Microsoft.Win32.SessionEndedEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndedEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.SessionEndedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndedEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndedEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="Microsoft.Win32.SessionEndedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Microsoft.Win32.SessionEndedEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.IntranetZoneCredentialPolicy" type="t:Microsoft.Win32.IntranetZoneCredentialPolicy" />
+  <xs:complexType name="Microsoft.Win32.IntranetZoneCredentialPolicy">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.PowerModeChangedEventArgs" type="t:Microsoft.Win32.PowerModeChangedEventArgs" />
+  <xs:complexType name="Microsoft.Win32.PowerModeChangedEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="mode">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="Microsoft.Win32.PowerModes" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:Microsoft.Win32.PowerModes" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Mode">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Mode_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:Microsoft.Win32.PowerModes" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

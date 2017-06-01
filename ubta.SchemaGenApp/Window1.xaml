@@ -1,0 +1,48 @@
+﻿<Window x:Class="ubta.SchemaGenApp.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ubta.SchemaGenApp"
+    Title="Window1" Height="329" Width="816">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TreeView Margin="0,0,0,0" Name="treeView1" Grid.ColumnSpan="1" Grid.Row="1" 
+            ItemsSource="{Binding FirstGeneration}" 
+                  VerticalAlignment="Top" >
+                <TreeView.ItemContainerStyle>
+                    <!-- 
+        This Style binds a TreeViewItem to a IViewModel. 
+        -->
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                        <!--<Setter Property="IsChecked" Value="{Binding IsChecked, Mode=TwoWay}" />-->
+                        <Setter Property="FontWeight" Value="Normal" />
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked, Mode=TwoWay}" Width="Auto"/>
+                </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+
+        </TreeView>
+        <Menu Grid.ColumnSpan="1" Grid.Row="0">
+            <MenuItem Name="fileMenu" Header="_File">
+                <MenuItem Name="openmenu" Header="_Open" Click="openmenu_Click"/>
+                <MenuItem Name="savemenu" Header="_Save" Click="savemenu_Click"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

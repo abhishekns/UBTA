@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/Microsoft.Win32.SafeHandles" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/Microsoft.Win32.SafeHandles" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="Microsoft.Win32.SafeHandles.SafeX509ChainHandle" type="t:Microsoft.Win32.SafeHandles.SafeX509ChainHandle" />
+  <xs:complexType name="Microsoft.Win32.SafeHandles.SafeX509ChainHandle">
+    <xs:choice minOccurs="0" maxOccurs="unbounded" />
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="Microsoft.Win32.SafeHandles.SafeProcessHandle" type="t:Microsoft.Win32.SafeHandles.SafeProcessHandle" />
+  <xs:complexType name="Microsoft.Win32.SafeHandles.SafeProcessHandle">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="existingHandle">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ownsHandle">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<p:TestCaseFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:s="http://www.usecasetests.com/System"
+               xmlns:p="http://www.usecasetests.com/ubta.ParamFiles"
+               xmlns:u="http://www.usecasetests.com/ubta.Schema"
+               xmlns:a="http://www.usecasetests.com/ubta.Assert"
+               xmlns="http://www.usecasetests.com/SampleLib"
+               >
+  <p:Setup>
+    <p:UseCase Name="MySetup">
+      <SampleLib.MyClassB Name="b">
+        <Constructor>
+          <value Value="xyz"/>
+        </Constructor>
+      </SampleLib.MyClassB>
+      <SampleLib.MyClassA Name="a">
+        <Constructor>
+          <name_0 Value="abc"/>
+          <b_0 Name="b"/>
+        </Constructor>
+      </SampleLib.MyClassA>
+    </p:UseCase>
+  </p:Setup>
+  <p:TestCases>
+    <p:TestCase >
+      <p:PreCondition>
+        <SampleLib.MyClassA Name="a">
+          <DoSomething>
+            <a_0 Value="something1"></a_0>
+            <b_0 Value="something2"></b_0>
+          </DoSomething>
+        </SampleLib.MyClassA>
+      </p:PreCondition>
+      <p:UseCase Name="MyTestUseCase">
+        <SampleLib.MyClassA Name="a">
+          <DoSomething>
+            <a_1 Value="something3"></a_1>
+          </DoSomething>
+          <DoSomething>
+            <a_0 Value="something4" />
+            <b_0 Value="somethingb" />
+          </DoSomething>
+          <DoSomething>
+            <a_2 Value="somethinga"/>
+            <b_2 Name="b" />
+          </DoSomething>
+          <Constructor>
+            <name_0 Value="newNameOfA"/>
+            <b_0 Name="b"/>
+          </Constructor>
+        </SampleLib.MyClassA>
+        <a:ubta.Assert.Assert Name="t">
+          <a:That>
+            <a:arg_in Name="a"></a:arg_in>
+            <a:That_rv Name="m"/>
+          </a:That>
+        </a:ubta.Assert.Assert>
+        <a:ubta.Assert.IValueChecker Name="m">
+          <a:IsNotNull/>
+        </a:ubta.Assert.IValueChecker>
+      </p:UseCase>
+      <p:PostCondition>
+        <u:System.Object Name="a">
+          <ToString xmlns="">
+            <ToString_rv Name="mvalue"/>
+          </ToString>
+        </u:System.Object>
+      </p:PostCondition>
+    </p:TestCase>
+    <p:TestCase >
+      <p:PreCondition>
+        <SampleLib.MyClassB Name="b">
+          <Constructor>
+            <value Value="test2"/>
+          </Constructor>
+        </SampleLib.MyClassB>
+      </p:PreCondition>
+      <p:UseCase Name="t2">
+        <SampleLib.MyClassA Name="a">
+          <Constructor>
+            <name_0 Value="t2"/>
+            <b_0 Name="b"/>
+          </Constructor>
+        </SampleLib.MyClassA>
+      </p:UseCase>
+      <p:PostCondition>
+        <SampleLib.MyClassA Name="a">
+        </SampleLib.MyClassA>
+      </p:PostCondition>
+    </p:TestCase>
+  </p:TestCases>
+  <p:Teardown>
+    <p:UseCase Name="teardown">
+      <SampleLib.MyClassA Name="a">
+      </SampleLib.MyClassA>
+    </p:UseCase>
+  </p:Teardown>
+</p:TestCaseFile>

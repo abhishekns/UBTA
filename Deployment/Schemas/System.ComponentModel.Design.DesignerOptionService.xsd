@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.ComponentModel.Design.DesignerOptionService" xmlns:q2="http://www.siemens.com/med/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.ComponentModel.Design.DesignerOptionService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" type="t:System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" />
+  <xs:complexType name="System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Properties">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Properties_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.ComponentModel.PropertyDescriptorCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Item">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="get_Item_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Parent">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Parent_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Name">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Name_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ShowDialog">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="ShowDialog_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+</xs:schema>

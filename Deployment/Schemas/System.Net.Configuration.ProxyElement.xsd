@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.Configuration.ProxyElement" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.Configuration.ProxyElement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Net.Configuration.ProxyElement+UseSystemDefaultValues" type="t:System.Net.Configuration.ProxyElement.UseSystemDefaultValues" />
+  <xs:simpleType name="System.Net.Configuration.ProxyElement.UseSystemDefaultValues">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Configuration.ProxyElement+BypassOnLocalValues" type="t:System.Net.Configuration.ProxyElement.BypassOnLocalValues" />
+  <xs:simpleType name="System.Net.Configuration.ProxyElement.BypassOnLocalValues">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Configuration.ProxyElement+AutoDetectValues" type="t:System.Net.Configuration.ProxyElement.AutoDetectValues" />
+  <xs:simpleType name="System.Net.Configuration.ProxyElement.AutoDetectValues">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+</xs:schema>

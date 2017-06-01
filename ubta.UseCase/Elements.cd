@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ubta.UseCase.BaseElement">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <Members>
+      <Method Name="BaseElement" Hidden="true" />
+      <Field Name="myName" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>BaseElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ubta.UseCase.InstanceElement" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstanceElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ubta.UseCase.VirtualElement" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VirtualElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ubta.UseCase.MethodBaseElement" Collapsed="true">
+    <Position X="6.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>MethodBaseElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ubta.UseCase.ConstructorElement" Collapsed="true">
+    <Position X="8.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConstructorElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ubta.UseCase.MethodElement" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>MethodElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ubta.UseCase.UseCaseElement">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <Members>
+      <Field Name="myElemType" Hidden="true" />
+      <Field Name="myType" Hidden="true" />
+      <Method Name="UseCaseElement" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAEgAAAAAAIAAAAAIAAAQAAAAAACAA=</HashCode>
+      <FileName>UseCaseElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ubta.UseCase.ElementType">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>UseCaseElement.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

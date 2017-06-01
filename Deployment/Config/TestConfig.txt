@@ -1,0 +1,3 @@
+﻿%UBTA_HOME%\Deployment\Schemas\Common.xsd
+%UBTA_HOME%\Deployment\Schemas\ParamFiles.xsd
+%UBTA_HOME%\Deployment\Schemas\ubta.Assert.xsd

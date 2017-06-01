@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.WebRequestMethods" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.WebRequestMethods" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Net.WebRequestMethods+Ftp" type="t:System.Net.WebRequestMethods+Ftp" />
+  <xs:complexType name="System.Net.WebRequestMethods+Ftp">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DownloadFile" type="u:System.String" />
+      <xs:element name="ListDirectory" type="u:System.String" />
+      <xs:element name="UploadFile" type="u:System.String" />
+      <xs:element name="DeleteFile" type="u:System.String" />
+      <xs:element name="AppendFile" type="u:System.String" />
+      <xs:element name="GetFileSize" type="u:System.String" />
+      <xs:element name="UploadFileWithUniqueName" type="u:System.String" />
+      <xs:element name="MakeDirectory" type="u:System.String" />
+      <xs:element name="RemoveDirectory" type="u:System.String" />
+      <xs:element name="ListDirectoryDetails" type="u:System.String" />
+      <xs:element name="GetDateTimestamp" type="u:System.String" />
+      <xs:element name="PrintWorkingDirectory" type="u:System.String" />
+      <xs:element name="Rename" type="u:System.String" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.WebRequestMethods+File" type="t:System.Net.WebRequestMethods+File" />
+  <xs:complexType name="System.Net.WebRequestMethods+File">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DownloadFile" type="u:System.String" />
+      <xs:element name="UploadFile" type="u:System.String" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.WebRequestMethods+Http" type="t:System.Net.WebRequestMethods+Http" />
+  <xs:complexType name="System.Net.WebRequestMethods+Http">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Get" type="u:System.String" />
+      <xs:element name="Connect" type="u:System.String" />
+      <xs:element name="Head" type="u:System.String" />
+      <xs:element name="Put" type="u:System.String" />
+      <xs:element name="Post" type="u:System.String" />
+      <xs:element name="MkCol" type="u:System.String" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

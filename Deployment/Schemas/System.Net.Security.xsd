@@ -1,0 +1,2183 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.Security" xmlns:q0="http://www.siemens.com/med/System.Net" xmlns:q8="http://www.siemens.com/med/System.Security.Authentication" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.Security" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="System.Security.Authentication.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Net.Security.NegotiateStream" type="t:System.Net.Security.NegotiateStream" />
+  <xs:complexType name="System.Net.Security.NegotiateStream">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="EndAuthenticateAsServer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="asyncResult">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsServer">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="policy_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredImpersonationLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="policy_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredImpersonationLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsClientAsync">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="AuthenticateAsClientAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsClientAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="allowedImpersonationLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsClientAsync_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="binding_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ChannelBinding" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsClientAsync_rv_3">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="binding_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ChannelBinding" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="allowedImpersonationLevel_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsClientAsync_rv_4">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="innerStream_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="innerStream_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="leaveInnerStreamOpen_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EndAuthenticateAsClient">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="asyncResult">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsServerAsync">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="AuthenticateAsServerAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="policy_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsServerAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredImpersonationLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsServerAsync_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="policy_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredImpersonationLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsServerAsync_rv_3">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_RemoteIdentity">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_RemoteIdentity_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Security.Principal.IIdentity" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BeginAuthenticateAsServer">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="asyncCallback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsServer_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="policy_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsServer_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredImpersonationLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsServer_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="policy_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredImpersonationLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsServer_rv_3">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_ImpersonationLevel">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ImpersonationLevel_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Security.Principal.TokenImpersonationLevel" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsClient">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="credential_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="binding_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ChannelBinding" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="allowedImpersonationLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="binding_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ChannelBinding" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="allowedImpersonationLevel_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BeginAuthenticateAsClient">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="asyncCallback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsClient_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsClient_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="binding_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ChannelBinding" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsClient_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="allowedImpersonationLevel_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsClient_rv_3">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="credential_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.NetworkCredential" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="binding_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ChannelBinding" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="targetName_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredProtectionLevel_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.ProtectionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.ProtectionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="allowedImpersonationLevel_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.TokenImpersonationLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsClient_rv_4">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.Security.AuthenticationLevel" type="t:System.Net.Security.AuthenticationLevel" />
+  <xs:simpleType name="System.Net.Security.AuthenticationLevel">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Security.SslStream" type="t:System.Net.Security.SslStream" />
+  <xs:complexType name="System.Net.Security.SslStream">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="innerStream_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="leaveInnerStreamOpen_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateValidationCallback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateSelectionCallback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.LocalCertificateSelectionCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="innerStream_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="leaveInnerStreamOpen_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateValidationCallback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateSelectionCallback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.LocalCertificateSelectionCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="encryptionPolicy_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.EncryptionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.EncryptionPolicy" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="innerStream_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="innerStream_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="leaveInnerStreamOpen_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="innerStream_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="leaveInnerStreamOpen_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateValidationCallback_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_CheckCertRevocationStatus">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_CheckCertRevocationStatus_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsServerAsync">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="serverCertificate_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsServerAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="serverCertificate_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="clientCertificateRequired_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="enabledSslProtocols_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.SslProtocols" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="q8:System.Security.Authentication.SslProtocols" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="checkCertificateRevocation_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsServerAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_CipherStrength">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_CipherStrength_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_HashAlgorithm">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_HashAlgorithm_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.HashAlgorithmType" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BeginAuthenticateAsServer">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="serverCertificate_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsServer_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="serverCertificate_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="clientCertificateRequired_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="enabledSslProtocols_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.SslProtocols" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="q8:System.Security.Authentication.SslProtocols" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="checkCertificateRevocation_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsServer_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_CipherAlgorithm">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_CipherAlgorithm_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.CipherAlgorithmType" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_HashStrength">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_HashStrength_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsClientAsync">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="targetHost_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsClientAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="targetHost_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="clientCertificates_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509CertificateCollection" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="enabledSslProtocols_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.SslProtocols" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="q8:System.Security.Authentication.SslProtocols" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="checkCertificateRevocation_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AuthenticateAsClientAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_KeyExchangeStrength">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_KeyExchangeStrength_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_LocalCertificate">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_LocalCertificate_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509Certificate" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EndAuthenticateAsServer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="asyncResult">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_TransportContext">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_TransportContext_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.TransportContext" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsServer">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="serverCertificate_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="serverCertificate_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="clientCertificateRequired_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="enabledSslProtocols_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.SslProtocols" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="q8:System.Security.Authentication.SslProtocols" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="checkCertificateRevocation_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_KeyExchangeAlgorithm">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_KeyExchangeAlgorithm_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.ExchangeAlgorithmType" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BeginAuthenticateAsClient">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="targetHost_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsClient_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="targetHost_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="clientCertificates_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509CertificateCollection" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="enabledSslProtocols_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.SslProtocols" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="q8:System.Security.Authentication.SslProtocols" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="checkCertificateRevocation_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncCallback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="asyncState_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAuthenticateAsClient_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AuthenticateAsClient">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="targetHost_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="clientCertificates_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509CertificateCollection" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="enabledSslProtocols_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.SslProtocols" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="q8:System.Security.Authentication.SslProtocols" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="checkCertificateRevocation_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="targetHost_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_RemoteCertificate">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_RemoteCertificate_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509Certificate" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SslProtocol">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SslProtocol_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.SslProtocols" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EndAuthenticateAsClient">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="asyncResult">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:element name="System.Net.Security.LocalCertificateSelectionCallback" type="t:System.Net.Security.LocalCertificateSelectionCallback" />
+  <xs:complexType name="System.Net.Security.LocalCertificateSelectionCallback">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:System.Net.Security.LocalCertificateSelectionCallback.Invoke" />
+      <xs:element name="Constructor" type="t:System.Net.Security.LocalCertificateSelectionCallback.Constructor" />
+      <xs:element name="BeginInvoke" type="t:System.Net.Security.LocalCertificateSelectionCallback.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:System.Net.Security.LocalCertificateSelectionCallback.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.LocalCertificateSelectionCallback.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="targetHost">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.String" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="optional" />
+          <xs:attribute name="Value" type="u:System.String" use="optional" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="localCertificates">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509CertificateCollection" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remoteCertificate">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="acceptableIssuers">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="_Array:System.String" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Invoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509Certificate" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.LocalCertificateSelectionCallback.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.LocalCertificateSelectionCallback.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="targetHost">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.String" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="optional" />
+          <xs:attribute name="Value" type="u:System.String" use="optional" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="localCertificates">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509CertificateCollection" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remoteCertificate">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="acceptableIssuers">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="_Array:System.String" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.LocalCertificateSelectionCallback.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="EndInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509Certificate" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System.Net.Security.AuthenticatedStream" type="t:System.Net.Security.AuthenticatedStream" />
+  <xs:complexType name="System.Net.Security.AuthenticatedStream">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_IsAuthenticated">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsAuthenticated_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_IsServer">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsServer_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_IsSigned">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsSigned_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_LeaveInnerStreamOpen">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_LeaveInnerStreamOpen_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_IsMutuallyAuthenticated">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsMutuallyAuthenticated_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_IsEncrypted">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsEncrypted_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.Security.EncryptionPolicy" type="t:System.Net.Security.EncryptionPolicy" />
+  <xs:simpleType name="System.Net.Security.EncryptionPolicy">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Security.ProtectionLevel" type="t:System.Net.Security.ProtectionLevel" />
+  <xs:simpleType name="System.Net.Security.ProtectionLevel">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Security.RemoteCertificateValidationCallback" type="t:System.Net.Security.RemoteCertificateValidationCallback" />
+  <xs:complexType name="System.Net.Security.RemoteCertificateValidationCallback">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:System.Net.Security.RemoteCertificateValidationCallback.Invoke" />
+      <xs:element name="Constructor" type="t:System.Net.Security.RemoteCertificateValidationCallback.Constructor" />
+      <xs:element name="BeginInvoke" type="t:System.Net.Security.RemoteCertificateValidationCallback.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:System.Net.Security.RemoteCertificateValidationCallback.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.RemoteCertificateValidationCallback.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="certificate">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="chain">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Chain" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sslPolicyErrors">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Net.Security.SslPolicyErrors" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="optional" />
+          <xs:attribute name="Value" type="t:System.Net.Security.SslPolicyErrors" use="optional" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Invoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.RemoteCertificateValidationCallback.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.RemoteCertificateValidationCallback.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="certificate">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="chain">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Chain" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sslPolicyErrors">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Net.Security.SslPolicyErrors" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="optional" />
+          <xs:attribute name="Value" type="t:System.Net.Security.SslPolicyErrors" use="optional" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Net.Security.RemoteCertificateValidationCallback.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="EndInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System.Net.Security.SslPolicyErrors" type="t:System.Net.Security.SslPolicyErrors" />
+  <xs:simpleType name="System.Net.Security.SslPolicyErrors">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+</xs:schema>

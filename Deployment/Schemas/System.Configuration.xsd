@@ -1,0 +1,3082 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Configuration" xmlns:q6="http://www.siemens.com/med/System.Collections.Specialized" xmlns:q4="http://www.siemens.com/med/System" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Configuration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Configuration.NoSettingsVersionUpgradeAttribute" type="t:System.Configuration.NoSettingsVersionUpgradeAttribute" />
+  <xs:complexType name="System.Configuration.NoSettingsVersionUpgradeAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.NameValueFileSectionHandler" type="t:System.Configuration.NameValueFileSectionHandler" />
+  <xs:complexType name="System.Configuration.NameValueFileSectionHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.ConfigurationException" type="t:System.Configuration.ConfigurationException" />
+  <xs:complexType name="System.Configuration.ConfigurationException">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Filename">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Filename_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_BareMessage">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_BareMessage_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetXmlNodeLineNumber">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="node">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Xml.XmlNode" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetXmlNodeLineNumber_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetXmlNodeFilename">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="node">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Xml.XmlNode" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetXmlNodeFilename_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Line">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Line_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="message_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="inner_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="node_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Xml.XmlNode" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="inner_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="node_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Xml.XmlNode" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="filename_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="line_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="inner_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="filename_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="line_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SingleTagSectionHandler" type="t:System.Configuration.SingleTagSectionHandler" />
+  <xs:complexType name="System.Configuration.SingleTagSectionHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsDescriptionAttribute" type="t:System.Configuration.SettingsDescriptionAttribute" />
+  <xs:complexType name="System.Configuration.SettingsDescriptionAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Description">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Description_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="description">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsPropertyValueCollection" type="t:System.Configuration.SettingsPropertyValueCollection" />
+  <xs:complexType name="System.Configuration.SettingsPropertyValueCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="SetReadOnly">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="Add">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="property">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsPropertyValue" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Item">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="get_Item_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsPropertyValue" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Remove">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="Clear">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SpecialSetting" type="t:System.Configuration.SpecialSetting" />
+  <xs:simpleType name="System.Configuration.SpecialSetting">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Configuration.SettingsLoadedEventHandler" type="t:System.Configuration.SettingsLoadedEventHandler" />
+  <xs:complexType name="System.Configuration.SettingsLoadedEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:System.Configuration.SettingsLoadedEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:System.Configuration.SettingsLoadedEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:System.Configuration.SettingsLoadedEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:System.Configuration.SettingsLoadedEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsLoadedEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Configuration.SettingsLoadedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsLoadedEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsLoadedEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Configuration.SettingsLoadedEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsLoadedEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System.Configuration.SpecialSettingAttribute" type="t:System.Configuration.SpecialSettingAttribute" />
+  <xs:complexType name="System.Configuration.SpecialSettingAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_SpecialSetting">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SpecialSetting_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SpecialSetting" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="specialSetting">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SpecialSetting" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Configuration.SpecialSetting" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.AppSettingsReader" type="t:System.Configuration.AppSettingsReader" />
+  <xs:complexType name="System.Configuration.AppSettingsReader">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="type">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Type" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SchemeSettingElement" type="t:System.Configuration.SchemeSettingElement" />
+  <xs:complexType name="System.Configuration.SchemeSettingElement">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_GenericUriParserOptions">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_GenericUriParserOptions_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.GenericUriParserOptions" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="get_Name">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Name_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:element name="System.Configuration.SettingsPropertyIsReadOnlyException" type="t:System.Configuration.SettingsPropertyIsReadOnlyException" />
+  <xs:complexType name="System.Configuration.SettingsPropertyIsReadOnlyException">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="message_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="innerException_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsLoadedEventArgs" type="t:System.Configuration.SettingsLoadedEventArgs" />
+  <xs:complexType name="System.Configuration.SettingsLoadedEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Provider">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Provider_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsProvider" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="provider">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsProvider" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.DictionarySectionHandler" type="t:System.Configuration.DictionarySectionHandler" />
+  <xs:complexType name="System.Configuration.DictionarySectionHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.ApplicationSettingsBase" type="t:System.Configuration.ApplicationSettingsBase" />
+  <xs:complexType name="System.Configuration.ApplicationSettingsBase">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetPreviousVersion">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="propertyName">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetPreviousVersion_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Upgrade">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="Reset">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="set_SettingsKey">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_SettingsSaving">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsSavingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SettingsKey">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SettingsKey_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_SettingChanging">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingChangingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_SettingsSaving">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsSavingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_SettingsLoaded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsLoadedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_SettingsLoaded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsLoadedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_SettingChanging">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingChangingEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Reload">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.ApplicationScopedSettingAttribute" type="t:System.Configuration.ApplicationScopedSettingAttribute" />
+  <xs:complexType name="System.Configuration.ApplicationScopedSettingAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingChangingEventArgs" type="t:System.Configuration.SettingChangingEventArgs" />
+  <xs:complexType name="System.Configuration.SettingChangingEventArgs">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_SettingKey">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SettingKey_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SettingClass">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SettingClass_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_NewValue">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_NewValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="settingName">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="settingClass">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="settingKey">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="newValue">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="cancel">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SettingName">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SettingName_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.UserSettingsGroup" type="t:System.Configuration.UserSettingsGroup" />
+  <xs:complexType name="System.Configuration.UserSettingsGroup">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsSavingEventHandler" type="t:System.Configuration.SettingsSavingEventHandler" />
+  <xs:complexType name="System.Configuration.SettingsSavingEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:System.Configuration.SettingsSavingEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:System.Configuration.SettingsSavingEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:System.Configuration.SettingsSavingEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:System.Configuration.SettingsSavingEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsSavingEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.ComponentModel.CancelEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsSavingEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsSavingEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.ComponentModel.CancelEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingsSavingEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsProperty" type="t:System.Configuration.SettingsProperty" />
+  <xs:complexType name="System.Configuration.SettingsProperty">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="set_Name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Name">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Name_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Provider">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Provider_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsProvider" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_DefaultValue">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_DefaultValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_ThrowOnErrorDeserializing">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ThrowOnErrorDeserializing_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_ThrowOnErrorSerializing">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_IsReadOnly">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_PropertyType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Type" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_DefaultValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SerializeAs">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SerializeAs_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsSerializeAs" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_Provider">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsProvider" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_SerializeAs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsSerializeAs" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Configuration.SettingsSerializeAs" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_ThrowOnErrorDeserializing">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="name_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="name_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="propertyType_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Type" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="provider_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Configuration.SettingsProvider" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="isReadOnly_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="defaultValue_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="serializeAs_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Configuration.SettingsSerializeAs" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Configuration.SettingsSerializeAs" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="attributes_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Configuration.SettingsAttributeDictionary" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="throwOnErrorDeserializing_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="throwOnErrorSerializing_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="propertyToCopy_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Configuration.SettingsProperty" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_IsReadOnly">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsReadOnly_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Attributes">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Attributes_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsAttributeDictionary" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_ThrowOnErrorSerializing">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ThrowOnErrorSerializing_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_PropertyType">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_PropertyType_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Type" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsPropertyValue" type="t:System.Configuration.SettingsPropertyValue" />
+  <xs:complexType name="System.Configuration.SettingsPropertyValue">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_SerializedValue">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SerializedValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_IsDirty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Deserialized">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Deserialized_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_IsDirty">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsDirty_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_SerializedValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Property">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Property_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsProperty" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Name">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Name_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_PropertyValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_UsingDefaultValue">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_UsingDefaultValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_PropertyValue">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_PropertyValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="property">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsProperty" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_Deserialized">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.UriSection" type="t:System.Configuration.UriSection" />
+  <xs:complexType name="System.Configuration.UriSection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_IriParsing">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IriParsing_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.IriParsingElement" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Idn">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Idn_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.IdnElement" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="get_SchemeSettings">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SchemeSettings_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SchemeSettingElementCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsSerializeAsAttribute" type="t:System.Configuration.SettingsSerializeAsAttribute" />
+  <xs:complexType name="System.Configuration.SettingsSerializeAsAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_SerializeAs">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SerializeAs_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsSerializeAs" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="serializeAs">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsSerializeAs" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Configuration.SettingsSerializeAs" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.ConfigXmlDocument" type="t:System.Configuration.ConfigXmlDocument" />
+  <xs:complexType name="System.Configuration.ConfigXmlDocument">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="LoadSingleElement">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="filename">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="sourceReader">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Xml.XmlTextReader" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.IgnoreSectionHandler" type="t:System.Configuration.IgnoreSectionHandler" />
+  <xs:complexType name="System.Configuration.IgnoreSectionHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.ConfigurationSettings" type="t:System.Configuration.ConfigurationSettings" />
+  <xs:complexType name="System.Configuration.ConfigurationSettings">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_AppSettings">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_AppSettings_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Collections.Specialized.NameValueCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetConfig">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="sectionName">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetConfig_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:element name="System.Configuration.ApplicationSettingsGroup" type="t:System.Configuration.ApplicationSettingsGroup" />
+  <xs:complexType name="System.Configuration.ApplicationSettingsGroup">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingValueElement" type="t:System.Configuration.SettingValueElement" />
+  <xs:complexType name="System.Configuration.SettingValueElement">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="set_ValueXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Xml.XmlNode" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_ValueXml">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ValueXml_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Xml.XmlNode" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SchemeSettingElementCollection" type="t:System.Configuration.SchemeSettingElementCollection" />
+  <xs:complexType name="System.Configuration.SchemeSettingElementCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Item">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="index_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="get_Item_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="t:System.Configuration.SchemeSettingElement" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="name_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="get_Item_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="t:System.Configuration.SchemeSettingElement" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="IndexOf">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="element">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SchemeSettingElement" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="IndexOf_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsAttributeDictionary" type="t:System.Configuration.SettingsAttributeDictionary" />
+  <xs:complexType name="System.Configuration.SettingsAttributeDictionary">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="attributes_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Configuration.SettingsAttributeDictionary" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingElement" type="t:System.Configuration.SettingElement" />
+  <xs:complexType name="System.Configuration.SettingElement">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="set_Value">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingValueElement" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="name_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="serializeAs_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Configuration.SettingsSerializeAs" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Configuration.SettingsSerializeAs" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SerializeAs">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SerializeAs_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsSerializeAs" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Name">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Name_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_SerializeAs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsSerializeAs" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Configuration.SettingsSerializeAs" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Value">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Value_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingValueElement" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_Name">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.IPersistComponentSettings" type="t:System.Configuration.IPersistComponentSettings" />
+  <xs:complexType name="System.Configuration.IPersistComponentSettings">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="set_SaveSettings">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResetComponentSettings">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="set_SettingsKey">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SaveSettings">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SaveSettings_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SettingsKey">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SettingsKey_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SaveComponentSettings">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="LoadComponentSettings">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsPropertyWrongTypeException" type="t:System.Configuration.SettingsPropertyWrongTypeException" />
+  <xs:complexType name="System.Configuration.SettingsPropertyWrongTypeException">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="message_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="innerException_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsPropertyCollection" type="t:System.Configuration.SettingsPropertyCollection" />
+  <xs:complexType name="System.Configuration.SettingsPropertyCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="SetReadOnly">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="Add">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="property">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsProperty" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Item">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="get_Item_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsProperty" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Remove">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="Clear">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsManageabilityAttribute" type="t:System.Configuration.SettingsManageabilityAttribute" />
+  <xs:complexType name="System.Configuration.SettingsManageabilityAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Manageability">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Manageability_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsManageability" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="manageability">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsManageability" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Configuration.SettingsManageability" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsPropertyNotFoundException" type="t:System.Configuration.SettingsPropertyNotFoundException" />
+  <xs:complexType name="System.Configuration.SettingsPropertyNotFoundException">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="message_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="innerException_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsProviderCollection" type="t:System.Configuration.SettingsProviderCollection" />
+  <xs:complexType name="System.Configuration.SettingsProviderCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.UserScopedSettingAttribute" type="t:System.Configuration.UserScopedSettingAttribute" />
+  <xs:complexType name="System.Configuration.UserScopedSettingAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.IConfigurationSystem" type="t:System.Configuration.IConfigurationSystem" />
+  <xs:complexType name="System.Configuration.IConfigurationSystem">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetConfig">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="configKey">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetConfig_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Init">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsContext" type="t:System.Configuration.SettingsContext" />
+  <xs:complexType name="System.Configuration.SettingsContext">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.IdnElement" type="t:System.Configuration.IdnElement" />
+  <xs:complexType name="System.Configuration.IdnElement">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="set_Enabled">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.UriIdnScope" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="q4:System.UriIdnScope" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="get_Enabled">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Enabled_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.UriIdnScope" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
+  </xs:annotation>
+  <xs:element name="System.Configuration.SettingsSerializeAs" type="t:System.Configuration.SettingsSerializeAs" />
+  <xs:simpleType name="System.Configuration.SettingsSerializeAs">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Configuration.IConfigurationSectionHandler" type="t:System.Configuration.IConfigurationSectionHandler" />
+  <xs:complexType name="System.Configuration.IConfigurationSectionHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Create">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="parent">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="configContext">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="section">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Xml.XmlNode" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Create_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingElementCollection" type="t:System.Configuration.SettingElementCollection" />
+  <xs:complexType name="System.Configuration.SettingElementCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Get">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="elementKey">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Get_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingElement" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Remove">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="element">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingElement" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Add">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="element">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingElement" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Clear">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsGroupNameAttribute" type="t:System.Configuration.SettingsGroupNameAttribute" />
+  <xs:complexType name="System.Configuration.SettingsGroupNameAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_GroupName">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_GroupName_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="groupName">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsProvider" type="t:System.Configuration.SettingsProvider" />
+  <xs:complexType name="System.Configuration.SettingsProvider">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_ApplicationName">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ApplicationName_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPropertyValues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsContext" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="collection">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsPropertyCollection" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetPropertyValues_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsPropertyValueCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetPropertyValues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsContext" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="collection">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsPropertyValueCollection" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_ApplicationName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.DefaultSettingValueAttribute" type="t:System.Configuration.DefaultSettingValueAttribute" />
+  <xs:complexType name="System.Configuration.DefaultSettingValueAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Value">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Value_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsBase" type="t:System.Configuration.SettingsBase" />
+  <xs:complexType name="System.Configuration.SettingsBase">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Providers">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Providers_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsProviderCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Context">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Context_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsContext" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Synchronized">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="settingsBase">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsBase" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Synchronized_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsBase" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Item">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="propertyName">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="get_Item_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_IsSynchronized">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsSynchronized_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_PropertyValues">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_PropertyValues_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsPropertyValueCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Properties">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Properties_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsPropertyCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Initialize">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsContext" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="properties">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsPropertyCollection" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="providers">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsProviderCollection" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Save">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="set_Item">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="propertyName">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsGroupDescriptionAttribute" type="t:System.Configuration.SettingsGroupDescriptionAttribute" />
+  <xs:complexType name="System.Configuration.SettingsGroupDescriptionAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Description">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Description_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="description">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.LocalFileSettingsProvider" type="t:System.Configuration.LocalFileSettingsProvider" />
+  <xs:complexType name="System.Configuration.LocalFileSettingsProvider">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingChangingEventHandler" type="t:System.Configuration.SettingChangingEventHandler" />
+  <xs:complexType name="System.Configuration.SettingChangingEventHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:System.Configuration.SettingChangingEventHandler.Invoke" />
+      <xs:element name="Constructor" type="t:System.Configuration.SettingChangingEventHandler.Constructor" />
+      <xs:element name="BeginInvoke" type="t:System.Configuration.SettingChangingEventHandler.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:System.Configuration.SettingChangingEventHandler.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingChangingEventHandler.Invoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Configuration.SettingChangingEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingChangingEventHandler.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingChangingEventHandler.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="sender">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="e">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Configuration.SettingChangingEventArgs" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="System.Configuration.SettingChangingEventHandler.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System.Configuration.ClientSettingsSection" type="t:System.Configuration.ClientSettingsSection" />
+  <xs:complexType name="System.Configuration.ClientSettingsSection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Settings">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Settings_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingElementCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.NameValueSectionHandler" type="t:System.Configuration.NameValueSectionHandler" />
+  <xs:complexType name="System.Configuration.NameValueSectionHandler">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.IriParsingElement" type="t:System.Configuration.IriParsingElement" />
+  <xs:complexType name="System.Configuration.IriParsingElement">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="set_Enabled">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="get_Enabled">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Enabled_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.ISettingsProviderService" type="t:System.Configuration.ISettingsProviderService" />
+  <xs:complexType name="System.Configuration.ISettingsProviderService">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetSettingsProvider">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="property">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsProperty" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetSettingsProvider_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsProvider" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsProviderAttribute" type="t:System.Configuration.SettingsProviderAttribute" />
+  <xs:complexType name="System.Configuration.SettingsProviderAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_ProviderTypeName">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ProviderTypeName_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="providerTypeName_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="providerType_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Type" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingAttribute" type="t:System.Configuration.SettingAttribute" />
+  <xs:complexType name="System.Configuration.SettingAttribute">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.IApplicationSettingsProvider" type="t:System.Configuration.IApplicationSettingsProvider" />
+  <xs:complexType name="System.Configuration.IApplicationSettingsProvider">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetPreviousVersion">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsContext" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="property">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsProperty" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetPreviousVersion_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Configuration.SettingsPropertyValue" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Upgrade">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsContext" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="properties">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsPropertyCollection" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Reset">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="context">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsContext" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Configuration.SettingsManageability" type="t:System.Configuration.SettingsManageability" />
+  <xs:simpleType name="System.Configuration.SettingsManageability">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+</xs:schema>

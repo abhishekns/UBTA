@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Security.Authentication.ExtendedProtection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Security.Authentication.ExtendedProtection" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Security.Authentication.ExtendedProtection.ServiceNameCollection" type="t:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" />
+  <xs:complexType name="System.Security.Authentication.ExtendedProtection.ServiceNameCollection">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="items">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Collections.ICollection" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Merge">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="serviceName_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Merge_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="t:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="serviceNames_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Collections.IEnumerable" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Merge_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="t:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Contains">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="searchServiceName">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.String" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Contains_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" type="t:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" />
+  <xs:simpleType name="System.Security.Authentication.ExtendedProtection.PolicyEnforcement">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicyTypeConverter" type="t:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicyTypeConverter" />
+  <xs:complexType name="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicyTypeConverter">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.ProtectionScenario" type="t:System.Security.Authentication.ExtendedProtection.ProtectionScenario" />
+  <xs:simpleType name="System.Security.Authentication.ExtendedProtection.ProtectionScenario">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.ChannelBinding" type="t:System.Security.Authentication.ExtendedProtection.ChannelBinding" />
+  <xs:complexType name="System.Security.Authentication.ExtendedProtection.ChannelBinding">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_Size">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Size_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.TokenBinding" type="t:System.Security.Authentication.ExtendedProtection.TokenBinding" />
+  <xs:complexType name="System.Security.Authentication.ExtendedProtection.TokenBinding">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetRawTokenBindingId">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="GetRawTokenBindingId_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Byte[]" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_BindingType">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_BindingType_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.ExtendedProtection.TokenBindingType" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" type="t:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
+  <xs:complexType name="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_CustomServiceNames">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_CustomServiceNames_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_OSSupportsExtendedProtection">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_OSSupportsExtendedProtection_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_CustomChannelBinding">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_CustomChannelBinding_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.ExtendedProtection.ChannelBinding" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="policyEnforcement_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="protectionScenario_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ProtectionScenario" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Authentication.ExtendedProtection.ProtectionScenario" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customServiceNames_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ServiceNameCollection" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="policyEnforcement_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="protectionScenario_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ProtectionScenario" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Authentication.ExtendedProtection.ProtectionScenario" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customServiceNames_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Collections.ICollection" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="policyEnforcement_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customChannelBinding_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.ChannelBinding" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="policyEnforcement_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_ProtectionScenario">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ProtectionScenario_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.ExtendedProtection.ProtectionScenario" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_PolicyEnforcement">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_PolicyEnforcement_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.ChannelBindingKind" type="t:System.Security.Authentication.ExtendedProtection.ChannelBindingKind" />
+  <xs:simpleType name="System.Security.Authentication.ExtendedProtection.ChannelBindingKind">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Security.Authentication.ExtendedProtection.TokenBindingType" type="t:System.Security.Authentication.ExtendedProtection.TokenBindingType" />
+  <xs:simpleType name="System.Security.Authentication.ExtendedProtection.TokenBindingType">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+</xs:schema>

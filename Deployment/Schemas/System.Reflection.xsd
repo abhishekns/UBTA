@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Reflection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Reflection" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Reflection.ICustomTypeProvider" type="t:System.Reflection.ICustomTypeProvider" />
+  <xs:complexType name="System.Reflection.ICustomTypeProvider">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetCustomType">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="GetCustomType_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Type" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

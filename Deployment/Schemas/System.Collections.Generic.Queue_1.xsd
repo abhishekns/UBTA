@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Collections.Generic.Queue_1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Collections.Generic.Queue_1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Collections.Generic.Queue" type="t:System.Collections.Generic.Queue" />
+  <xs:complexType name="System.Collections.Generic.Queue">
+    <xs:choice minOccurs="0" maxOccurs="unbounded" />
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

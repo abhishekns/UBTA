@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ParamFiles"
+    targetNamespace="http://www.usecasetests.com/ubta.ParamFiles"
+    elementFormDefault="qualified"
+    xmlns="http://www.usecasetests.com/ubta.ParamFiles"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="TestCaseFile" type="TestCaseFile" />
+  <xs:complexType name="TestCaseFile">
+    <xs:sequence>
+      <xs:element name="Setup" type="Setup" maxOccurs="1" minOccurs="0"/>
+      <xs:element name="TestCases" minOccurs="1" >
+        <xs:complexType>
+          <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="TestCase" type="TestCase"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Teardown" type="Teardown" maxOccurs="1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestCase" type="TestCase" />
+  <xs:complexType name="Setup">
+    <xs:choice>
+      <xs:element name="UseCase" type="UseCase" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Teardown">
+    <xs:choice>
+      <xs:element name="UseCase" type="UseCase" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="TestCase">
+    <xs:sequence>
+      <xs:element name="PreCondition" type="PreCondition" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="UseCase" type="UseCase" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="PostCondition" type="PostCondition" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UseCase" abstract="false">
+    <xs:choice maxOccurs="unbounded">
+      <xs:any/>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="TestCondition" abstract="true" mixed="true">
+    <xs:choice maxOccurs="unbounded">
+      <xs:any/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="PreCondition">
+    <xs:complexContent>
+      <xs:extension base="TestCondition" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PostCondition">
+    <xs:complexContent>
+      <xs:extension base="TestCondition"/>
+    </xs:complexContent>
+  </xs:complexType>
+    
+</xs:schema>

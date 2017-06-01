@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Runtime.InteropServices.ComTypes" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Runtime.InteropServices.ComTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Runtime.InteropServices.ComTypes.IAdviseSink" type="t:System.Runtime.InteropServices.ComTypes.IAdviseSink" />
+  <xs:complexType name="System.Runtime.InteropServices.ComTypes.IAdviseSink">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="OnViewChange">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="aspect">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="index">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OnSave">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="OnDataChange">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="format">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="stgmedium">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.STGMEDIUM" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OnClose">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="OnRename">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="moniker">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Runtime.InteropServices.ComTypes.IMoniker" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.ADVF" type="t:System.Runtime.InteropServices.ComTypes.ADVF" />
+  <xs:simpleType name="System.Runtime.InteropServices.ComTypes.ADVF">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.DATADIR" type="t:System.Runtime.InteropServices.ComTypes.DATADIR" />
+  <xs:simpleType name="System.Runtime.InteropServices.ComTypes.DATADIR">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" type="t:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" />
+  <xs:complexType name="System.Runtime.InteropServices.ComTypes.IEnumSTATDATA">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Next">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="celt">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="rgelt">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.STATDATA" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="pceltFetched">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Next_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Clone">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="newEnum">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Skip">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="celt">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Skip_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Reset">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="Reset_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.IDataObject" type="t:System.Runtime.InteropServices.ComTypes.IDataObject" />
+  <xs:complexType name="System.Runtime.InteropServices.ComTypes.IDataObject">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="format">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="medium">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.STGMEDIUM" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryGetData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="format">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="QueryGetData_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DAdvise">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pFormatetc">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="advf">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Runtime.InteropServices.ComTypes.ADVF" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Runtime.InteropServices.ComTypes.ADVF" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="adviseSink">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Runtime.InteropServices.ComTypes.IAdviseSink" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="connection">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="DAdvise_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DUnadvise">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="connection">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDataHere">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="format">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="medium">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.STGMEDIUM" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="formatIn">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="medium">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.STGMEDIUM" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="release">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCanonicalFormatEtc">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="formatIn">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Ref" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="formatOut">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetCanonicalFormatEtc_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EnumDAdvise">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="enumAdvise">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="EnumDAdvise_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EnumFormatEtc">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="direction">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Runtime.InteropServices.ComTypes.DATADIR" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Runtime.InteropServices.ComTypes.DATADIR" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="EnumFormatEtc_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Runtime.InteropServices.ComTypes.IEnumFORMATETC" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.TYMED" type="t:System.Runtime.InteropServices.ComTypes.TYMED" />
+  <xs:simpleType name="System.Runtime.InteropServices.ComTypes.TYMED">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.DVASPECT" type="t:System.Runtime.InteropServices.ComTypes.DVASPECT" />
+  <xs:simpleType name="System.Runtime.InteropServices.ComTypes.DVASPECT">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.STGMEDIUM" type="t:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />
+  <xs:complexType name="System.Runtime.InteropServices.ComTypes.STGMEDIUM">
+    <xs:choice minOccurs="0" maxOccurs="unbounded" />
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.IEnumFORMATETC" type="t:System.Runtime.InteropServices.ComTypes.IEnumFORMATETC" />
+  <xs:complexType name="System.Runtime.InteropServices.ComTypes.IEnumFORMATETC">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Next">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="celt">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="rgelt">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.FORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="pceltFetched">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Next_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Clone">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="newEnum">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Runtime.InteropServices.ComTypes.IEnumFORMATETC" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Skip">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="celt">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Skip_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Reset">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="Reset_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.STATDATA" type="t:System.Runtime.InteropServices.ComTypes.STATDATA" />
+  <xs:complexType name="System.Runtime.InteropServices.ComTypes.STATDATA">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="connection" type="u:System.Int32" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Runtime.InteropServices.ComTypes.FORMATETC" type="t:System.Runtime.InteropServices.ComTypes.FORMATETC" />
+  <xs:complexType name="System.Runtime.InteropServices.ComTypes.FORMATETC">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="lindex" type="u:System.Int32" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

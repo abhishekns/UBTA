@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Logging>
+  <LoggingAssembly Name="ubta.Logging.dll">
+    <LoadPath>%UBTA_HOME%\Deployment\bin\Debug\</LoadPath>
+  </LoggingAssembly>
+  <LogClass Name="ubta.Logging.Log">
+    <Info>
+      <Parameters>
+        <Parameter>
+          <Type>string</Type>
+          <Name>domain</Name>
+        </Parameter>
+        <Parameter>
+          <Type>string</Type>
+          <Name>message</Name>
+        </Parameter>
+      </Parameters>
+    </Info>
+    <Warn>
+      <Parameters>
+        <Parameter>
+          <Type>string</Type>
+          <Name>domain</Name>
+        </Parameter>
+        <Parameter>
+          <Type>string</Type>
+          <Name>message</Name>
+        </Parameter>
+      </Parameters>
+    </Warn>
+    <Error>
+      <Parameters>
+        <Parameter>
+          <Type>string</Type>
+          <Name>domain</Name>
+        </Parameter>
+        <Parameter>
+          <Type>string</Type>
+          <Name>message</Name>
+        </Parameter>
+        <Parameter>
+          <Type>System.Exception</Type>
+          <Value>$exceptionVar$</Value>
+        </Parameter>
+      </Parameters>
+    </Error>
+  </LogClass>
+  <TraceInOutClass Name="ubta.Logging.TraceInOut">
+    <ObjectName Name="aTrace"></ObjectName>
+    <Constructor>
+      <Parameters>
+        <Parameter>
+          <Type>string</Type>
+          <Name>domain</Name>
+        </Parameter>
+        <Parameter>
+          <Type>string</Type>
+          <Value>$method$</Value>
+        </Parameter>
+      </Parameters>
+    </Constructor>
+  </TraceInOutClass>
+  <TraceClass Name="ubta.Logging.Trace" UseInOut="true" >
+    <Info Name="Info">
+      <Parameters>
+        <Parameter>
+          <Type>string</Type>
+          <Name>domain</Name>
+        </Parameter>
+        <Parameter>
+          <Type>string</Type>
+          <Name>message</Name>
+        </Parameter>
+      </Parameters>
+    </Info>
+    <Warn Name="Warn">
+      <Parameters>
+        <Parameter>
+          <Type>string</Type>
+          <Name>domain</Name>
+        </Parameter>
+        <Parameter>
+          <Type>string</Type>
+          <Name>message</Name>
+        </Parameter>
+      </Parameters>
+    </Warn>
+    <Error Name="Error">
+      <Parameters>
+        <Parameter>
+          <Type>string</Type>
+          <Name>domain</Name>
+        </Parameter>
+        <Parameter>
+          <Type>string</Type>
+          <Name>message</Name>
+        </Parameter>
+        <Parameter>
+          <Type>System.Exception</Type>
+          <Name>e</Name>
+        </Parameter>
+      </Parameters>
+    </Error>
+  </TraceClass>
+</Logging>

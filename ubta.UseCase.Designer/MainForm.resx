@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="workflowDesignerControl1.Xoml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;ns0:DefaultSequentialUseCase x:Name="UseCase" xmlns:ns1="clr-namespace:_SampleLib.MyClassB;Assembly=SampleLibActivity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:ns2="clr-namespace:_SampleLib.MyClassA;Assembly=SampleLibActivity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:ns3="clr-namespace:_SampleLib.MySampleClass;Assembly=SampleLibActivity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:ns4="clr-namespace:_SampleLib.MyDelegate;Assembly=SampleLibActivity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:ubta.UseCase.Designer;Assembly=ubta.UseCase.Designer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"&gt;
+	&lt;ns1:Constructor value="NameOfB" x:Name="0d5b0a33-6e43-4e47-ae00-9f9085a91a7f" InstanceName="b" ActionName="Constructor" /&gt;
+	&lt;ns1:Constructor value="NameOfB1" x:Name="33bc7de8-8855-4f95-813d-b1e21abdccfc" InstanceName="b1" ActionName="Constructor" /&gt;
+	&lt;ns2:Constructor name="NameOfA" x:Name="6c8a2f66-6882-48ef-a846-1c8204d8df9c" InstanceName="a" ActionName="Constructor" /&gt;
+	&lt;ns2:get_B x:Name="5c2e77db-d05a-420a-88b7-3210ceac10d0" InstanceName="a" ActionName="get_B" /&gt;
+	&lt;ns2:set_B x:Name="b1730a9d-8039-443b-8744-13c69d015550" InstanceName="a" ActionName="set_B" /&gt;
+	&lt;ns2:DoSomething_2 x:Name="01ed4c6f-ada9-4e69-84ab-86351c30df08" a="&amp;amp;a" ActionName="DoSomething" InstanceName="a" /&gt;
+	&lt;ns2:DoSomething_1 x:Name="8db08852-2558-48b8-b8bc-8e6a16b54022" a="&amp;amp;b.Value" ActionName="DoSomething" InstanceName="a" /&gt;
+	&lt;ns3:set_MyEnum value="Type3" x:Name="ff90fbb5-d71c-4334-8712-ad34337b599c" InstanceName="sample" ActionName="set_MyEnum" /&gt;
+	&lt;ns3:get_MyEnum x:Name="4228fa50-e95d-44a5-a7a5-cd671092da30" InstanceName="sample" MyEnum_rv="Type1" ActionName="get_MyEnum" /&gt;
+	&lt;ns3:GetSomething_0 x:Name="c1636eeb-7b19-4c4d-867a-b6167a758b9d" InstanceName="sample" String_rv="{x:Null}" ActionName="GetSomething" /&gt;
+	&lt;ns3:GetSomething_1 param1="GS1" x:Name="7345726f-bc7d-4946-beb0-f4953f74d8d4" InstanceName="sample" String_rv="{x:Null}" ActionName="GetSomething" /&gt;
+	&lt;ns3:SetSomeInt x="10" x:Name="95ee6395-8dba-46d5-85a0-dbb3f3adfab7" InstanceName="sample" ActionName="SetSomeInt" /&gt;
+	&lt;ns3:GetSomeInt Int32_rv="0" x:Name="04da2603-6fec-4745-bc7b-c0c7d629819d" InstanceName="sample" ActionName="GetSomeInt" /&gt;
+	&lt;ns3:AddSomeInt x:Name="b61658cc-5edc-4730-972c-dbccc8238aa1" InstanceName="sample" ActionName="AddSomeInt" /&gt;
+	&lt;ns3:GetSomething_2 x:Name="8c152bfb-aa32-414e-b1f1-679423ff05a4" InstanceName="sample" ActionName="GetSomething" /&gt;
+	&lt;ns4:Invoke param1="&amp;amp;a" x:Name="52e04720-2509-4916-8d98-34421df362bc" InstanceName="sample" ActionName="MyEvent" /&gt;
+&lt;/ns0:DefaultSequentialUseCase&gt;</value>
+  </data>
+  <metadata name="myToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>126, 17</value>
+  </metadata>
+</root>

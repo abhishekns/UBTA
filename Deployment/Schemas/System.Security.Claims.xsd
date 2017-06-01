@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Security.Claims" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Security.Claims" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Security.Claims.DynamicRoleClaimProvider" type="t:System.Security.Claims.DynamicRoleClaimProvider" />
+  <xs:complexType name="System.Security.Claims.DynamicRoleClaimProvider">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="AddDynamicRoleClaims">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="claimsIdentity">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.Claims.ClaimsIdentity" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="claims">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Collections.Generic.IEnumerable" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

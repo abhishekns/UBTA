@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" targetNamespace="http://www.usecasetests.com/ubta.Schema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="System.Double">
+    <xs:restriction base="xs:double" />
+  </xs:simpleType>
+  <xs:simpleType name="System.Int32">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="System.Int64">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="System.Single">
+    <xs:restriction base="xs:float" />
+  </xs:simpleType>
+  <xs:simpleType name="System.Boolean">
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="System.Decimal">
+    <xs:restriction base="xs:decimal" />
+  </xs:simpleType>
+  <xs:simpleType name="System.String">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="RetValCondition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equal" />
+      <xs:enumeration value="Greater" />
+      <xs:enumeration value="Lesser" />
+      <xs:enumeration value="Not Equal" />
+      <xs:enumeration value="Within Bounds" />
+      <xs:enumeration value="Out Of Bounds" />
+      <xs:enumeration value="Not Applicable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="ParamValueType">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="ByName" />
+        <xs:enumeration value="ByValue" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="ParamCategory">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="In" />
+        <xs:enumeration value="Out" />
+        <xs:enumeration value="Ref" />
+        <xs:enumeration value="StructType" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="NumParam" type="xs:int" />
+  <xs:attribute name="ParamType" type="u:System.String" />
+  <xs:attribute name="ParamFile" type="u:System.String" />
+  <xs:attributeGroup name="NameOrValueAttGroup">
+    <xs:attribute name="Name" type="u:System.String" use="optional" />
+    <xs:attribute name="Value" type="u:System.String" use="optional" />
+  </xs:attributeGroup>
+  <xs:element name="System.Type" type="u:System.String" />
+  <xs:element name="System.Object" type="u:System.Object" />
+  <xs:complexType name="System.Object">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Equals">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="obj">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="StructType" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Equals_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetHashCode">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="GetHashCode_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetType">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="GetType_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Type" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ToString">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="ToString_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="RootNode">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:any />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

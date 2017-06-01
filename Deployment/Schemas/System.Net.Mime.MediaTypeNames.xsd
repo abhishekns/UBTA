@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.Mime.MediaTypeNames" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.Mime.MediaTypeNames" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Net.Mime.MediaTypeNames+Application" type="t:System.Net.Mime.MediaTypeNames+Application" />
+  <xs:complexType name="System.Net.Mime.MediaTypeNames+Application">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Soap" type="u:System.String" />
+      <xs:element name="Octet" type="u:System.String" />
+      <xs:element name="Rtf" type="u:System.String" />
+      <xs:element name="Pdf" type="u:System.String" />
+      <xs:element name="Zip" type="u:System.String" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.Mime.MediaTypeNames+Text" type="t:System.Net.Mime.MediaTypeNames+Text" />
+  <xs:complexType name="System.Net.Mime.MediaTypeNames+Text">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Plain" type="u:System.String" />
+      <xs:element name="Html" type="u:System.String" />
+      <xs:element name="Xml" type="u:System.String" />
+      <xs:element name="RichText" type="u:System.String" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.Mime.MediaTypeNames+Image" type="t:System.Net.Mime.MediaTypeNames+Image" />
+  <xs:complexType name="System.Net.Mime.MediaTypeNames+Image">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Gif" type="u:System.String" />
+      <xs:element name="Tiff" type="u:System.String" />
+      <xs:element name="Jpeg" type="u:System.String" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Security.AccessControl" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Security.AccessControl" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+  <xs:element name="System.Security.AccessControl.SemaphoreAuditRule" type="t:System.Security.AccessControl.SemaphoreAuditRule" />
+  <xs:complexType name="System.Security.AccessControl.SemaphoreAuditRule">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="identity">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.Principal.IdentityReference" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="eventRights">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreRights" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Security.AccessControl.SemaphoreRights" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="flags">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.AuditFlags" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_SemaphoreRights">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SemaphoreRights_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.AccessControl.SemaphoreRights" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Security.AccessControl.SemaphoreRights" type="t:System.Security.AccessControl.SemaphoreRights" />
+  <xs:simpleType name="System.Security.AccessControl.SemaphoreRights">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Security.AccessControl.SemaphoreSecurity" type="t:System.Security.AccessControl.SemaphoreSecurity" />
+  <xs:complexType name="System.Security.AccessControl.SemaphoreSecurity">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ResetAccessRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAccessRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="name_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="includeSections_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.AccessControl.AccessControlSections" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveAuditRuleAll">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAuditRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveAuditRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAuditRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="RemoveAuditRule_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddAuditRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAuditRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveAccessRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAccessRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="RemoveAccessRule_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetAccessRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAccessRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveAccessRuleAll">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAccessRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveAccessRuleSpecific">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAccessRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveAuditRuleSpecific">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAuditRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetAuditRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAuditRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddAccessRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rule">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.AccessControl.SemaphoreAccessRule" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Security.AccessControl.SemaphoreAccessRule" type="t:System.Security.AccessControl.SemaphoreAccessRule" />
+  <xs:complexType name="System.Security.AccessControl.SemaphoreAccessRule">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_SemaphoreRights">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SemaphoreRights_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.AccessControl.SemaphoreRights" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="identity_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Principal.IdentityReference" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="eventRights_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.AccessControl.SemaphoreRights" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.AccessControl.SemaphoreRights" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="type_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.AccessControl.AccessControlType" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="identity_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="eventRights_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.AccessControl.SemaphoreRights" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.AccessControl.SemaphoreRights" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="type_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.AccessControl.AccessControlType" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

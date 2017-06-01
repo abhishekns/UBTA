@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<u:RootNode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.usecasetests.com/SampleLib"
+          xmlns:u="http://www.usecasetests.com/ubta.Schema">
+  <SampleLib.MyGenericClass Name="Ab">
+    <Constructor>
+      <GenericArg00>SampleLib.MyClassA</GenericArg00>
+      <GenericArg10>SampleLib.MyClassB</GenericArg10>
+    </Constructor>
+  </SampleLib.MyGenericClass>
+  <SampleLib.MyClassB Name="b">
+    <Constructor>
+      <value Value="NameOfB"></value>
+    </Constructor>
+  </SampleLib.MyClassB>
+  <SampleLib.MyClassB Name="b1">
+    <Constructor>
+      <value Value="NameOfB1"></value>
+    </Constructor>
+  </SampleLib.MyClassB>
+  <SampleLib.MyClassA Name="a" >
+    <Constructor>
+      <name_0 Value="NameOfA"/>
+      <b_0 Name="b"/>
+    </Constructor>
+  </SampleLib.MyClassA>
+  <SampleLib.MyClassA Name="a" >
+    <Constructor>
+      <b_1 Name="b"/>
+    </Constructor>
+  </SampleLib.MyClassA>
+  <SampleLib.MyClassA Name="a" >
+    <get_B>
+      <get_B_rv Name="b1"/>
+    </get_B>
+  </SampleLib.MyClassA>
+  <SampleLib.MyClassA Name="a" >
+    <set_B>
+      <value Name="b"></value>
+    </set_B>
+  </SampleLib.MyClassA>
+  <SampleLib.MyClassA Name="a" >
+    <DoSomething>
+      <a_2 Value="a"></a_2>
+      <b_2 Name="b1"></b_2>
+    </DoSomething>
+  </SampleLib.MyClassA>
+  <SampleLib.MyClassA Name="a" >
+    <DoSomething>
+      <a_1 Name="b.Value"></a_1>
+    </DoSomething>
+  </SampleLib.MyClassA>
+  <SampleLib.MySampleClass Name="sample">
+    <set_MyEnum>
+      <value Value="Type3"/>
+    </set_MyEnum>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <get_MyEnum>
+      <get_MyEnum_rv Name="mEnum"/>
+    </get_MyEnum>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <GetSomething>
+      <param1_0 Name="a"></param1_0>
+    </GetSomething>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <GetSomething>
+      <param1_1 Value="GS1"></param1_1>
+      <param2_1 Name="a"></param2_1>
+    </GetSomething>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <SetSomeInt>
+      <x Value="10"></x>
+    </SetSomeInt>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <GetSomeInt>
+      <GetSomeInt_rv Name="x"/>
+    </GetSomeInt>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <AddSomeInt>
+      <x Name="x"/>
+    </AddSomeInt>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <GetSomething>
+      <param1_2 Name="a"></param1_2>
+    </GetSomething>
+  </SampleLib.MySampleClass>
+  <SampleLib.MySampleClass Name="sample">
+    <MyEvent>
+      <param1 Value="eventArgs"></param1>
+    </MyEvent>
+  </SampleLib.MySampleClass>
+</u:RootNode>
+

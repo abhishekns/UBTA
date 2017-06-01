@@ -1,0 +1,5 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartArguments>E:\Projects\RefactoredUBTA_100216\UBTA\SampleLib\bin\Debug\SampleLib.dll</StartArguments>
+  </PropertyGroup>
+</Project>
