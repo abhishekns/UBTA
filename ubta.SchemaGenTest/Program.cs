@@ -23,9 +23,23 @@ namespace ubta.SchemaGenTest
     {
         static void Main(string[] args)
         {
-            WriteSchema(Constants.ASSEMBLY_DIR + @"\SampleLib.dll");
-            WriteSchema(Constants.ASSEMBLY_DIR + @"\ubta.Assert.dll");
-            WriteSchema(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll");
+            if(args == null || args.Length == 0)
+            {
+                WriteSchema(Constants.ASSEMBLY_DIR + @"\SampleLib.dll");
+                WriteSchema(Constants.ASSEMBLY_DIR + @"\ubta.Assert.dll");
+                WriteSchema(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll");
+            }
+            else
+            {
+                if(File.Exists(args[0]))
+                {
+                    WriteSchema(args[0]);
+                }
+                else if(File.Exists(Constants.ASSEMBLY_DIR + args[0]))
+                {
+                    WriteSchema(Constants.ASSEMBLY_DIR + args[0]);
+                }
+            }
         }
 
         private static void WriteSchema(string assName)
