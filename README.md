@@ -13,7 +13,7 @@ Installation:
 
 The 'Deployment' folder contains the software. Change the Deployment folder environment variable based on your choice.
 
-set environment variable UBTA_HOME to your deployment directory. Make sure to keep the ending '\'.
+set environment variable UBTA_HOME to your deployment directory. Make sure to keep the ending "\\".
 
 Running:
 
