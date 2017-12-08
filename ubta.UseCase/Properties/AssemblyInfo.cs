@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ubta.UseCase")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This application can be used to create unit, component, cross-component, integrated and UI automation test cases for C# software.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("sisl")]
+[assembly: AssemblyCompany("Abhishek N Sharma")]
 [assembly: AssemblyProduct("ubta.UseCase")]
-[assembly: AssemblyCopyright("Copyright © sisl 2010")]
+[assembly: AssemblyCopyright("Copyright © Abhishek N Sharma 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

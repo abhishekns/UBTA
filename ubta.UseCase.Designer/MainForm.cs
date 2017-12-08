@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using ubta.Reflection;
+using ubta.Common.UI;
 
 namespace ubta.UseCase.Designer
 {
@@ -55,15 +56,7 @@ namespace ubta.UseCase.Designer
 
         void b_Click(object sender, EventArgs e)
         {
-            ToolStripButton b = sender as ToolStripButton;
-            if (null != b)
-            {
-                Instance i = b.Tag as Instance;
-                string ns = i.InstanceType.GetValidTypeNameForXml();
-                var dsuc = useCaseDesignerControl1.CurrentUseCase as DefaultSequentialUseCase;
-                dsuc.ActiveInstance = i;
-                SetToolsForNameSpace(ns, b);
-            }
+
         }
 
         private void SetToolsForNameSpace(string ns, ToolStripButton b)
@@ -254,6 +247,12 @@ namespace ubta.UseCase.Designer
             useCaseDesignerControl1.AdaptSizeTo(this.ClientSize);
             toolStripContainer1.Width = this.ClientSize.Width;
             myToolStrip.Width = this.ClientSize.Width;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBoxUBTA aboutWindow = new AboutBoxUBTA();
+            aboutWindow.Show();
         }
     }
 }

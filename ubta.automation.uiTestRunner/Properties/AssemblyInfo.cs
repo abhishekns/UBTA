@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ubta.ConsoleTestBed")]
+[assembly: AssemblyTitle("ubta.automation.uiTestRunner")]
 [assembly: AssemblyDescription("This application can be used to create unit, component, cross-component, integrated and UI automation test cases for C# software.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ubta.ConsoleTestBed")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("ubta.automation.uiTestRunner")]
+[assembly: AssemblyCopyright("Copyright © Abhishek N Sharma 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d4489a3f-5b09-477f-8b37-e5c0c4aa04a3")]
+[assembly: Guid("5883b153-beff-40b5-a83e-b97b57b59eef")]
 
 // Version information for an assembly consists of the following four values:
 //

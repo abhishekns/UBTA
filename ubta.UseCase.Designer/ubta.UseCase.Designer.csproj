@@ -148,6 +148,10 @@
     <Compile Include="UseCaseMarkupSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ubta.Common.UI\ubta.Common.UI.csproj">
+      <Project>{a7e09202-5828-4655-827d-e814ce49b451}</Project>
+      <Name>ubta.Common.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ubta.Common\ubta.Common.csproj">
       <Project>{9C6696FF-DC18-43B1-815F-8DBAB49A0F62}</Project>
       <Name>ubta.Common</Name>

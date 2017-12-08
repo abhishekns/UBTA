@@ -29,7 +29,6 @@ namespace ubta.UseCase.Designer
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +75,7 @@ namespace ubta.UseCase.Designer
             this.mnuSaveAs,
             this.mnuExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // menuNew
@@ -85,55 +84,55 @@ namespace ubta.UseCase.Designer
             this.mnuNewSequential,
             this.mnuNewStateMachine});
             this.menuNew.Name = "menuNew";
-            this.menuNew.Size = new System.Drawing.Size(135, 22);
+            this.menuNew.Size = new System.Drawing.Size(124, 22);
             this.menuNew.Text = "&New";
             // 
             // mnuNewSequential
             // 
             this.mnuNewSequential.Name = "mnuNewSequential";
-            this.mnuNewSequential.Size = new System.Drawing.Size(201, 22);
+            this.mnuNewSequential.Size = new System.Drawing.Size(203, 22);
             this.mnuNewSequential.Text = "Sequential Workflow";
             this.mnuNewSequential.Click += new System.EventHandler(this.mnuNewSequential_Click);
             // 
             // mnuNewStateMachine
             // 
             this.mnuNewStateMachine.Name = "mnuNewStateMachine";
-            this.mnuNewStateMachine.Size = new System.Drawing.Size(201, 22);
+            this.mnuNewStateMachine.Size = new System.Drawing.Size(203, 22);
             this.mnuNewStateMachine.Text = "State Machine Workflow";
             this.mnuNewStateMachine.Click += new System.EventHandler(this.mnuNewStateMachine_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.openToolStripMenuItem.Text = "&Open...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // mnuValidate
             // 
             this.mnuValidate.Name = "mnuValidate";
-            this.mnuValidate.Size = new System.Drawing.Size(135, 22);
+            this.mnuValidate.Size = new System.Drawing.Size(124, 22);
             this.mnuValidate.Text = "&Validate...";
             this.mnuValidate.Click += new System.EventHandler(this.mnuValidate_Click);
             // 
             // mnuSave
             // 
             this.mnuSave.Name = "mnuSave";
-            this.mnuSave.Size = new System.Drawing.Size(135, 22);
+            this.mnuSave.Size = new System.Drawing.Size(124, 22);
             this.mnuSave.Text = "&Save";
             this.mnuSave.Click += new System.EventHandler(this.mnuSave_Click);
             // 
             // mnuSaveAs
             // 
             this.mnuSaveAs.Name = "mnuSaveAs";
-            this.mnuSaveAs.Size = new System.Drawing.Size(135, 22);
+            this.mnuSaveAs.Size = new System.Drawing.Size(124, 22);
             this.mnuSaveAs.Text = "&SaveAs...";
             this.mnuSaveAs.Click += new System.EventHandler(this.mnuSaveAs_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(135, 22);
+            this.mnuExit.Size = new System.Drawing.Size(124, 22);
             this.mnuExit.Text = "E&xit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -142,14 +141,15 @@ namespace ubta.UseCase.Designer
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "&About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // trackBar1
             // 
@@ -176,19 +176,19 @@ namespace ubta.UseCase.Designer
             this.label1.TabIndex = 4;
             this.label1.Text = "Zoom";
             // 
-            // workflowDesignerControl1
+            // useCaseDesignerControl1
             // 
             this.useCaseDesignerControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.useCaseDesignerControl1.ControlsLayout = "25 25 300 100";
+            this.useCaseDesignerControl1.ControlsLayout = "";
             this.useCaseDesignerControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.useCaseDesignerControl1.Location = new System.Drawing.Point(0, -2);
             this.useCaseDesignerControl1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.useCaseDesignerControl1.MinimumSize = new System.Drawing.Size(699, 399);
-            this.useCaseDesignerControl1.Name = "workflowDesignerControl1";
+            this.useCaseDesignerControl1.Name = "useCaseDesignerControl1";
             this.useCaseDesignerControl1.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.useCaseDesignerControl1.Size = new System.Drawing.Size(766, 518);
             this.useCaseDesignerControl1.TabIndex = 0;
-            this.useCaseDesignerControl1.Xoml = resources.GetString("workflowDesignerControl1.Xoml");
+            this.useCaseDesignerControl1.Xoml = "";
             this.useCaseDesignerControl1.XomlFile = "";
             // 
             // toolStripContainer1
@@ -217,7 +217,7 @@ namespace ubta.UseCase.Designer
             this.myToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.myToolStrip.Location = new System.Drawing.Point(3, 0);
             this.myToolStrip.Name = "myToolStrip";
-            this.myToolStrip.Size = new System.Drawing.Size(109, 25);
+            this.myToolStrip.Size = new System.Drawing.Size(111, 25);
             this.myToolStrip.TabIndex = 0;
             // 
             // MainForm
@@ -233,9 +233,9 @@ namespace ubta.UseCase.Designer
             this.MinimumSize = new System.Drawing.Size(578, 410);
             this.Name = "MainForm";
             this.Text = "UseCase Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();

@@ -19,9 +19,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SchemaGenTest")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This application can be used to create unit, component, cross-component, integrated and UI automation test cases for C# software.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("sisl")]
+[assembly: AssemblyCompany("Abhishek N Sharma")]
 [assembly: AssemblyProduct("SchemaGenTest")]
 [assembly: AssemblyCopyright("Copyright © sisl 2009")]
 [assembly: AssemblyTrademark("")]
