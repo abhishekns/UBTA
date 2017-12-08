@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Automation;
 using ubta.automation.ui;
@@ -28,10 +30,23 @@ namespace ubta.automation.uiTestRunner
             var ae = uiaHelper.GetAutomationElement(btnName);
             uiaHelper.Invoke(ae);
 
-            //ae = uiaHelper.GetAutomationElement(txtBoxName);
-            //uiaHelper.SetContentValue(ae, "set by test runner");
+            var rootSnap = uiaHelper.GetRootSnapShot() as Bitmap;
+            rootSnap.Save(@"c:\temp\root_snap_orig.png");
 
-            var snap = uiaHelper.GetSnapShot(ae);
+            var snap = uiaHelper.GetSnapShot(ae) as Bitmap;
+            snap.Save(@"c:\temp\ID_BOTTOM_snap.png");
+
+            ae = uiaHelper.GetAutomationElement(txtBoxName);
+            snap = uiaHelper.GetSnapShot(ae) as Bitmap;
+            snap.Save(@"c:\temp\ID_TEXTBOX_snap_Orig.png");
+
+            uiaHelper.SetContentValue(ae, "set by test runner");
+            rootSnap = uiaHelper.GetRootSnapShot() as Bitmap;
+            rootSnap.Save(@"c:\temp\root_snap_new.png");
+
+            ae = uiaHelper.GetAutomationElement(txtBoxName);
+            var newSnap = uiaHelper.GetSnapShot(ae) as Bitmap;
+            newSnap.Save(@"c:\temp\ID_TEXTBOX_snap_New.png");
 
             uiaHelper.EndProcess();
         }

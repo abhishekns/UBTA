@@ -99,7 +99,7 @@ namespace ubta.automation.ui
             r.Width = (int)ae.Current.BoundingRectangle.Width;
             r.Height = (int)ae.Current.BoundingRectangle.Height;
             Bitmap bmp = rootBmp.Clone(r, rootBmp.PixelFormat);
-            bmp.Save(@"c:\temp\part-screenshot.bmp");
+            //bmp.Save(@"c:\temp\part-screenshot.bmp");
             return bmp;
         }
 
@@ -112,7 +112,7 @@ namespace ubta.automation.ui
             IntPtr dc = memoryGraphics.GetHdc();
             bool success = PrintWindow(new IntPtr(_rootAutomationElement.Current.NativeWindowHandle), dc, 0);
             memoryGraphics.ReleaseHdc(dc);
-            bmp.Save(@"c:\temp\screenshot.bmp");
+            //bmp.Save(@"c:\temp\screenshot.bmp");
             return bmp;
         }
 
