@@ -15,6 +15,7 @@ namespace ubta.automation.uiTestRunner
     class Program
     {
         private static string executable = Constants.ASSEMBLY_DIR + @"\ubta.automation.uiTest.exe";
+        // picked from uitest project's xaml file defining the UI.
 
         private static string btnName = "ID_BOTTOM";
         private static string txtBoxName = "ID_TEXTBOX";
