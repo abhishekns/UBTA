@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Workflow.ComponentModel.Design;
 using System.ComponentModel.Design.Serialization;
 using System.Workflow.ComponentModel.Serialization;
-using Microsoft.Practices.EnterpriseLibrary.Configuration.Design;
-using System.Workflow.Activities;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -15,8 +11,6 @@ using ubta.Reflection;
 using System.Windows.Forms.Design.Behavior;
 using System.ComponentModel.Design;
 using System.Windows.Forms;
-using System.Web.UI.Design;
-using System.Reflection;
 
 namespace ubta.UseCase.Designer
 {

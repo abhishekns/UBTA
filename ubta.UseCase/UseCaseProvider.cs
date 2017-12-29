@@ -26,11 +26,12 @@ namespace ubta.UseCase
             foreach (var d in dlls)
             {
                 d.Trim();
-                if (string.IsNullOrEmpty(d))
+                var dPath = Environment.ExpandEnvironmentVariables(d);
+                if (string.IsNullOrEmpty(dPath))
                 {
                     continue;
                 }
-                asses.Add(Assembly.LoadFile(d));
+                asses.Add(Assembly.LoadFile(dPath));
             }
             foreach (var ra in Assembly.GetExecutingAssembly().GetReferencedAssemblies())
             {
