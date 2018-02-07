@@ -48,11 +48,12 @@ namespace ubta.UseCase.Designer
             foreach (var d in dlls)
             {
                 d.Trim();
-                if (string.IsNullOrEmpty(d))
+                var dPath = Environment.ExpandEnvironmentVariables(d);
+                if (string.IsNullOrEmpty(dPath))
                 {
                     continue;
                 }
-                myWellKnown.Add(Assembly.LoadFile(d));
+                myWellKnown.Add(Assembly.LoadFile(dPath));
             }
             foreach (var ra in Assembly.GetExecutingAssembly().GetReferencedAssemblies())
             {

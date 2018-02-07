@@ -32,22 +32,23 @@ namespace ubta.automation.uiTestRunner
             uiaHelper.Invoke(ae);
 
             var rootSnap = uiaHelper.GetRootSnapShot() as Bitmap;
-            rootSnap.Save(@"c:\temp\root_snap_orig.png");
+            rootSnap.Save(Environment.ExpandEnvironmentVariables(@"%TMP%\root_snap_orig.png"));
 
             var snap = uiaHelper.GetSnapShot(ae) as Bitmap;
-            snap.Save(@"c:\temp\ID_BOTTOM_snap.png");
+            snap.Save(Environment.ExpandEnvironmentVariables(@"%TMP%\ID_BOTTOM_snap.png"));
 
             ae = uiaHelper.GetAutomationElement(txtBoxName);
             snap = uiaHelper.GetSnapShot(ae) as Bitmap;
-            snap.Save(@"c:\temp\ID_TEXTBOX_snap_Orig.png");
+            snap.Save(Environment.ExpandEnvironmentVariables(@"%TMP%\ID_TEXTBOX_snap_Orig.png"));
 
             uiaHelper.SetContentValue(ae, "set by test runner");
+            System.Threading.Thread.Sleep(250);
             rootSnap = uiaHelper.GetRootSnapShot() as Bitmap;
-            rootSnap.Save(@"c:\temp\root_snap_new.png");
+            rootSnap.Save(Environment.ExpandEnvironmentVariables(@"%TMP%\root_snap_new.png"));
 
             ae = uiaHelper.GetAutomationElement(txtBoxName);
             var newSnap = uiaHelper.GetSnapShot(ae) as Bitmap;
-            newSnap.Save(@"c:\temp\ID_TEXTBOX_snap_New.png");
+            newSnap.Save(Environment.ExpandEnvironmentVariables(@"%TMP%\ID_TEXTBOX_snap_New.png"));
 
             uiaHelper.EndProcess();
         }
