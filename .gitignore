@@ -52,4 +52,6 @@ Deployment/bin/Debug/
 obj/
 bin/
 .vs/ubta/v14/.suo
+.vs/
 *.ipch
+*.suo

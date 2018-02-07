@@ -26,26 +26,22 @@ namespace ubta.xml.transformer
                 {
                     using (XmlReader xr = XmlReader.Create(tr))
                     {
-                        using (TextReader xtr = new StringReader(this._input))
+                        myXslTransform.Load(xr);
+                    }
+                }
+                using (StringReader sr = new StringReader(_input))
+                {
+                    using (XmlReader xr = XmlReader.Create(sr))
+                    {
+                        using (StringWriter sw = new StringWriter())
                         {
-                            using (XmlReader ixr = XmlReader.Create(xtr))
-                            {
-                                StringBuilder sb = new StringBuilder();
-                                using (TextWriter tw = new StringWriter(sb))
-                                {
-                                    using (XmlWriter xw = XmlWriter.Create(tw))
-                                    {
-                                        myXslTransform.Load(xr);
-                                        myXslTransform.Transform(ixr, xw);
-                                        _output = sb.ToString();
-                                    }
-                                }
-                            }
+                            myXslTransform.Transform(xr, null, sw);
+                            _output = sw.ToString();
                         }
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 _lastError = e;
                 _output = "";

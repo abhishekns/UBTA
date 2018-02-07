@@ -25,12 +25,14 @@ namespace ubta.UseCase
             List<Assembly> asses = new List<Assembly>();
             foreach (var d in dlls)
             {
-                d.Trim();
-                if (string.IsNullOrEmpty(d))
+                var nd = d.Trim();
+                nd = System.Environment.ExpandEnvironmentVariables(nd);
+
+                if (string.IsNullOrEmpty(nd))
                 {
                     continue;
                 }
-                asses.Add(Assembly.LoadFile(d));
+                asses.Add(Assembly.LoadFile(nd));
             }
             foreach (var ra in Assembly.GetExecutingAssembly().GetReferencedAssemblies())
             {

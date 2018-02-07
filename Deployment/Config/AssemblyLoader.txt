@@ -1,4 +1,4 @@
-C:\Users\abnsharm\dev\RUBTA\Deployment\bin\Debug\SampleLib.dll
-C:\Users\abnsharm\dev\RUBTA\Deployment\bin\Debug\SampleLibActivity.dll
-C:\Users\abnsharm\dev\RUBTA\Deployment\bin\Debug\ubta.UseCase.dll
-C:\Users\abnsharm\dev\RUBTA\Deployment\bin\Debug\ubta.UseCase.Designer.exe
+%UBTA_HOME%\Deployment\bin\%Configuration%\SampleLib.dll
+%UBTA_HOME%\Deployment\bin\%Configuration%\SampleLibActivity.dll
+%UBTA_HOME%\Deployment\bin\%Configuration%\ubta.UseCase.dll
+%UBTA_HOME%\Deployment\bin\%Configuration%\ubta.UseCase.Designer.exe
