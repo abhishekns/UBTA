@@ -99,6 +99,10 @@
       <Project>{9C6696FF-DC18-43B1-815F-8DBAB49A0F62}</Project>
       <Name>ubta.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ubta.Logging\ubta.Logging.csproj">
+      <Project>{3880ecb3-1458-4ad9-b4eb-851986d89e89}</Project>
+      <Name>ubta.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ubta.Reflection\ubta.Reflection.csproj">
       <Project>{0B55485E-8417-4F79-B7C4-438CDE337596}</Project>
       <Name>ubta.Reflection</Name>

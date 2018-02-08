@@ -45,10 +45,17 @@ namespace ubta.UseCase.Designer
         {
             string config = Constants.CONFIG_DIR + @"\AssemblyLoader.txt";
             string[] dlls = File.ReadAllLines(config);
+            var dgbConfig = Assembly.GetExecutingAssembly().CodeBase.Contains(Constants.RELEASE_TYPE_DEBUG);
             foreach (var d in dlls)
             {
-                d.Trim();
-                var dPath = Environment.ExpandEnvironmentVariables(d);
+                var dPath = d.Trim();
+                string conf = Constants.RELEASE_TYPE_RELEASE;
+                if (dgbConfig)
+                {
+                    conf = Constants.RELEASE_TYPE_DEBUG;
+                }
+                dPath = dPath.Replace("%Configuration%", conf);
+                dPath = Environment.ExpandEnvironmentVariables(dPath);
                 if (string.IsNullOrEmpty(dPath))
                 {
                     continue;

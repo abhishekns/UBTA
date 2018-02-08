@@ -19,7 +19,7 @@ namespace ubta.Logging
             string td = DateTime.Now.ToString(System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat);
             if (null == e)
             {
-                sw.WriteLine(format, td, domain, message);
+                sw.WriteLine(string.Format("{0} : {1}", td, string.Format(format, domain, message)));
             }
             else
             {
