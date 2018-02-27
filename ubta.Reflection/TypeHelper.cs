@@ -377,8 +377,9 @@ namespace ubta.Reflection
                     {
                         ass = Assembly.Load(assembly);
                     }
-                    catch
+                    catch(Exception e)
                     {
+                        ubta.Logging.Log.Error("TypeHelper", "Error while loading " + assembly, e);
                         // don't care if all are not loaded.
                     }
                 }

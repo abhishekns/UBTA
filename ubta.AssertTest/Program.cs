@@ -18,21 +18,8 @@ using record = ubta.Assert.record;
 
 namespace ubta.AssertTest
 {
-
-    
-    class Program
+    class Program : ubta.Assert.TestRecorder
     {
-        static ubta.Assert.IValueChecker That(object arg_in)
-        {
-            return assert.That(arg_in);
-        }
-
-        static string Record(params record[] r)
-        {
-            return new ubta.Assert.Record(r).report();
-        }
-
-
         static void Main(string[] args)
         {
             

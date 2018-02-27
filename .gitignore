@@ -57,3 +57,4 @@ bin/
 *.suo
 .vs/
 ClassGeneratorOutput/
+*.log

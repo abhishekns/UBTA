@@ -13,6 +13,8 @@
 #endregion
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Text;
 
 namespace ubta.Assert
 {
@@ -65,6 +67,7 @@ namespace ubta.Assert
 
     public class Record
     {
+        private List<string> myParameterNames;
         private record[] myRecords;
         public Record(params record[] r)
         {
@@ -407,5 +410,28 @@ namespace ubta.Assert
         }
 
         #endregion
+    }
+
+    public class TestRecorder
+    {
+        public static ubta.Assert.IValueChecker That(object arg_in)
+        {
+            return ubta.Assert.Assert.That(arg_in);
+        }
+
+        public static string Record(params record[] r)
+        {
+            return new ubta.Assert.Record(r).report();
+        }
+
+    }
+
+    public static class MemberInfoGetting
+    {
+        public static string GetMemberName<T>(Expression<Func<T>> memberExpression)
+        {
+            MemberExpression expressionBody = (MemberExpression)memberExpression.Body;
+            return expressionBody.Member.Name;
+        }
     }
 }
