@@ -24,9 +24,9 @@ string t3 = null;
 
 // below describes a way to generate test records that are readable as well as can generate equivalent test records that are layman readable.
 
-string report = Record(
-new record(() => { That(t).And(t1).And(t2).And(t3).AreNull(); }),
-new record(()=> {  That(t).IsNotNull(); }));
+string report = Record( 
+    new record(() => { That(t).And(t1).And(t2).And(t3).AreNull(); }),
+    new record(()=> {  That(t).IsNotNull(); }));
 
 // print to console or file or display...
 
