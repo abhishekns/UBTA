@@ -14,4 +14,4 @@ jobs:
       with:
         dotnet-version: 3.0.100
     - name: Build with dotnet
-      run: dotnet -p:Target=x64 --configuration Release
+      run: dotnet --configuration Release -p:Target=x64
