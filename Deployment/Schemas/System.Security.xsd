@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Security" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Security" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
+  <xs:element name="System.Security.SecureStringMarshal" type="t:System.Security.SecureStringMarshal" />
+  <xs:complexType name="System.Security.SecureStringMarshal">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="SecureStringToGlobalAllocAnsi">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="s">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SecureStringToGlobalAllocAnsi_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.IntPtr" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SecureStringToCoTaskMemAnsi">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="s">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SecureStringToCoTaskMemAnsi_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.IntPtr" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SecureStringToCoTaskMemUnicode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="s">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SecureStringToCoTaskMemUnicode_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.IntPtr" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SecureStringToGlobalAllocUnicode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="s">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SecureStringToGlobalAllocUnicode_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.IntPtr" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+</xs:schema>

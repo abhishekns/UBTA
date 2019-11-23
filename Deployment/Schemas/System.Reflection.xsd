@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Reflection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Reflection" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Reflection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Reflection" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Reflection.ICustomTypeProvider" type="t:System.Reflection.ICustomTypeProvider" />
   <xs:complexType name="System.Reflection.ICustomTypeProvider">
     <xs:choice minOccurs="0" maxOccurs="unbounded">

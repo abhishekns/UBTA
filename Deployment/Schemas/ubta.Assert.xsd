@@ -1,6 +1,38 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/ubta.Assert" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/ubta.Assert" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
+  <xs:element name="ubta.Assert.Record" type="t:ubta.Assert.Record" />
+  <xs:complexType name="ubta.Assert.Record">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="r">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:ubta.Assert.record" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="report">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="report_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
   <xs:element name="ubta.Assert.Assert" type="t:ubta.Assert.Assert" />
   <xs:complexType name="ubta.Assert.Assert">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -30,19 +62,127 @@
     </xs:choice>
     <xs:attribute name="Name" type="u:System.String" use="required" />
   </xs:complexType>
-  <xs:element name="ubta.Assert.ICondition" type="t:ubta.Assert.ICondition" />
-  <xs:complexType name="ubta.Assert.ICondition">
+  <xs:element name="ubta.Assert.ThatDel" type="t:ubta.Assert.ThatDel" />
+  <xs:complexType name="ubta.Assert.ThatDel">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="Evaluate">
+      <xs:element name="Invoke" type="t:ubta.Assert.ThatDel.Invoke" />
+      <xs:element name="Constructor" type="t:ubta.Assert.ThatDel.Constructor" />
+      <xs:element name="BeginInvoke" type="t:ubta.Assert.ThatDel.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:ubta.Assert.ThatDel.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ThatDel.Invoke">
+    <xs:sequence>
+      <xs:element name="ivc">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Invoke_rv">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="Evaluate_rv">
-              <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="t:ubta.Assert.IValueChecker" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ThatDel.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ThatDel.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="ivc">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ThatDel.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="EndInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="t:ubta.Assert.IValueChecker" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ubta.Assert.MemberInfoGetting" type="t:ubta.Assert.MemberInfoGetting" />
+  <xs:complexType name="ubta.Assert.MemberInfoGetting">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetMemberName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="memberExpression">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed=":System.Object" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+            <xs:element minOccurs="0" name="GetMemberName_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:choice>
@@ -408,6 +548,238 @@
               </xs:complexType>
             </xs:element>
           </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="ubta.Assert.TestRecorder" type="t:ubta.Assert.TestRecorder" />
+  <xs:complexType name="ubta.Assert.TestRecorder">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="That">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="arg_in">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="That_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:ubta.Assert.IValueChecker" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Record">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="r">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:ubta.Assert.record" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Record_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="ubta.Assert.record" type="t:ubta.Assert.record" />
+  <xs:complexType name="ubta.Assert.record">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:ubta.Assert.record.Invoke" />
+      <xs:element name="Constructor" type="t:ubta.Assert.record.Constructor" />
+      <xs:element name="BeginInvoke" type="t:ubta.Assert.record.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:ubta.Assert.record.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.record.Invoke" />
+  <xs:complexType name="ubta.Assert.record.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.record.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.record.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ubta.Assert.ConditionDel" type="t:ubta.Assert.ConditionDel" />
+  <xs:complexType name="ubta.Assert.ConditionDel">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Invoke" type="t:ubta.Assert.ConditionDel.Invoke" />
+      <xs:element name="Constructor" type="t:ubta.Assert.ConditionDel.Constructor" />
+      <xs:element name="BeginInvoke" type="t:ubta.Assert.ConditionDel.BeginInvoke" />
+      <xs:element name="EndInvoke" type="t:ubta.Assert.ConditionDel.EndInvoke" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ConditionDel.Invoke">
+    <xs:choice>
+      <xs:element minOccurs="0" name="Invoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ConditionDel.Constructor">
+    <xs:sequence>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="method">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ConditionDel.BeginInvoke">
+    <xs:sequence>
+      <xs:element name="callback">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="object">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.Object" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="BeginInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubta.Assert.ConditionDel.EndInvoke">
+    <xs:sequence>
+      <xs:element name="result">
+        <xs:complexType mixed="true">
+          <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="In" ref="u:ParamCategory" />
+          <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="EndInvoke_rv">
+        <xs:complexType>
+          <xs:attribute name="Name" type="u:System.String" use="required" />
+          <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ubta.Assert.ICondition" type="t:ubta.Assert.ICondition" />
+  <xs:complexType name="ubta.Assert.ICondition">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="get_recursion">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_recursion_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Evaluate">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="Evaluate_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
     </xs:choice>

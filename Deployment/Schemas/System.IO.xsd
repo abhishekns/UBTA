@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.IO" xmlns:q2="http://www.siemens.com/med/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.IO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.IO" xmlns:q2="http://www.usecasetests.com/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.IO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.IO.IODescriptionAttribute" type="t:System.IO.IODescriptionAttribute" />
   <xs:complexType name="System.IO.IODescriptionAttribute">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -891,7 +891,17 @@
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence />
+            <xs:sequence>
+              <xs:element name="message_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
             <xs:sequence>
               <xs:element name="message_1">
                 <xs:complexType mixed="true">
@@ -902,18 +912,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="message_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="innerException_2">
+              <xs:element name="innerException_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Exception" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -922,6 +921,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
+            <xs:sequence />
           </xs:choice>
         </xs:complexType>
       </xs:element>

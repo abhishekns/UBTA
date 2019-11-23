@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates" xmlns:q18="http://www.siemens.com/med/Microsoft.Win32.SafeHandles" xmlns:q10="http://www.siemens.com/med/System.Security.Cryptography" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography" />
-  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography" />
-  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography" />
-  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography" />
-  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography" />
-  <xs:import schemaLocation="Microsoft.Win32.SafeHandles.xsd" namespace="http://www.siemens.com/med/Microsoft.Win32.SafeHandles" />
-  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography" />
-  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Security.Cryptography.X509Certificates" xmlns:q18="http://www.usecasetests.com/Microsoft.Win32.SafeHandles" xmlns:q10="http://www.usecasetests.com/System.Security.Cryptography" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Security.Cryptography.X509Certificates" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography" />
+  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography" />
+  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography" />
+  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography" />
+  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography" />
+  <xs:import schemaLocation="Microsoft.Win32.SafeHandles.xsd" namespace="http://www.usecasetests.com/Microsoft.Win32.SafeHandles" />
+  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography" />
+  <xs:import schemaLocation="System.Security.Cryptography.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Security.Cryptography.X509Certificates.X509RevocationMode" type="t:System.Security.Cryptography.X509Certificates.X509RevocationMode" />
   <xs:simpleType name="System.Security.Cryptography.X509Certificates.X509RevocationMode">
     <xs:restriction base="u:System.String" />
@@ -131,7 +131,18 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="rawData_1">
+              <xs:element name="fileName_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="rawData_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -139,7 +150,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="password_1">
+              <xs:element name="password_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -148,21 +159,10 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="keyStorageFlags_1">
+              <xs:element name="keyStorageFlags_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="fileName_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -484,9 +484,8 @@
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence />
             <xs:sequence>
-              <xs:element name="storeName_1">
+              <xs:element name="storeName_0">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -497,7 +496,7 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="storeName_2">
+              <xs:element name="storeName_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreName" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -508,26 +507,17 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="storeLocation_3">
+              <xs:element name="storeHandle_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreLocation" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreLocation" use="optional" />
+                  <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
+            <xs:sequence />
             <xs:sequence>
-              <xs:element name="storeName_4">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreName" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreName" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="storeLocation_4">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreLocation" ref="u:ParamType" />
@@ -541,9 +531,9 @@
             <xs:sequence>
               <xs:element name="storeName_5">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreName" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreName" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -559,10 +549,20 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="storeHandle_6">
+              <xs:element name="storeName_6">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="storeLocation_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreLocation" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreLocation" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1801,46 +1801,51 @@
   <xs:element name="System.Security.Cryptography.X509Certificates.X509Certificate2" type="t:System.Security.Cryptography.X509Certificates.X509Certificate2" />
   <xs:complexType name="System.Security.Cryptography.X509Certificates.X509Certificate2">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="get_SerialNumber">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_SerialNumber_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence>
-              <xs:element name="handle_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="certificate_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
             <xs:sequence />
+            <xs:sequence>
+              <xs:element name="rawData_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="rawData_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="password_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
             <xs:sequence>
               <xs:element name="rawData_3">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="password_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -1865,6 +1870,14 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="keyStorageFlags_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="rawData_5">
@@ -1883,17 +1896,17 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="rawData_6">
+              <xs:element name="keyStorageFlags_5">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="password_6">
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="fileName_6">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -1902,36 +1915,22 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="keyStorageFlags_6">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="rawData_7">
+              <xs:element name="fileName_7">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="password_7">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="keyStorageFlags_7">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1943,6 +1942,14 @@
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="password_8">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1967,6 +1974,14 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="keyStorageFlags_9">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="fileName_10">
@@ -1986,27 +2001,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="fileName_11">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="password_11">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="keyStorageFlags_11">
+              <xs:element name="keyStorageFlags_10">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -2016,7 +2011,49 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="fileName_12">
+              <xs:element name="handle_11">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="certificate_12">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509Certificate" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCertContentType">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="rawData_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="GetCertContentType_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509ContentType" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="fileName_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -2025,20 +2062,10 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="password_12">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.SecureString" ref="u:ParamType" />
+              <xs:element minOccurs="0" name="GetCertContentType_rv_1">
+                <xs:complexType>
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="keyStorageFlags_12">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                  <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509ContentType" name="Type" type="u:System.String" use="optional" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
@@ -2117,13 +2144,13 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_RawData">
+      <xs:element name="get_SerialNumber">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_RawData_rv">
+            <xs:element minOccurs="0" name="get_SerialNumber_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.Byte[]" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -2141,13 +2168,13 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_SubjectName">
+      <xs:element name="get_RawData">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_SubjectName_rv">
+            <xs:element minOccurs="0" name="get_RawData_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Security.Cryptography.X509Certificates.X500DistinguishedName" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed=":System.Byte[]" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -2179,42 +2206,15 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetCertContentType">
+      <xs:element name="get_SubjectName">
         <xs:complexType>
-          <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence>
-              <xs:element name="rawData_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="GetCertContentType_rv_0">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509ContentType" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="fileName_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="GetCertContentType_rv_1">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.Security.Cryptography.X509Certificates.X509ContentType" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SubjectName_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Security.Cryptography.X509Certificates.X500DistinguishedName" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
           </xs:choice>
         </xs:complexType>
       </xs:element>

@@ -33,7 +33,7 @@ namespace ubta.UseCase
                     conf = Constants.RELEASE_TYPE_DEBUG;
                 }
                 dPath = dPath.Replace("%Configuration%", conf);
-                dPath = Environment.ExpandEnvironmentVariables(dPath);
+                dPath = dPath.ExpandEnvVariables();
                 if (string.IsNullOrEmpty(dPath))
                 {
                     continue;

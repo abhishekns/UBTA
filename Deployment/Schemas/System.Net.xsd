@@ -1,42 +1,42 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net" xmlns:q11="http://www.siemens.com/med/System.Net.Cache" xmlns:q14="http://www.siemens.com/med/System.Net.Sockets" xmlns:q16="http://www.siemens.com/med/System.Net.HttpListener" xmlns:q9="http://www.siemens.com/med/System.Security.Authentication.ExtendedProtection" xmlns:q4="http://www.siemens.com/med/System" xmlns:q6="http://www.siemens.com/med/System.Collections.Specialized" xmlns:q3="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates" xmlns:q5="http://www.siemens.com/med/System.Net.Security" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.siemens.com/med/System.Net.Security" />
-  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.siemens.com/med/System.Security.Cryptography.X509Certificates" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.siemens.com/med/System.Net.Security" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.siemens.com/med/System.Net.Security" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication.ExtendedProtection" />
-  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication.ExtendedProtection" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication.ExtendedProtection" />
-  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.siemens.com/med/System.Security.Authentication.ExtendedProtection" />
-  <xs:import schemaLocation="System.Net.HttpListener.xsd" namespace="http://www.siemens.com/med/System.Net.HttpListener" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.siemens.com/med/System.Net.Security" />
-  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.siemens.com/med/System.Net.Security" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Net" xmlns:q11="http://www.usecasetests.com/System.Net.Cache" xmlns:q14="http://www.usecasetests.com/System.Net.Sockets" xmlns:q16="http://www.usecasetests.com/System.Net.HttpListener" xmlns:q9="http://www.usecasetests.com/System.Security.Authentication.ExtendedProtection" xmlns:q4="http://www.usecasetests.com/System" xmlns:q6="http://www.usecasetests.com/System.Collections.Specialized" xmlns:q3="http://www.usecasetests.com/System.Security.Cryptography.X509Certificates" xmlns:q5="http://www.usecasetests.com/System.Net.Security" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Net" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography.X509Certificates" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.usecasetests.com/System.Net.Security" />
+  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography.X509Certificates" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography.X509Certificates" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.Security.Cryptography.X509Certificates.xsd" namespace="http://www.usecasetests.com/System.Security.Cryptography.X509Certificates" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.usecasetests.com/System.Net.Security" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.usecasetests.com/System.Net.Security" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.usecasetests.com/System.Security.Authentication.ExtendedProtection" />
+  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.usecasetests.com/System.Security.Authentication.ExtendedProtection" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.usecasetests.com/System.Security.Authentication.ExtendedProtection" />
+  <xs:import schemaLocation="System.Security.Authentication.ExtendedProtection.xsd" namespace="http://www.usecasetests.com/System.Security.Authentication.ExtendedProtection" />
+  <xs:import schemaLocation="System.Net.HttpListener.xsd" namespace="http://www.usecasetests.com/System.Net.HttpListener" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.usecasetests.com/System.Net.Security" />
+  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.usecasetests.com/System.Net.Security" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Net.UploadValuesCompletedEventArgs" type="t:System.Net.UploadValuesCompletedEventArgs" />
   <xs:complexType name="System.Net.UploadValuesCompletedEventArgs">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -606,18 +606,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_SendChunked">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_SendChunked_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="get_AutomaticDecompression">
         <xs:complexType>
           <xs:choice>
@@ -682,6 +670,21 @@
               </xs:complexType>
             </xs:element>
           </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_Pipelined">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="get_Address">
@@ -969,19 +972,16 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="set_Pipelined">
+      <xs:element name="get_SendChunked">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SendChunked_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-          </xs:sequence>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="set_AllowAutoRedirect">
@@ -1134,11 +1134,10 @@
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence>
-              <xs:element name="hostNameOrAddress_0">
+              <xs:element name="address_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1151,10 +1150,11 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="address_1">
+              <xs:element name="hostNameOrAddress_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1916,6 +1916,18 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
+      <xs:element name="get_Headers">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Headers_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.WebHeaderCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="set_KeepAlive">
         <xs:complexType>
           <xs:sequence>
@@ -1979,20 +1991,6 @@
             <xs:element name="value">
               <xs:complexType mixed="true">
                 <xs:attribute fixed="System.Net.WebHeaderCollection" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="CopyFrom">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="templateResponse">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Net.HttpListenerResponse" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="In" ref="u:ParamCategory" />
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -2199,16 +2197,18 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_Headers">
+      <xs:element name="CopyFrom">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_Headers_rv">
-              <xs:complexType>
+          <xs:sequence>
+            <xs:element name="templateResponse">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.HttpListenerResponse" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.WebHeaderCollection" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="get_StatusCode">
@@ -3374,9 +3374,9 @@
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence>
-              <xs:element name="cookie_0">
+              <xs:element name="cookies_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Cookie" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.CookieCollection" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -3384,9 +3384,17 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="cookies_1">
+              <xs:element name="uri_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.CookieCollection" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Uri" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cookie_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Cookie" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -3402,9 +3410,9 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="cookie_2">
+              <xs:element name="cookies_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Cookie" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.CookieCollection" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -3412,17 +3420,9 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="uri_3">
+              <xs:element name="cookie_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Uri" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="cookies_3">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.CookieCollection" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Cookie" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -4438,18 +4438,6 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_InputStream">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_InputStream_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.IO.Stream" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="get_ServiceName">
         <xs:complexType>
           <xs:choice>
@@ -4534,13 +4522,13 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_ContentLength64">
+      <xs:element name="get_InputStream">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_ContentLength64_rv">
+            <xs:element minOccurs="0" name="get_InputStream_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Int64" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed=":System.IO.Stream" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -4661,6 +4649,18 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_ContentLength64">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ContentLength64_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int64" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -4975,6 +4975,20 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="set_Credentials">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.ICredentials" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="get_Credentials">
         <xs:complexType>
           <xs:choice>
@@ -5002,20 +5016,6 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="t:System.Uri" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="set_Credentials">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Net.ICredentials" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -6142,18 +6142,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_DefaultWebProxy">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_DefaultWebProxy_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.IWebProxy" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="set_Method">
         <xs:complexType>
           <xs:sequence>
@@ -6573,6 +6561,18 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="t:System.Net.WebResponse" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_DefaultWebProxy">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_DefaultWebProxy_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.IWebProxy" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -10241,18 +10241,6 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_BypassList">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_BypassList_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.String[]" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="get_BypassProxyOnLocal">
         <xs:complexType>
           <xs:choice>
@@ -10375,20 +10363,11 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="Host_5">
+              <xs:element name="Address_5">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="Port_5">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -10400,6 +10379,15 @@
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="BypassOnLocal_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -10420,6 +10408,14 @@
                   <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="BypassList_7">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -10452,9 +10448,17 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="Credentials_8">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.ICredentials" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="Address_9">
+              <xs:element name="Host_9">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -10463,27 +10467,11 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="BypassOnLocal_9">
+              <xs:element name="Port_9">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="BypassList_9">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="Credentials_9">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.ICredentials" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -10505,6 +10493,18 @@
               </xs:complexType>
             </xs:element>
           </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_BypassList">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_BypassList_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.String[]" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="get_Address">
@@ -10632,6 +10632,44 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
+      <xs:element name="UrlEncodeToBytes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="offset">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="count">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="UrlEncodeToBytes_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Byte[]" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="UrlEncode">
         <xs:complexType>
           <xs:sequence>
@@ -10648,6 +10686,44 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.String" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UrlDecodeToBytes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="encodedValue">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="offset">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="count">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="UrlDecodeToBytes_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Byte[]" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -10693,82 +10769,6 @@
               </xs:element>
             </xs:sequence>
           </xs:choice>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="UrlDecodeToBytes">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="encodedValue">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="offset">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="count">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="0" name="UrlDecodeToBytes_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.Byte[]" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="UrlEncodeToBytes">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="offset">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="count">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="0" name="UrlEncodeToBytes_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.Byte[]" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:choice>

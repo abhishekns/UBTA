@@ -375,7 +375,7 @@ namespace ubta.UseCase.Designer
 
         private DefaultSequentialUseCase LoadDSUseCase()
         {
-            string[] primarySchemaLocations = { string.Format(@"{0}\ubta.Assert.xsd", Constants.DEFAULT_SCHEMA_DIR) };
+            string[] primarySchemaLocations = { string.Format(@"{0}\ubta.Assert.xsd", Constants.DEFAULT_SCHEMA_DIR)};
             string useCaseLocation = string.Format(@"{0}\ExecuteTest.SampleLib.xml", Constants.CONFIG_DIR);
             string schemaLocation = string.Format(@"{0}\SampleLib.xsd", Constants.DEFAULT_SCHEMA_DIR);
             UseCaseMarkupSerializer ucms = new UseCaseMarkupSerializer();

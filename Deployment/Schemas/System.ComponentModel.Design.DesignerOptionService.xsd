@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.ComponentModel.Design.DesignerOptionService" xmlns:q2="http://www.siemens.com/med/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.ComponentModel.Design.DesignerOptionService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.ComponentModel.Design.DesignerOptionService" xmlns:q2="http://www.usecasetests.com/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.ComponentModel.Design.DesignerOptionService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" type="t:System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" />
   <xs:complexType name="System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection">
     <xs:choice minOccurs="0" maxOccurs="unbounded">

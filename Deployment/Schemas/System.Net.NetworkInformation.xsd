@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.NetworkInformation" xmlns:q0="http://www.siemens.com/med/System.Net" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.NetworkInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Net.NetworkInformation" xmlns:q0="http://www.usecasetests.com/System.Net" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Net.NetworkInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Net.NetworkInformation.UnicastIPAddressInformation" type="t:System.Net.NetworkInformation.UnicastIPAddressInformation" />
   <xs:complexType name="System.Net.NetworkInformation.UnicastIPAddressInformation">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -23,18 +23,6 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_PrefixLength">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_PrefixLength_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="get_IPv4Mask">
         <xs:complexType>
           <xs:choice>
@@ -42,6 +30,18 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="t:System.Net.IPAddress" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_DuplicateAddressDetectionState">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_DuplicateAddressDetectionState_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.NetworkInformation.DuplicateAddressDetectionState" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -71,13 +71,13 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_DuplicateAddressDetectionState">
+      <xs:element name="get_PrefixLength">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_DuplicateAddressDetectionState_rv">
+            <xs:element minOccurs="0" name="get_PrefixLength_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.NetworkInformation.DuplicateAddressDetectionState" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -939,34 +939,6 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="BeginGetUnicastAddresses">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="callback">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="state">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="0" name="BeginGetUnicastAddresses_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="get_IsWinsProxy">
         <xs:complexType>
           <xs:choice>
@@ -1075,16 +1047,32 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetUdpIPv4Statistics">
+      <xs:element name="BeginGetUnicastAddresses">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="GetUdpIPv4Statistics_rv">
-              <xs:complexType>
+          <xs:sequence>
+            <xs:element name="callback">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.NetworkInformation.UdpStatistics" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+            <xs:element name="state">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="BeginGetUnicastAddresses_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="GetTcpIPv6Statistics">
@@ -1174,6 +1162,18 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="t:System.Net.NetworkInformation.IPGlobalProperties" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetUdpIPv4Statistics">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="GetUdpIPv4Statistics_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.NetworkInformation.UdpStatistics" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/Microsoft.Win32" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/Microsoft.Win32" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/Microsoft.Win32" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/Microsoft.Win32" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="Microsoft.Win32.TimerElapsedEventHandler" type="t:Microsoft.Win32.TimerElapsedEventHandler" />
   <xs:complexType name="Microsoft.Win32.TimerElapsedEventHandler">
     <xs:choice minOccurs="0" maxOccurs="unbounded">

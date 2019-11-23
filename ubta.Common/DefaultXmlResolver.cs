@@ -54,10 +54,10 @@ namespace ubta.Common
             else
             {
                 string filename = Path.GetFileName(absoluteUri.AbsolutePath);
-                string home = Constants.HOME_PATH + @"Deployment\Schemas\";
-                if (File.Exists(home + filename))
+                string f = Constants.DEFAULT_SCHEMA_DIR + filename;
+                if (File.Exists(f))
                 {
-                    return new FileStream(home + filename, FileMode.Open);
+                    return new FileStream(f, FileMode.Open);
                 }
                 return null;
             }

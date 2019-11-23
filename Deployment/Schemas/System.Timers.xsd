@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Timers" xmlns:q2="http://www.siemens.com/med/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Timers" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Timers" xmlns:q2="http://www.usecasetests.com/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Timers" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Timers.TimersDescriptionAttribute" type="t:System.Timers.TimersDescriptionAttribute" />
   <xs:complexType name="System.Timers.TimersDescriptionAttribute">
     <xs:choice minOccurs="0" maxOccurs="unbounded">

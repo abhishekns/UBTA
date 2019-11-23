@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.Configuration" xmlns:q4="http://www.siemens.com/med/System" xmlns:q14="http://www.siemens.com/med/System.Net.Sockets" xmlns:q5="http://www.siemens.com/med/System.Net.Security" xmlns:q21="http://www.siemens.com/med/System.Net.Configuration.ProxyElement" xmlns:q1="http://www.siemens.com/med/System.Net.Mail" xmlns:q11="http://www.siemens.com/med/System.Net.Cache" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.Configuration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.siemens.com/med/System.Net.Mail" />
-  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.siemens.com/med/System.Net.Mail" />
-  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.siemens.com/med/System.Net.Mail" />
-  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.siemens.com/med/System.Net.Mail" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.siemens.com/med/System.Net.Cache" />
-  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.siemens.com/med/System.Net.Security" />
-  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.siemens.com/med/System.Net.Security" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.siemens.com/med/System.Net.Sockets" />
-  <xs:import schemaLocation="System.Net.Configuration.ProxyElement.xsd" namespace="http://www.siemens.com/med/System.Net.Configuration.ProxyElement" />
-  <xs:import schemaLocation="System.Net.Configuration.ProxyElement.xsd" namespace="http://www.siemens.com/med/System.Net.Configuration.ProxyElement" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Net.Configuration.ProxyElement.xsd" namespace="http://www.siemens.com/med/System.Net.Configuration.ProxyElement" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Net.Configuration" xmlns:q4="http://www.usecasetests.com/System" xmlns:q14="http://www.usecasetests.com/System.Net.Sockets" xmlns:q5="http://www.usecasetests.com/System.Net.Security" xmlns:q21="http://www.usecasetests.com/System.Net.Configuration.ProxyElement" xmlns:q1="http://www.usecasetests.com/System.Net.Mail" xmlns:q11="http://www.usecasetests.com/System.Net.Cache" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Net.Configuration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.usecasetests.com/System.Net.Mail" />
+  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.usecasetests.com/System.Net.Mail" />
+  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.usecasetests.com/System.Net.Mail" />
+  <xs:import schemaLocation="System.Net.Mail.xsd" namespace="http://www.usecasetests.com/System.Net.Mail" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Cache.xsd" namespace="http://www.usecasetests.com/System.Net.Cache" />
+  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.usecasetests.com/System.Net.Security" />
+  <xs:import schemaLocation="System.Net.Security.xsd" namespace="http://www.usecasetests.com/System.Net.Security" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="System.Net.Sockets.xsd" namespace="http://www.usecasetests.com/System.Net.Sockets" />
+  <xs:import schemaLocation="System.Net.Configuration.ProxyElement.xsd" namespace="http://www.usecasetests.com/System.Net.Configuration.ProxyElement" />
+  <xs:import schemaLocation="System.Net.Configuration.ProxyElement.xsd" namespace="http://www.usecasetests.com/System.Net.Configuration.ProxyElement" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Net.Configuration.ProxyElement.xsd" namespace="http://www.usecasetests.com/System.Net.Configuration.ProxyElement" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Net.Configuration.SmtpSection" type="t:System.Net.Configuration.SmtpSection" />
   <xs:complexType name="System.Net.Configuration.SmtpSection">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -522,18 +522,6 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_Module">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_Module_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.Configuration.ModuleElement" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="get_BypassList">
         <xs:complexType>
           <xs:choice>
@@ -545,21 +533,6 @@
             </xs:element>
           </xs:choice>
         </xs:complexType>
-      </xs:element>
-      <xs:element name="get_UseDefaultCredentials">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_UseDefaultCredentials_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="Constructor">
-        <xs:complexType />
       </xs:element>
       <xs:element name="set_UseDefaultCredentials">
         <xs:complexType>
@@ -583,6 +556,33 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="get_UseDefaultCredentials">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_UseDefaultCredentials_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Module">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Module_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.Configuration.ModuleElement" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -1109,16 +1109,19 @@
   <xs:element name="System.Net.Configuration.WebProxyScriptElement" type="t:System.Net.Configuration.WebProxyScriptElement" />
   <xs:complexType name="System.Net.Configuration.WebProxyScriptElement">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="get_DownloadTimeout">
+      <xs:element name="set_AutoConfigUrlRetryInterval">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_DownloadTimeout_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.TimeSpan" name="Type" type="u:System.String" use="optional" />
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="set_DownloadTimeout">
@@ -1135,8 +1138,32 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="get_AutoConfigUrlRetryInterval">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_AutoConfigUrlRetryInterval_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="Constructor">
         <xs:complexType />
+      </xs:element>
+      <xs:element name="get_DownloadTimeout">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_DownloadTimeout_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.TimeSpan" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
       </xs:element>
     </xs:choice>
     <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -2470,6 +2497,42 @@
   <xs:annotation>
     <xs:appinfo>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll</xs:appinfo>
   </xs:annotation>
+  <xs:element name="System.Net.Configuration.WindowsAuthenticationElement" type="t:System.Net.Configuration.WindowsAuthenticationElement" />
+  <xs:complexType name="System.Net.Configuration.WindowsAuthenticationElement">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="set_DefaultCredentialsHandleCacheSize">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_DefaultCredentialsHandleCacheSize">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_DefaultCredentialsHandleCacheSize_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Constructor">
+        <xs:complexType />
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
   <xs:element name="System.Net.Configuration.SocketElement" type="t:System.Net.Configuration.SocketElement" />
   <xs:complexType name="System.Net.Configuration.SocketElement">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -2965,6 +3028,18 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="t:System.Net.Configuration.HttpWebRequestElement" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_WindowsAuthentication">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_WindowsAuthentication_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.Configuration.WindowsAuthenticationElement" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Collections.Generic" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Collections.Generic" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Collections.Generic" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Collections.Generic" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Collections.Generic.LinkedListNode" type="t:System.Collections.Generic.LinkedListNode" />
   <xs:complexType name="System.Collections.Generic.LinkedListNode">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -27,7 +27,7 @@
             <xs:element minOccurs="0" name="get_List_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.LinkedListNode`1" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.LinkedListNode`1" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -74,7 +74,7 @@
             <xs:element minOccurs="0" name="get_Last_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -109,9 +109,9 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="value_0">
+              <xs:element name="newNode_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="T:object" ref="u:ParamType" />
+                  <xs:attribute fixed=":System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -127,9 +127,9 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="newNode_1">
+              <xs:element name="value_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed=":System.Object" ref="u:ParamType" />
+                  <xs:attribute fixed="T:object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -145,7 +145,7 @@
             <xs:element minOccurs="0" name="FindLast_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -157,7 +157,7 @@
             <xs:element minOccurs="0" name="Find_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -169,7 +169,7 @@
             <xs:element minOccurs="0" name="get_First_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.LinkedList`1" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -296,7 +296,7 @@
             <xs:element minOccurs="0" name="get_Comparer_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.SortedSet`1" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.SortedSet`1" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -321,6 +321,18 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TryGetValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TryGetValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -462,7 +474,7 @@
             <xs:element minOccurs="0" name="Reverse_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.SortedSet`1" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.SortedSet`1" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -602,7 +614,7 @@
             <xs:element minOccurs="0" name="get_Comparer_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.SortedList`2" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.SortedList`2" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -928,7 +940,7 @@
             <xs:element minOccurs="0" name="get_Comparer_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="http://www.siemens.com/med/System.Collections.Generic:System.Collections.Generic.SortedDictionary`2" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="http://www.usecasetests.com/System.Collections.Generic:System.Collections.Generic.SortedDictionary`2" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>

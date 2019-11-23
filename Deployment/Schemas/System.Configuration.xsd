@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Configuration" xmlns:q6="http://www.siemens.com/med/System.Collections.Specialized" xmlns:q4="http://www.siemens.com/med/System" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Configuration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="System.xsd" namespace="http://www.siemens.com/med/System" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Configuration" xmlns:q6="http://www.usecasetests.com/System.Collections.Specialized" xmlns:q4="http://www.usecasetests.com/System" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Configuration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="System.xsd" namespace="http://www.usecasetests.com/System" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Configuration.NoSettingsVersionUpgradeAttribute" type="t:System.Configuration.NoSettingsVersionUpgradeAttribute" />
   <xs:complexType name="System.Configuration.NoSettingsVersionUpgradeAttribute">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -684,12 +684,6 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="Upgrade">
-        <xs:complexType />
-      </xs:element>
-      <xs:element name="Reset">
-        <xs:complexType />
-      </xs:element>
       <xs:element name="set_SettingsKey">
         <xs:complexType>
           <xs:sequence>
@@ -698,6 +692,20 @@
                 <xs:attribute fixed="System.String" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="optional" />
                 <xs:attribute name="Value" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="add_SettingsLoaded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Configuration.SettingsLoadedEventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="In" ref="u:ParamCategory" />
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
@@ -759,19 +767,8 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="add_SettingsLoaded">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Configuration.SettingsLoadedEventHandler" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
+      <xs:element name="Reload">
+        <xs:complexType />
       </xs:element>
       <xs:element name="remove_SettingsLoaded">
         <xs:complexType>
@@ -787,6 +784,9 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="Upgrade">
+        <xs:complexType />
+      </xs:element>
       <xs:element name="remove_SettingChanging">
         <xs:complexType>
           <xs:sequence>
@@ -801,7 +801,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="Reload">
+      <xs:element name="Reset">
         <xs:complexType />
       </xs:element>
     </xs:choice>

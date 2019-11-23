@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.Sockets" xmlns:q0="http://www.siemens.com/med/System.Net" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.Sockets" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.siemens.com/med/System.Net" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Net.Sockets" xmlns:q0="http://www.usecasetests.com/System.Net" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Net.Sockets" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="System.Net.xsd" namespace="http://www.usecasetests.com/System.Net" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Net.Sockets.MulticastOption" type="t:System.Net.Sockets.MulticastOption" />
   <xs:complexType name="System.Net.Sockets.MulticastOption">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -714,10 +714,18 @@
   <xs:element name="System.Net.Sockets.Socket" type="t:System.Net.Sockets.Socket" />
   <xs:complexType name="System.Net.Sockets.Socket">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="Poll">
+      <xs:element name="BeginSendTo">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="microSeconds">
+            <xs:element name="buffer">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="offset">
               <xs:complexType mixed="true">
                 <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -726,19 +734,52 @@
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-            <xs:element name="mode">
+            <xs:element name="size">
               <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Net.Sockets.SelectMode" ref="u:ParamType" />
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="t:System.Net.Sockets.SelectMode" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                 <xs:attribute fixed="In" ref="u:ParamCategory" />
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-            <xs:element minOccurs="0" name="Poll_rv">
+            <xs:element name="socketFlags">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="remoteEP">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.EndPoint" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="callback">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="state">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="BeginSendTo_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -764,53 +805,87 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="BeginSendFile">
+      <xs:element name="SetSocketOption">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence>
-              <xs:element name="fileName_0">
+              <xs:element name="optionLevel_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="callback_0">
+              <xs:element name="optionName_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="state_0">
+              <xs:element name="optionValue_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginSendFile_rv_0">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="fileName_1">
+              <xs:element name="optionLevel_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="preBuffer_1">
+              <xs:element name="optionName_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="optionValue_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="optionLevel_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="optionName_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="optionValue_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -818,43 +893,32 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="postBuffer_1">
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="optionLevel_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="flags_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.TransmitFileOptions" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.TransmitFileOptions" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="callback_1">
+              <xs:element name="optionName_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="state_1">
+              <xs:element name="optionValue_3">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginSendFile_rv_1">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
@@ -905,26 +969,6 @@
                 <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                 <xs:attribute fixed="In" ref="u:ParamCategory" />
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="SendAsync">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="e">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Net.Sockets.SocketAsyncEventArgs" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="0" name="SendAsync_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -1206,9 +1250,8 @@
       <xs:element name="Close">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence />
             <xs:sequence>
-              <xs:element name="timeout_1">
+              <xs:element name="timeout_0">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -1218,6 +1261,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
+            <xs:sequence />
           </xs:choice>
         </xs:complexType>
       </xs:element>
@@ -1355,46 +1399,11 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffer_4">
+              <xs:element name="buffers_4">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="offset_4">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="size_4">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="socketFlags_4">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="errorCode_4">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
@@ -1410,6 +1419,15 @@
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="socketFlags_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1439,6 +1457,14 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="errorCode_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
               <xs:element minOccurs="0" name="Receive_rv_6">
                 <xs:complexType>
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -1447,10 +1473,28 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffers_7">
+              <xs:element name="buffer_7">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="offset_7">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="size_7">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1532,110 +1576,6 @@
                 <xs:complexType>
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="BeginAccept">
-        <xs:complexType>
-          <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence>
-              <xs:element name="callback_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="state_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginAccept_rv_0">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="receiveSize_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="callback_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="state_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginAccept_rv_1">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="acceptSocket_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="receiveSize_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="callback_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="state_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginAccept_rv_2">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
@@ -1755,126 +1695,6 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="SetSocketOption">
-        <xs:complexType>
-          <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence>
-              <xs:element name="optionLevel_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionName_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionValue_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="optionLevel_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionName_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionValue_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="optionLevel_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionName_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionValue_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="optionLevel_3">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionLevel" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionLevel" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionName_3">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketOptionName" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketOptionName" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="optionValue_3">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="BeginSend">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
@@ -1938,28 +1758,10 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffer_1">
+              <xs:element name="buffers_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="offset_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="size_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1970,14 +1772,6 @@
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="errorCode_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
@@ -2022,6 +1816,14 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="errorCode_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
               <xs:element name="callback_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
@@ -2046,10 +1848,28 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffers_3">
+              <xs:element name="buffer_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="offset_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="size_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -2268,15 +2088,100 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_ReceiveTimeout">
+      <xs:element name="BeginSendFile">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_ReceiveTimeout_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="fileName_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="callback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginSendFile_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="fileName_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="preBuffer_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="postBuffer_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="flags_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.TransmitFileOptions" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.TransmitFileOptions" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="callback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginSendFile_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
           </xs:choice>
         </xs:complexType>
       </xs:element>
@@ -2295,77 +2200,6 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="BeginSendTo">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="buffer">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="offset">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="size">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="socketFlags">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="remoteEP">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Net.EndPoint" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="callback">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="state">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="0" name="BeginSendTo_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -2491,10 +2325,28 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffers_5">
+              <xs:element name="buffer_5">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="offset_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="size_5">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -2508,14 +2360,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="errorCode_5">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element minOccurs="0" name="Send_rv_5">
                 <xs:complexType>
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -2524,28 +2368,10 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffer_6">
+              <xs:element name="buffers_6">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="offset_6">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="size_6">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -2556,6 +2382,14 @@
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="errorCode_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
@@ -2640,19 +2474,55 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="Disconnect">
+      <xs:element name="Select">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="reuseSocket">
+            <xs:element name="checkRead">
               <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="checkWrite">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="checkError">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="microSeconds">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                 <xs:attribute fixed="In" ref="u:ParamCategory" />
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_ReceiveTimeout">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ReceiveTimeout_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="EndReceiveFrom">
@@ -2678,6 +2548,36 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Poll">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="microSeconds">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="mode">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.SelectMode" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Net.Sockets.SelectMode" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Poll_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -2967,28 +2867,10 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffer_1">
+              <xs:element name="buffers_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="offset_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="size_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -2999,14 +2881,6 @@
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="errorCode_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
@@ -3051,6 +2925,14 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="errorCode_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Net.Sockets.SocketError" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="Out" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
               <xs:element name="callback_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
@@ -3075,10 +2957,28 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="buffers_3">
+              <xs:element name="buffer_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
+                  <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="offset_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="size_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -3126,22 +3026,134 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_OSSupportsIPv6">
+      <xs:element name="BeginAccept">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_OSSupportsIPv6_rv">
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="receiveSize_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="callback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAccept_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="callback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAccept_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="acceptSocket_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="receiveSize_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="callback_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginAccept_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendAsync">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="e">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.SocketAsyncEventArgs" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SendAsync_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_SupportsIPv6">
+      <xs:element name="get_OSSupportsIPv6">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_SupportsIPv6_rv">
+            <xs:element minOccurs="0" name="get_OSSupportsIPv6_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
@@ -3275,43 +3287,16 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="Select">
+      <xs:element name="get_SupportsIPv6">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="checkRead">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SupportsIPv6_rv">
+              <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-            <xs:element name="checkWrite">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="checkError">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="microSeconds">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="BeginConnect">
@@ -3515,15 +3500,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="offset_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="size_0">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
@@ -3566,15 +3542,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="size_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="socketFlags_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
@@ -3608,15 +3575,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="socketFlags_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="remoteEP_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.EndPoint" ref="u:ParamType" />
@@ -3637,6 +3595,33 @@
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="offset_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="size_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="socketFlags_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -3772,7 +3757,17 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="addressFamily_1">
+              <xs:element name="socketInformation_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketInformation" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="addressFamily_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.AddressFamily" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -3781,7 +3776,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="socketType_1">
+              <xs:element name="socketType_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.SocketType" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -3790,21 +3785,11 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="protocolType_1">
+              <xs:element name="protocolType_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.ProtocolType" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="t:System.Net.Sockets.ProtocolType" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="socketInformation_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketInformation" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -3889,15 +3874,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="offset_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="size_0">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
@@ -3940,15 +3916,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="size_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="socketFlags_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
@@ -3982,15 +3949,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="socketFlags_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="remoteEP_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="_Array:System.Net.EndPoint" ref="u:ParamType" />
@@ -4011,6 +3969,33 @@
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="_Array:System.Byte" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="offset_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="size_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="socketFlags_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -4123,6 +4108,21 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
+      <xs:element name="Disconnect">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="reuseSocket">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="get_RemoteEndPoint">
         <xs:complexType>
           <xs:choice>
@@ -4175,9 +4175,9 @@
             <xs:sequence>
               <xs:element name="ioControlCode_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Sockets.IOControlCode" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.IOControlCode" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -4208,9 +4208,9 @@
             <xs:sequence>
               <xs:element name="ioControlCode_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.IOControlCode" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.IOControlCode" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -4643,16 +4643,19 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_Connected">
+      <xs:element name="set_ReceiveTimeout">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_Connected_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="set_LingerState">
@@ -4669,30 +4672,85 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="set_SendBufferSize">
+      <xs:element name="ConnectAsync">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetStream">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="GetStream_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.Sockets.NetworkStream" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="address_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ConnectAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="host_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ConnectAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="addresses_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ConnectAsync_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
           </xs:choice>
         </xs:complexType>
       </xs:element>
@@ -4711,10 +4769,25 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_NoDelay">
+      <xs:element name="set_ReceiveBufferSize">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Connected">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_NoDelay_rv">
+            <xs:element minOccurs="0" name="get_Connected_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
@@ -4723,30 +4796,146 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_SendTimeout">
+      <xs:element name="GetStream">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_SendTimeout_rv">
+            <xs:element minOccurs="0" name="GetStream_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="t:System.Net.Sockets.NetworkStream" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="EndConnect">
+      <xs:element name="BeginConnect">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="asyncResult">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="host_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requestCallback_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginConnect_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="address_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requestCallback_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginConnect_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="addresses_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requestCallback_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="BeginConnect_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="Constructor">
@@ -4910,233 +5099,31 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="set_Client">
+      <xs:element name="get_Client">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Client_rv">
+              <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                <xs:attribute fixed="t:System.Net.Sockets.Socket" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="BeginConnect">
-        <xs:complexType>
-          <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence>
-              <xs:element name="host_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="port_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="requestCallback_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="state_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginConnect_rv_0">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="address_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="port_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="requestCallback_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="state_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginConnect_rv_1">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="addresses_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Net.IPAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="port_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="requestCallback_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.AsyncCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="state_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="BeginConnect_rv_2">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.IAsyncResult" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="ConnectAsync">
+      <xs:element name="get_SendTimeout">
         <xs:complexType>
-          <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence>
-              <xs:element name="address_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="port_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="ConnectAsync_rv_0">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="host_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="port_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="ConnectAsync_rv_1">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="addresses_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="_Array:System.Net.IPAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="port_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element minOccurs="0" name="ConnectAsync_rv_2">
-                <xs:complexType>
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_SendTimeout_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="set_ReceiveBufferSize">
+      <xs:element name="set_SendBufferSize">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="value">
@@ -5154,16 +5141,32 @@
       <xs:element name="Close">
         <xs:complexType />
       </xs:element>
-      <xs:element name="get_Client">
+      <xs:element name="EndConnect">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_Client_rv">
-              <xs:complexType>
+          <xs:sequence>
+            <xs:element name="asyncResult">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.IAsyncResult" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.Sockets.Socket" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="set_Client">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="get_ReceiveBufferSize">
@@ -5178,19 +5181,16 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="set_ReceiveTimeout">
+      <xs:element name="get_NoDelay">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_NoDelay_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-          </xs:sequence>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="get_ExclusiveAddressUse">
@@ -5315,28 +5315,236 @@
   <xs:simpleType name="System.Net.Sockets.AddressFamily">
     <xs:restriction base="u:System.String" />
   </xs:simpleType>
-  <xs:element name="System.Net.Sockets.ProtocolFamily" type="t:System.Net.Sockets.ProtocolFamily" />
-  <xs:simpleType name="System.Net.Sockets.ProtocolFamily">
-    <xs:restriction base="u:System.String" />
-  </xs:simpleType>
-  <xs:element name="System.Net.Sockets.TcpListener" type="t:System.Net.Sockets.TcpListener" />
-  <xs:complexType name="System.Net.Sockets.TcpListener">
+  <xs:element name="System.Net.Sockets.SocketTaskExtensions" type="t:System.Net.Sockets.SocketTaskExtensions" />
+  <xs:complexType name="System.Net.Sockets.SocketTaskExtensions">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="Constructor">
+      <xs:element name="AcceptAsync">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence>
-              <xs:element name="localEP_0">
+              <xs:element name="socket_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.IPEndPoint" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element minOccurs="0" name="AcceptAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Net.Sockets.Socket, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="localaddr_1">
+              <xs:element name="socket_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="acceptSocket_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AcceptAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Net.Sockets.Socket, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReceiveAsync">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="socket_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="buffers_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="socketFlags_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ReceiveAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="socket_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="buffer_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.ArraySegment" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="socketFlags_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ReceiveAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendAsync">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="socket_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="buffers_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Collections.Generic.IList" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="socketFlags_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SendAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="socket_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="buffer_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.ArraySegment" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="socketFlags_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SendAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConnectAsync">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="socket_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="remoteEP_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.EndPoint" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ConnectAsync_rv_0">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="socket_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="address_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -5353,8 +5561,261 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element minOccurs="0" name="ConnectAsync_rv_1">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
+              <xs:element name="socket_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="addresses_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="_Array:System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ConnectAsync_rv_2">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="socket_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="host_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ConnectAsync_rv_3">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed=":System.Threading.Tasks.Task" name="Type" type="u:System.String" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendToAsync">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="socket">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="buffer">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.ArraySegment" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="socketFlags">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="remoteEP">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.EndPoint" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SendToAsync_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReceiveFromAsync">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="socket">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="buffer">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.ArraySegment" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="socketFlags">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="remoteEndPoint">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.EndPoint" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="ReceiveFromAsync_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Net.Sockets.SocketReceiveFromResult, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReceiveMessageFromAsync">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="socket">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.Socket" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="buffer">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.ArraySegment" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="socketFlags">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.Sockets.SocketFlags" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="t:System.Net.Sockets.SocketFlags" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="remoteEndPoint">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Net.EndPoint" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="ReceiveMessageFromAsync_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed=":System.Threading.Tasks.Task`1[[System.Net.Sockets.SocketReceiveMessageFromResult, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
+  <xs:element name="System.Net.Sockets.ProtocolFamily" type="t:System.Net.Sockets.ProtocolFamily" />
+  <xs:simpleType name="System.Net.Sockets.ProtocolFamily">
+    <xs:restriction base="u:System.String" />
+  </xs:simpleType>
+  <xs:element name="System.Net.Sockets.TcpListener" type="t:System.Net.Sockets.TcpListener" />
+  <xs:complexType name="System.Net.Sockets.TcpListener">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Constructor">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence>
+              <xs:element name="port_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="localEP_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.IPEndPoint" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="localaddr_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
               <xs:element name="port_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
@@ -5468,16 +5929,19 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="AcceptSocket">
+      <xs:element name="AllowNatTraversal">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="AcceptSocket_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.Net.Sockets.Socket" name="Type" type="u:System.String" use="optional" />
+          <xs:sequence>
+            <xs:element name="allowed">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="EndAcceptTcpClient">
@@ -5585,21 +6049,6 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="AllowNatTraversal">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="allowed">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="EndAcceptSocket">
         <xs:complexType>
           <xs:sequence>
@@ -5618,6 +6067,18 @@
               </xs:complexType>
             </xs:element>
           </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AcceptSocket">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="AcceptSocket_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.Net.Sockets.Socket" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="get_ExclusiveAddressUse">
@@ -5686,6 +6147,13 @@
   <xs:simpleType name="System.Net.Sockets.SocketClientAccessPolicyProtocol">
     <xs:restriction base="u:System.String" />
   </xs:simpleType>
+  <xs:element name="System.Net.Sockets.SocketReceiveFromResult" type="t:System.Net.Sockets.SocketReceiveFromResult" />
+  <xs:complexType name="System.Net.Sockets.SocketReceiveFromResult">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ReceivedBytes" type="u:System.Int32" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
   <xs:element name="System.Net.Sockets.IPv6MulticastOption" type="t:System.Net.Sockets.IPv6MulticastOption" />
   <xs:complexType name="System.Net.Sockets.IPv6MulticastOption">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -5844,21 +6312,21 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="ifindex_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="multicastAddr_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="ifindex_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -6016,22 +6484,22 @@
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence />
             <xs:sequence>
-              <xs:element name="family_1">
+              <xs:element name="port_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.AddressFamily" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.AddressFamily" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="port_2">
+              <xs:element name="family_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Sockets.AddressFamily" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.AddressFamily" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -6539,17 +7007,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="multicastAddr_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="localAddress_1">
+              <xs:element name="localAddress_0">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -6559,7 +7017,7 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="ifindex_2">
+              <xs:element name="ifindex_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -6568,10 +7026,29 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="multicastAddr_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
               <xs:element name="multicastAddr_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="timeToLive_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -6582,15 +7059,6 @@
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="timeToLive_3">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -6919,6 +7387,13 @@
   <xs:simpleType name="System.Net.Sockets.SocketOptionLevel">
     <xs:restriction base="u:System.String" />
   </xs:simpleType>
+  <xs:element name="System.Net.Sockets.SocketReceiveMessageFromResult" type="t:System.Net.Sockets.SocketReceiveMessageFromResult" />
+  <xs:complexType name="System.Net.Sockets.SocketReceiveMessageFromResult">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ReceivedBytes" type="u:System.Int32" />
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
   <xs:element name="System.Net.Sockets.UdpReceiveResult" type="t:System.Net.Sockets.UdpReceiveResult" />
   <xs:complexType name="System.Net.Sockets.UdpReceiveResult">
     <xs:choice minOccurs="0" maxOccurs="unbounded">

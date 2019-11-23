@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.ComponentModel.Design" xmlns:q19="http://www.siemens.com/med/System.ComponentModel.Design.DesignerOptionService" xmlns:q2="http://www.siemens.com/med/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.ComponentModel.Design" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.Design.DesignerOptionService.xsd" namespace="http://www.siemens.com/med/System.ComponentModel.Design.DesignerOptionService" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.ComponentModel.Design" xmlns:q19="http://www.usecasetests.com/System.ComponentModel.Design.DesignerOptionService" xmlns:q2="http://www.usecasetests.com/System.ComponentModel" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.ComponentModel.Design" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.Design.DesignerOptionService.xsd" namespace="http://www.usecasetests.com/System.ComponentModel.Design.DesignerOptionService" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.ComponentModel.Design.IComponentDiscoveryService" type="t:System.ComponentModel.Design.IComponentDiscoveryService" />
   <xs:complexType name="System.ComponentModel.Design.IComponentDiscoveryService">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -2531,6 +2531,74 @@
     </xs:choice>
     <xs:attribute name="Name" type="u:System.String" use="required" />
   </xs:complexType>
+  <xs:element name="System.ComponentModel.Design.IDictionaryService" type="t:System.ComponentModel.Design.IDictionaryService" />
+  <xs:complexType name="System.ComponentModel.Design.IDictionaryService">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="SetValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetValue_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetKey">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="GetKey_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="u:System.String" use="required" />
+  </xs:complexType>
   <xs:element name="System.ComponentModel.Design.IServiceContainer" type="t:System.ComponentModel.Design.IServiceContainer" />
   <xs:complexType name="System.ComponentModel.Design.IServiceContainer">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -4199,74 +4267,6 @@
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="In" ref="u:ParamCategory" />
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:choice>
-    <xs:attribute name="Name" type="u:System.String" use="required" />
-  </xs:complexType>
-  <xs:element name="System.ComponentModel.Design.IDictionaryService" type="t:System.ComponentModel.Design.IDictionaryService" />
-  <xs:complexType name="System.ComponentModel.Design.IDictionaryService">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="SetValue">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="key">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetValue">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="key">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="0" name="GetValue_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetKey">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-              </xs:complexType>
-            </xs:element>
-            <xs:element minOccurs="0" name="GetKey_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Object" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>

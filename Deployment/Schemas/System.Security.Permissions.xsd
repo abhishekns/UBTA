@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Security.Permissions" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Security.Permissions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Security.Permissions" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Security.Permissions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Security.Permissions.TypeDescriptorPermissionFlags" type="t:System.Security.Permissions.TypeDescriptorPermissionFlags" />
   <xs:simpleType name="System.Security.Permissions.TypeDescriptorPermissionFlags">
     <xs:restriction base="u:System.String" />

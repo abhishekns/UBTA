@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.CodeDom" xmlns:q6="http://www.siemens.com/med/System.Collections.Specialized" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.CodeDom" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.CodeDom" xmlns:q6="http://www.usecasetests.com/System.Collections.Specialized" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.CodeDom" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.CodeDom.CodeParameterDeclarationExpressionCollection" type="t:System.CodeDom.CodeParameterDeclarationExpressionCollection" />
   <xs:complexType name="System.CodeDom.CodeParameterDeclarationExpressionCollection">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -460,19 +460,7 @@
       <xs:element name="Constructor">
         <xs:complexType />
       </xs:element>
-      <xs:element name="get_ImplementationTypes">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_ImplementationTypes_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.CodeDom.CodeTypeReferenceCollection" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="remove_PopulateImplementationTypes">
+      <xs:element name="add_PopulateImplementationTypes">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="value">
@@ -486,7 +474,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="remove_PopulateParameters">
+      <xs:element name="remove_PopulateImplementationTypes">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="value">
@@ -514,16 +502,18 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_Parameters">
+      <xs:element name="remove_PopulateParameters">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_Parameters_rv">
-              <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.CodeDom.CodeParameterDeclarationExpressionCollection" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="remove_PopulateStatements">
@@ -561,6 +551,18 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="t:System.CodeDom.CodeTypeParameterCollection" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="get_Parameters">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Parameters_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="t:System.CodeDom.CodeParameterDeclarationExpressionCollection" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -614,18 +616,16 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="add_PopulateImplementationTypes">
+      <xs:element name="get_ImplementationTypes">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_ImplementationTypes_rv">
+              <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                <xs:attribute fixed="t:System.CodeDom.CodeTypeReferenceCollection" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-          </xs:sequence>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="add_PopulateParameters">
@@ -4734,9 +4734,8 @@
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence />
             <xs:sequence>
-              <xs:element name="name_1">
+              <xs:element name="name_0">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -4746,6 +4745,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
+            <xs:sequence />
           </xs:choice>
         </xs:complexType>
       </xs:element>
@@ -4787,10 +4787,10 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_IsInterface">
+      <xs:element name="get_IsPartial">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_IsInterface_rv">
+            <xs:element minOccurs="0" name="get_IsPartial_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
@@ -4826,10 +4826,10 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_IsEnum">
+      <xs:element name="get_IsInterface">
         <xs:complexType>
           <xs:choice>
-            <xs:element minOccurs="0" name="get_IsEnum_rv">
+            <xs:element minOccurs="0" name="get_IsInterface_rv">
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
@@ -4838,42 +4838,19 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_Members">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_Members_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="t:System.CodeDom.CodeTypeMemberCollection" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="remove_PopulateMembers">
+      <xs:element name="set_IsStruct">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="value">
               <xs:complexType mixed="true">
-                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="optional" />
+                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
                 <xs:attribute fixed="In" ref="u:ParamCategory" />
                 <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="get_IsPartial">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_IsPartial_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="set_IsPartial">
@@ -4903,18 +4880,16 @@
           </xs:choice>
         </xs:complexType>
       </xs:element>
-      <xs:element name="remove_PopulateBaseTypes">
+      <xs:element name="get_Members">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_Members_rv">
+              <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                <xs:attribute fixed="t:System.CodeDom.CodeTypeMemberCollection" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-          </xs:sequence>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="set_IsEnum">
@@ -4932,19 +4907,16 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="set_IsStruct">
+      <xs:element name="get_IsEnum">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="value">
-              <xs:complexType mixed="true">
-                <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
-                <xs:attribute name="Name" type="u:System.String" use="optional" />
-                <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
-                <xs:attribute fixed="In" ref="u:ParamCategory" />
-                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsEnum_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
-          </xs:sequence>
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="get_TypeAttributes">
@@ -4986,16 +4958,18 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="get_IsStruct">
+      <xs:element name="remove_PopulateMembers">
         <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="get_IsStruct_rv">
-              <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
                 <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
               </xs:complexType>
             </xs:element>
-          </xs:choice>
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="set_TypeAttributes">
@@ -5026,7 +5000,33 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="get_IsStruct">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="get_IsStruct_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Boolean" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="add_PopulateMembers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value">
+              <xs:complexType mixed="true">
+                <xs:attribute fixed="System.EventHandler" ref="u:ParamType" />
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="In" ref="u:ParamCategory" />
+                <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_PopulateBaseTypes">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="value">

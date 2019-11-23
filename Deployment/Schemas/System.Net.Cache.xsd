@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.Net.Cache" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.Net.Cache" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.Net.Cache" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.Net.Cache" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.Net.Cache.HttpRequestCachePolicy" type="t:System.Net.Cache.HttpRequestCachePolicy" />
   <xs:complexType name="System.Net.Cache.HttpRequestCachePolicy">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -56,18 +56,9 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="cacheAgeControl_2">
+              <xs:element name="cacheSyncDate_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Cache.HttpCacheAgeControl" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Cache.HttpCacheAgeControl" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="ageOrFreshOrStale_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
+                  <xs:attribute fixed="System.DateTime" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -100,11 +91,28 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="cacheSyncDate_4">
+              <xs:element name="cacheSyncDate_3">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.DateTime" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="cacheAgeControl_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Cache.HttpCacheAgeControl" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Cache.HttpCacheAgeControl" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ageOrFreshOrStale_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -132,14 +140,6 @@
               <xs:element name="freshOrStale_5">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.TimeSpan" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="cacheSyncDate_5">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.DateTime" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />

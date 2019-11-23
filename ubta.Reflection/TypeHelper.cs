@@ -379,7 +379,7 @@ namespace ubta.Reflection
                     }
                     catch(Exception e)
                     {
-                        ubta.Logging.Log.Error("TypeHelper", "Error while loading " + assembly, e);
+                        ubta.Logging.Log.Warn("TypeHelper", "Error "+ e.Message +" occurred while loading " + assembly +". The assembly is ignored.");
                         // don't care if all are not loaded.
                     }
                 }

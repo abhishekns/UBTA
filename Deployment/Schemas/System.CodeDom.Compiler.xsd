@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:u="http://www.siemens.com/med/ubta.Schema" xmlns:t="http://www.siemens.com/med/System.CodeDom.Compiler" xmlns:q2="http://www.siemens.com/med/System.ComponentModel" xmlns:q6="http://www.siemens.com/med/System.Collections.Specialized" xmlns:q12="http://www.siemens.com/med/System.CodeDom" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.siemens.com/med/System.CodeDom.Compiler" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.CodeDom.xsd" namespace="http://www.siemens.com/med/System.CodeDom" />
-  <xs:import schemaLocation="System.CodeDom.xsd" namespace="http://www.siemens.com/med/System.CodeDom" />
-  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.siemens.com/med/System.ComponentModel" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.siemens.com/med/System.Collections.Specialized" />
-  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.siemens.com/med/ubta.Schema" />
+<xs:schema xmlns:u="http://www.usecasetests.com/ubta.Schema" xmlns:t="http://www.usecasetests.com/System.CodeDom.Compiler" xmlns:q2="http://www.usecasetests.com/System.ComponentModel" xmlns:q6="http://www.usecasetests.com/System.Collections.Specialized" xmlns:q12="http://www.usecasetests.com/System.CodeDom" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.usecasetests.com/System.CodeDom.Compiler" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.CodeDom.xsd" namespace="http://www.usecasetests.com/System.CodeDom" />
+  <xs:import schemaLocation="System.CodeDom.xsd" namespace="http://www.usecasetests.com/System.CodeDom" />
+  <xs:import schemaLocation="System.ComponentModel.xsd" namespace="http://www.usecasetests.com/System.ComponentModel" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="System.Collections.Specialized.xsd" namespace="http://www.usecasetests.com/System.Collections.Specialized" />
+  <xs:import schemaLocation="ubta.Schema.xsd" namespace="http://www.usecasetests.com/ubta.Schema" />
   <xs:element name="System.CodeDom.Compiler.CompilerResults" type="t:System.CodeDom.Compiler.CompilerResults" />
   <xs:complexType name="System.CodeDom.Compiler.CompilerResults">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -927,6 +927,14 @@
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence>
+              <xs:element name="output_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.IO.TextWriter" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
               <xs:element minOccurs="0" name="CreateGenerator_rv_0">
                 <xs:complexType>
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -935,10 +943,11 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="output_1">
+              <xs:element name="fileName_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.IO.TextWriter" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -951,15 +960,6 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="fileName_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element minOccurs="0" name="CreateGenerator_rv_2">
                 <xs:complexType>
                   <xs:attribute name="Name" type="u:System.String" use="required" />

@@ -209,14 +209,31 @@ namespace ubta.SchemaGeneration
                                     }
                                     else
                                     {
-                                        Type[] cnstrts = ga[i].GetGenericParameterConstraints();
-                                        if (null != cnstrts && cnstrts.Length > 0)
+                                        try
                                         {
-                                            sb.Append(cnstrts[0].GetCodeDeclarationStatement());
+                                            Type gat = ga[i];
+                                            Type[] cnstrts;
+                                            if (gat.IsGenericParameter)
+                                            {
+                                                cnstrts = ga[i].GetGenericParameterConstraints();
+                                            }
+                                            else
+                                            {
+                                                cnstrts = new Type[0];
+                                            }
+                                            if (null != cnstrts && cnstrts.Length > 0)
+                                            {
+                                                sb.Append(cnstrts[0].GetCodeDeclarationStatement());
+                                            }
+                                            else
+                                            {
+                                                sb.Append("System.Object");
+                                            }
                                         }
-                                        else
+                                        catch(Exception ie)
                                         {
-                                            sb.Append("System.Object");
+                                            Logger.write(ie);
+                                            throw;
                                         }
                                     }
                                 }
