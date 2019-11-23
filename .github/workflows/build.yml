@@ -14,6 +14,4 @@ jobs:
       with:
         dotnet-version: 3.0.100
     - name: Build with dotnet
-      run: dotnet --list-runtimes 
-      run: dotnet --list-sdks
-      run: dotnet build -p:Target=x64 --configuration Release
+      run: dotnet --list-runtimes --list-sdks -p:Target=x64 --configuration Release
