@@ -41,25 +41,10 @@ namespace ubta.Common
     }
     public class Constants
     {
-        public static string GetHomeDir()
-        {
-            string homeDir = Environment.ExpandEnvironmentVariables(@"%UBTA_HOME%");
-            if (homeDir.Contains("%UBTA_HOME%"))
-            {
-                homeDir = Assembly.GetExecutingAssembly().Location + @"..\..\..\..\..\";
-                homeDir = Path.GetFullPath(homeDir);
-                Environment.SetEnvironmentVariable("UBTA_HOME", homeDir);
-                var sw = File.CreateText(@"c:\temp\ubta.init.log");
-                sw.Write("UBTA_HOME : " + homeDir);
-                sw.Close();
-                sw.Dispose();
-            }
-            return homeDir;
-        }
-        
+       
         public static string RELEASE_TYPE_DEBUG = "Debug";
         public static string RELEASE_TYPE_RELEASE = "Release";
-        public static string HOME = GetHomeDir();
+        public static string HOME = ubta.Util.GetHomeDir();
         public static string DEPLOYMENT_DIR = string.Format(@"{0}\Deployment", HOME);
         public static string RELEASE_TYPE = Assembly.GetExecutingAssembly().CodeBase.Contains(RELEASE_TYPE_DEBUG) ? RELEASE_TYPE_DEBUG : RELEASE_TYPE_RELEASE;
         public static string CONFIG_DIR = string.Format(@"{0}\Config", DEPLOYMENT_DIR);

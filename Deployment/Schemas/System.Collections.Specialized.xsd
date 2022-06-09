@@ -571,14 +571,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="changedItems_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="action_1">
@@ -590,19 +582,10 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="changedItems_1">
+              <xs:element name="changedItem_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="startingIndex_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -626,6 +609,15 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="index_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="action_3">
@@ -637,17 +629,9 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="newItem_3">
+              <xs:element name="changedItems_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="oldItem_3">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -664,7 +648,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="newItems_4">
+              <xs:element name="changedItems_4">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -672,10 +656,11 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="oldItems_4">
+              <xs:element name="startingIndex_4">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -691,27 +676,18 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="newItems_5">
+              <xs:element name="newItem_5">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="oldItems_5">
+              <xs:element name="oldItem_5">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="startingIndex_5">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -727,7 +703,15 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="changedItem_6">
+              <xs:element name="newItem_6">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="oldItem_6">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -736,15 +720,6 @@
                 </xs:complexType>
               </xs:element>
               <xs:element name="index_6">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="oldIndex_6">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -764,7 +739,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="changedItems_7">
+              <xs:element name="newItems_7">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -772,20 +747,10 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="index_7">
+              <xs:element name="oldItems_7">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="oldIndex_7">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -797,6 +762,31 @@
                   <xs:attribute fixed="System.Collections.Specialized.NotifyCollectionChangedAction" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="t:System.Collections.Specialized.NotifyCollectionChangedAction" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="newItems_8">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="oldItems_8">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="startingIndex_8">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -829,6 +819,15 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+              <xs:element name="oldIndex_9">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="action_10">
@@ -840,23 +839,24 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="newItem_10">
+              <xs:element name="changedItems_10">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="oldItem_10">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Object" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Collections.IList" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="index_10">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="oldIndex_10">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />

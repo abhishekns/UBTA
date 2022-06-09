@@ -2,8 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ubta.Common;
 using System.IO;
+using System.Reflection;
+
+
+namespace ubta
+{
+    public class Util
+    {
+        public static string GetHomeDir()
+        {
+            string homeDir = Environment.ExpandEnvironmentVariables(@"%UBTA_HOME%");
+            if (homeDir.Contains("%UBTA_HOME%"))
+            {
+                homeDir = Assembly.GetExecutingAssembly().Location + @"..\..\..\..\..\";
+                homeDir = Path.GetFullPath(homeDir);
+                Environment.SetEnvironmentVariable("UBTA_HOME", homeDir);
+                var sw = File.CreateText(@"c:\temp\ubta.init.log");
+                sw.Write("UBTA_HOME : " + homeDir);
+                sw.Close();
+                sw.Dispose();
+            }
+            return homeDir;
+        }
+    }
+}
+
 
 namespace ubta.Logging
 {
@@ -33,7 +57,8 @@ namespace ubta.Logging
         private Log()
         {
         }
-        public static string LOG_FILE = Constants.HOME_PATH + "ubta.log";
+
+        public static string LOG_FILE = ubta.Util.GetHomeDir() + @"\ubta.log";
         private static Log log = new Log();
         private StreamWriter myLogWriter = new StreamWriter(LOG_FILE);
 
@@ -57,7 +82,7 @@ namespace ubta.Logging
 
     public class TraceInOut : IDisposable
     {
-        public static string TRACE_FILE = Constants.HOME_PATH + "ubta.trace";
+        public static string TRACE_FILE = ubta.Util.GetHomeDir() + "ubta.trace";
         protected static StreamWriter myTraceWriter = new StreamWriter(TRACE_FILE);
 
         private string myDomain;

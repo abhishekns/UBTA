@@ -79,6 +79,12 @@
     <Compile Include="VariableManager.cs" />
     <Compile Include="XmlNodeExtension.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ubta.Logging\ubta.Logging.csproj">
+      <Project>{3880ecb3-1458-4ad9-b4eb-851986d89e89}</Project>
+      <Name>ubta.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

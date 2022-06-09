@@ -327,8 +327,9 @@
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
             <xs:sequence>
-              <xs:element name="permissionAccess_0">
+              <xs:element name="permissionAccess_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -337,7 +338,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="permissionAccessPath_0">
+              <xs:element name="permissionAccessPath_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="_Array:System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -346,7 +347,6 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:sequence />
           </xs:choice>
         </xs:complexType>
       </xs:element>

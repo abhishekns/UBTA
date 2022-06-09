@@ -3757,17 +3757,7 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="socketInformation_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.SocketInformation" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="addressFamily_2">
+              <xs:element name="addressFamily_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.AddressFamily" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -3776,7 +3766,7 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="socketType_2">
+              <xs:element name="socketType_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.SocketType" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -3785,11 +3775,21 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="protocolType_2">
+              <xs:element name="protocolType_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Sockets.ProtocolType" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="t:System.Net.Sockets.ProtocolType" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="socketInformation_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Sockets.SocketInformation" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -5787,7 +5787,25 @@
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence>
-              <xs:element name="port_0">
+              <xs:element name="localEP_0">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.IPEndPoint" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="localaddr_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="port_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -5798,24 +5816,6 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="localEP_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.IPEndPoint" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="localaddr_2">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.IPAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="port_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
@@ -6484,22 +6484,22 @@
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence />
             <xs:sequence>
-              <xs:element name="port_1">
+              <xs:element name="family_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Net.Sockets.AddressFamily" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Sockets.AddressFamily" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="family_2">
+              <xs:element name="port_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Sockets.AddressFamily" ref="u:ParamType" />
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Sockets.AddressFamily" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>

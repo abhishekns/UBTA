@@ -1333,38 +1333,40 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="subject_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="body_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="from_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Mail.MailAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="to_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Mail.MailAddress" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subject_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="body_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1373,18 +1375,16 @@
             <xs:sequence>
               <xs:element name="from_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="System.Net.Mail.MailAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
               <xs:element name="to_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="System.Net.Mail.MailAddress" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>

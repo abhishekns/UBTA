@@ -485,20 +485,18 @@
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence>
-              <xs:element name="serializerTypeName_0">
+              <xs:element name="serializerType_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="System.Type" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="baseSerializerTypeName_0">
+              <xs:element name="baseSerializerType_0">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="System.Type" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -514,10 +512,11 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="serializerType_1">
+              <xs:element name="serializerTypeName_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Type" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -550,10 +549,11 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="baseSerializerType_2">
+              <xs:element name="baseSerializerTypeName_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Type" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1424,15 +1424,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="isComplete_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="member_1">
@@ -1447,6 +1438,15 @@
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Collections.ICollection" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="isComplete_1">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>

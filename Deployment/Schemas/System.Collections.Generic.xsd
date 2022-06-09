@@ -355,7 +355,7 @@
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence />
             <xs:sequence>
-              <xs:element name="collection_1">
+              <xs:element name="comparer_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed=":System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -373,7 +373,9 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="comparer_2">
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="collection_3">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed=":System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -381,8 +383,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:sequence>
               <xs:element name="comparer_3">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed=":System.Object" ref="u:ParamType" />
@@ -951,9 +951,9 @@
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:sequence />
             <xs:sequence>
-              <xs:element name="comparer_1">
+              <xs:element name="dictionary_1">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed=":System.Object" ref="u:ParamType" />
+                  <xs:attribute fixed=", :System.Object:System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -969,16 +969,16 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
-            <xs:sequence>
-              <xs:element name="dictionary_3">
+              <xs:element name="comparer_2">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed=", :System.Object:System.Object" ref="u:ParamType" />
+                  <xs:attribute fixed=":System.Object" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
+            </xs:sequence>
+            <xs:sequence>
               <xs:element name="comparer_3">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed=":System.Object" ref="u:ParamType" />

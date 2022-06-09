@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Schema;
+
+using ubta.Logging;
 
 namespace ubta.Common
 {
@@ -42,7 +45,28 @@ namespace ubta.Common
         {
             doc_ref.XmlResolver = new DefaultXmlResolver();
             doc_ref.Load(path);
-            doc_ref.Schemas.Add(SchemaHelper.GetSchemas(path, defaultSchemaLoc_in, getRoot_in));
+            try
+            {
+                bool success = true;
+                XmlSchemaSet xss = null;
+                try
+                {
+                    xss = SchemaHelper.GetSchemas(path, defaultSchemaLoc_in, getRoot_in);
+                    xss.Compile();
+                }
+                catch(Exception ex)
+                {
+                    success = false;
+                    ubta.Logging.Log.Warn("ubta.Common.SchemaHelper", "SetupDoc failed for " + path);
+                }
+                if (success)
+                    doc_ref.Schemas.Add(xss);
+            }
+            catch(Exception e)
+            {
+                // For now eat it up
+                ubta.Logging.Log.Warn("ubta.Common.SchemaHelper", "SetupDoc failed for " + path);
+            }
             doc_ref.Validate(new ValidationEventHandler(ValHandler));
             return doc_ref;
         }
@@ -82,12 +106,22 @@ namespace ubta.Common
                     {
                         fname = fname + ".xsd";
                     }
-                    if (File.Exists(fname)) // && !fname.EndsWith("ubta.Schema.xsd"))
+                    if (File.Exists(fname) && !fname.EndsWith("ubta.Schema.xsd"))
                     {
                         using (FileStream fs = new FileStream(fname, FileMode.Open))
                         {
                             XmlSchema x = XmlSchema.Read(fs, new ValidationEventHandler(ValHandler));
-                            xss.Add(x);
+
+                            //FileStream file = new FileStream(fname + "_.xsd", FileMode.Create, FileAccess.ReadWrite);
+                            //XmlTextWriter xwriter = new XmlTextWriter(file, new UTF8Encoding());
+                            //xwriter.Formatting = Formatting.Indented;
+                            //x.Write(xwriter);
+                            //System.Console.WriteLine(fname);
+                            if (!xss.Contains(x))
+                            {
+                                xss.Add(x);
+                                xss.Compile();
+                            }
                         }
                     }
                     else if (!xa.Value.Contains(".w3."))
@@ -99,6 +133,8 @@ namespace ubta.Common
                     }
                 }
             }
+            
+
             xss.Compile();
             return xss;
         }

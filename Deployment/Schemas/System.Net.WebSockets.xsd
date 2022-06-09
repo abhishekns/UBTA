@@ -966,20 +966,19 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="error_7">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.WebSockets.WebSocketError" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.WebSockets.WebSocketError" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="nativeError_7">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Int32" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="innerException_7">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1004,15 +1003,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="message_8">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="error_9">
@@ -1033,10 +1023,11 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="innerException_9">
+              <xs:element name="message_9">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1061,15 +1052,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="message_10">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
               <xs:element name="innerException_10">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Exception" ref="u:ParamType" />
@@ -1080,11 +1062,37 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
+              <xs:element name="error_11">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.WebSockets.WebSocketError" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.WebSockets.WebSocketError" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="nativeError_11">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
               <xs:element name="message_11">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="innerException_11">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1100,21 +1108,13 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="innerException_12">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Exception" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="nativeError_13">
+              <xs:element name="message_13">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Int32" ref="u:ParamType" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Int32" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>

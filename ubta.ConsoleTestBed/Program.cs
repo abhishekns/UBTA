@@ -21,7 +21,7 @@ namespace ubta.ConsoleTestBed
             uAssert.That(o1).And(o2).AreNotNull();
             o1 = null;
             uAssert.That(o1).IsNull();
-            //o2 = null;
+            o2 = null;
             uAssert.That(o1).And(o2).AreNull();
         }
     }

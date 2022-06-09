@@ -1016,31 +1016,6 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="leaveInnerStreamOpen_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="userCertificateValidationCallback_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="userCertificateSelectionCallback_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Security.LocalCertificateSelectionCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="innerStream_1">
@@ -1060,36 +1035,28 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="userCertificateValidationCallback_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="userCertificateSelectionCallback_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Security.LocalCertificateSelectionCallback" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="encryptionPolicy_1">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Net.Security.EncryptionPolicy" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Net.Security.EncryptionPolicy" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
             <xs:sequence>
               <xs:element name="innerStream_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.IO.Stream" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="leaveInnerStreamOpen_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateValidationCallback_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
@@ -1110,6 +1077,22 @@
                   <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
                   <xs:attribute name="Value" type="u:System.Boolean" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateValidationCallback_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateSelectionCallback_3">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.LocalCertificateSelectionCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1137,6 +1120,23 @@
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Net.Security.RemoteCertificateValidationCallback" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="userCertificateSelectionCallback_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.LocalCertificateSelectionCallback" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="encryptionPolicy_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Net.Security.EncryptionPolicy" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Net.Security.EncryptionPolicy" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>

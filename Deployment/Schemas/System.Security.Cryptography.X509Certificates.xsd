@@ -484,8 +484,9 @@
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
             <xs:sequence>
-              <xs:element name="storeName_0">
+              <xs:element name="storeName_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -496,7 +497,7 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="storeName_1">
+              <xs:element name="storeName_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreName" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -507,17 +508,26 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="storeHandle_2">
+              <xs:element name="storeLocation_3">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="required" />
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreLocation" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreLocation" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:sequence />
             <xs:sequence>
+              <xs:element name="storeName_4">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreName" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreName" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
               <xs:element name="storeLocation_4">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreLocation" ref="u:ParamType" />
@@ -531,9 +541,9 @@
             <xs:sequence>
               <xs:element name="storeName_5">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreName" ref="u:ParamType" />
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreName" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -549,20 +559,10 @@
               </xs:element>
             </xs:sequence>
             <xs:sequence>
-              <xs:element name="storeName_6">
+              <xs:element name="storeHandle_6">
                 <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="storeLocation_6">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.Security.Cryptography.X509Certificates.StoreLocation" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="t:System.Security.Cryptography.X509Certificates.StoreLocation" use="optional" />
+                  <xs:attribute fixed="System.IntPtr" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="required" />
                   <xs:attribute fixed="In" ref="u:ParamCategory" />
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
@@ -1411,8 +1411,9 @@
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:sequence />
             <xs:sequence>
-              <xs:element name="useMachineContext_0">
+              <xs:element name="useMachineContext_1">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Boolean" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="optional" />
@@ -1422,7 +1423,6 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:sequence />
             <xs:sequence>
               <xs:element name="chainContext_2">
                 <xs:complexType mixed="true">

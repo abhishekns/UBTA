@@ -891,17 +891,7 @@
       <xs:element name="Constructor">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="1">
-            <xs:sequence>
-              <xs:element name="message_0">
-                <xs:complexType mixed="true">
-                  <xs:attribute fixed="System.String" ref="u:ParamType" />
-                  <xs:attribute name="Name" type="u:System.String" use="optional" />
-                  <xs:attribute name="Value" type="u:System.String" use="optional" />
-                  <xs:attribute fixed="In" ref="u:ParamCategory" />
-                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
+            <xs:sequence />
             <xs:sequence>
               <xs:element name="message_1">
                 <xs:complexType mixed="true">
@@ -912,7 +902,18 @@
                   <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
                 </xs:complexType>
               </xs:element>
-              <xs:element name="innerException_1">
+            </xs:sequence>
+            <xs:sequence>
+              <xs:element name="message_2">
+                <xs:complexType mixed="true">
+                  <xs:attribute fixed="System.String" ref="u:ParamType" />
+                  <xs:attribute name="Name" type="u:System.String" use="optional" />
+                  <xs:attribute name="Value" type="u:System.String" use="optional" />
+                  <xs:attribute fixed="In" ref="u:ParamCategory" />
+                  <xs:attribute default="ByValue" ref="u:ParamValueType" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="innerException_2">
                 <xs:complexType mixed="true">
                   <xs:attribute fixed="System.Exception" ref="u:ParamType" />
                   <xs:attribute name="Name" type="u:System.String" use="required" />
@@ -921,7 +922,6 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:sequence />
           </xs:choice>
         </xs:complexType>
       </xs:element>
