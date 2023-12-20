@@ -14,7 +14,7 @@
 
 using assert = ubta.Assert.Assert;
 
-using record = ubta.Assert.record;
+using Recorder = ubta.Assert.Recorder;
 
 namespace ubta.AssertTest
 {
@@ -39,11 +39,11 @@ namespace ubta.AssertTest
             string t3 = null;
 
             string report = Record(
-            new record(() =>
+            new Recorder(() =>
             {
                 That(t).And(t1).And(t2).And(t3).AreNull();
             }),
-            new record(()=>
+            new Recorder(()=>
             {
                 That(t).IsNotNull();
             }));

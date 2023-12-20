@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.540
@@ -33,49 +33,49 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{0475
 		Deployment\Config\Logging\LoggingTracingTemplate.cs = Deployment\Config\Logging\LoggingTracingTemplate.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Common", "ubta.Common\ubta.Common.csproj", "{9C6696FF-DC18-43B1-815F-8DBAB49A0F62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Common", "ubta.Common\ubta.Common.csproj", "{9C6696FF-DC18-43B1-815F-8DBAB49A0F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.ExecuterLib", "ubta.ExecuterLib\ubta.ExecuterLib.csproj", "{887A6A56-1284-42EF-980E-8760B0014ECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.ExecuterLib", "ubta.ExecuterLib\ubta.ExecuterLib.csproj", "{887A6A56-1284-42EF-980E-8760B0014ECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.SchemaGeneration", "ubta.SchemaGeneration\ubta.SchemaGeneration.csproj", "{1A38E1ED-1742-48D4-9858-BBEEE8C00045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.SchemaGeneration", "ubta.SchemaGeneration\ubta.SchemaGeneration.csproj", "{1A38E1ED-1742-48D4-9858-BBEEE8C00045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.SchemaGenTest", "ubta.SchemaGenTest\ubta.SchemaGenTest.csproj", "{344BE866-60E2-4269-BB68-D2B3A77345F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.SchemaGenTest", "ubta.SchemaGenTest\ubta.SchemaGenTest.csproj", "{344BE866-60E2-4269-BB68-D2B3A77345F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleLib", "SampleLib\SampleLib.csproj", "{C13FC1FF-AEA3-457B-B74E-1732622EFDFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleLib", "SampleLib\SampleLib.csproj", "{C13FC1FF-AEA3-457B-B74E-1732622EFDFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.ExecuteTest", "ubta.ExecuteTest\ubta.ExecuteTest.csproj", "{BF83FD82-C7A5-4B87-8081-0D8FBC7ED2BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.ExecuteTest", "ubta.ExecuteTest\ubta.ExecuteTest.csproj", "{BF83FD82-C7A5-4B87-8081-0D8FBC7ED2BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Assert", "ubta.Assert\ubta.Assert.csproj", "{621B7BA2-DA2D-4168-AFE7-437762D985A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Assert", "ubta.Assert\ubta.Assert.csproj", "{621B7BA2-DA2D-4168-AFE7-437762D985A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Reflection", "ubta.Reflection\ubta.Reflection.csproj", "{0B55485E-8417-4F79-B7C4-438CDE337596}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Reflection", "ubta.Reflection\ubta.Reflection.csproj", "{0B55485E-8417-4F79-B7C4-438CDE337596}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.UseCase", "ubta.UseCase\ubta.UseCase.csproj", "{AA063FCA-FC18-4C3B-9304-CDB39CB67059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.UseCase", "ubta.UseCase\ubta.UseCase.csproj", "{AA063FCA-FC18-4C3B-9304-CDB39CB67059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Common.UI", "ubta.Common.UI\ubta.Common.UI.csproj", "{A7E09202-5828-4655-827D-E814CE49B451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Common.UI", "ubta.Common.UI\ubta.Common.UI.csproj", "{A7E09202-5828-4655-827D-E814CE49B451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Config", "ubta.Config\ubta.Config.csproj", "{7E4C62C9-46EE-4FFE-A3D9-A4EC8F866D2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Config", "ubta.Config\ubta.Config.csproj", "{7E4C62C9-46EE-4FFE-A3D9-A4EC8F866D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Reflection.Editable.ClassGenerator", "ubta.Reflection.Editable.ClassGenerator\ubta.Reflection.Editable.ClassGenerator.csproj", "{52581924-4813-484A-B290-9F2ABF4FDCEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Reflection.Editable.ClassGenerator", "ubta.Reflection.Editable.ClassGenerator\ubta.Reflection.Editable.ClassGenerator.csproj", "{52581924-4813-484A-B290-9F2ABF4FDCEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Reflection.Editable.ClassGeneratorTest", "ubta.Reflection.Editable.ClassGeneratorTest\ubta.Reflection.Editable.ClassGeneratorTest.csproj", "{DBEC4708-05D4-48AC-A31A-BC5E1E162020}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Reflection.Editable.ClassGeneratorTest", "ubta.Reflection.Editable.ClassGeneratorTest\ubta.Reflection.Editable.ClassGeneratorTest.csproj", "{DBEC4708-05D4-48AC-A31A-BC5E1E162020}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.Logging", "ubta.Logging\ubta.Logging.csproj", "{3880ECB3-1458-4AD9-B4EB-851986D89E89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.Logging", "ubta.Logging\ubta.Logging.csproj", "{3880ECB3-1458-4AD9-B4EB-851986D89E89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.UseCase.Designer", "ubta.UseCase.Designer\ubta.UseCase.Designer.csproj", "{8904EE31-6AF2-45A8-9AD9-9991C9121C5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.UseCase.Designer", "ubta.UseCase.Designer\ubta.UseCase.Designer.csproj", "{8904EE31-6AF2-45A8-9AD9-9991C9121C5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.UseCase.DesignerTest", "ubta.UseCase.DesignerTest\ubta.UseCase.DesignerTest.csproj", "{76B84D54-EBCE-40E2-BAB1-DD9C54D2CBDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.UseCase.DesignerTest", "ubta.UseCase.DesignerTest\ubta.UseCase.DesignerTest.csproj", "{76B84D54-EBCE-40E2-BAB1-DD9C54D2CBDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.ConsoleTestBed", "ubta.ConsoleTestBed\ubta.ConsoleTestBed.csproj", "{D4489A3F-5B09-477F-8B37-E5C0C4AA04A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.ConsoleTestBed", "ubta.ConsoleTestBed\ubta.ConsoleTestBed.csproj", "{D4489A3F-5B09-477F-8B37-E5C0C4AA04A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.AssertTest", "ubta.AssertTest\ubta.AssertTest.csproj", "{774FA467-1ABB-42FF-9B2D-7C22A42E3926}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.AssertTest", "ubta.AssertTest\ubta.AssertTest.csproj", "{774FA467-1ABB-42FF-9B2D-7C22A42E3926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.automation.ui", "ubta.automation.ui\ubta.automation.ui.csproj", "{6371B576-B1B2-4D16-BE94-C34D9C77E888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.automation.ui", "ubta.automation.ui\ubta.automation.ui.csproj", "{6371B576-B1B2-4D16-BE94-C34D9C77E888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.automation.uiTest", "ubta.automation.uiTest\ubta.automation.uiTest.csproj", "{D13D683F-7120-4D62-8CDA-3AE9B05956A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.automation.uiTest", "ubta.automation.uiTest\ubta.automation.uiTest.csproj", "{D13D683F-7120-4D62-8CDA-3AE9B05956A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.automation.uiTestRunner", "ubta.automation.uiTestRunner\ubta.automation.uiTestRunner.csproj", "{5883B153-BEFF-40B5-A83E-B97B57B59EEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.automation.uiTestRunner", "ubta.automation.uiTestRunner\ubta.automation.uiTestRunner.csproj", "{5883B153-BEFF-40B5-A83E-B97B57B59EEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ubta.xml.transformer", "ubta.xml.transformer\ubta.xml.transformer.csproj", "{EBE3C388-BD1E-4CFB-965D-589602EE92FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ubta.xml.transformer", "ubta.xml.transformer\ubta.xml.transformer.csproj", "{EBE3C388-BD1E-4CFB-965D-589602EE92FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,7 +12,6 @@
 /*] END */
 #endregion
 using System;
-using System.Windows;
 
 namespace ubta.Common.Maths
 {
@@ -461,7 +460,7 @@ namespace ubta.Common.Maths
 
         #region Data
 
-        public Point my2DPoint;
+        public Point2D my2DPoint;
         public double myZ;
         public double myW;
 

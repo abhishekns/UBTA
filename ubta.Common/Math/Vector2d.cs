@@ -556,7 +556,7 @@ namespace ubta.Common.Maths
 
         #region Data
 
-        public System.Windows.Point my2DPoint;
+        public Point2D my2DPoint;
 
         #endregion
     }

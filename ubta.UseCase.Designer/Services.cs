@@ -437,19 +437,24 @@ namespace ubta.UseCase.Designer
         {
             if (menuID == WorkflowMenuCommands.SelectionMenu)
             {
+                // TODO ContextMenu is no longer supported. Use ContextMenuStrip instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
                 ContextMenu contextMenu = new ContextMenu();
 
                 foreach (DesignerVerb verb in Verbs)
                 {
+                    // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
                     MenuItem menuItem = new MenuItem(verb.Text, new EventHandler(OnMenuClicked));
                     menuItem.Tag = verb;
                     contextMenu.MenuItems.Add(menuItem);
                 }
 
+                // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
                 MenuItem[] items = GetSelectionMenuItems();
                 if (items.Length > 0)
                 {
+                    // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
                     contextMenu.MenuItems.Add(new MenuItem("-"));
+                    // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
                     foreach (MenuItem item in items)
                         contextMenu.MenuItems.Add(item);
                 }
@@ -462,6 +467,7 @@ namespace ubta.UseCase.Designer
 
         private void OnMenuClicked(object sender, EventArgs e)
         {
+            // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
             MenuItem menuItem = sender as MenuItem;
             if (menuItem != null && menuItem.Tag is MenuCommand)
             {
@@ -470,8 +476,10 @@ namespace ubta.UseCase.Designer
             }
         }
 
-        private MenuItem[] GetSelectionMenuItems()
+        private // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+MenuItem[] GetSelectionMenuItems()
         {
+            // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
             List<MenuItem> menuItems = new List<MenuItem>();
 
             bool addMenuItems = true;
@@ -501,6 +509,7 @@ namespace ubta.UseCase.Designer
                     MenuCommand command = FindCommand(id);
                     if (command != null)
                     {
+                        // TODO MenuItem is no longer supported. Use ToolStripMenuItem instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
                         MenuItem menuItem = new MenuItem(selectionCommands[id], new EventHandler(OnMenuClicked));
                         menuItem.Tag = command;
                         menuItems.Add(menuItem);

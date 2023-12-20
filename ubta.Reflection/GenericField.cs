@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Reflection;
+using System.Runtime.Loader;
 
 namespace ubta.Reflection
 {
@@ -9,12 +10,12 @@ namespace ubta.Reflection
     {
         public GenericField(object obj, FieldInfo info)
         {
-            if (System.Runtime.Remoting.RemotingServices.IsTransparentProxy(obj))
-            {
-                System.Runtime.Remoting.Proxies.RealProxy proxy = System.Runtime.Remoting.RemotingServices.GetRealProxy(obj);
-                MethodInfo mi = typeof(System.Runtime.Remoting.Proxies.RealProxy).GetMethod("GetUnwrappedServer", BindingFlags.NonPublic | BindingFlags.Instance);
-                obj = mi.Invoke(proxy, null);
-            }
+            // if (System.Runtime.Remoting.RemotingServices.IsTransparentProxy(obj))
+            // {
+            //     System.Runtime.Remoting.Proxies.RealProxy proxy = System.Runtime.Remoting.RemotingServices.GetRealProxy(obj);
+            //     MethodInfo mi = typeof(System.Runtime.Remoting.Proxies.RealProxy).GetMethod("GetUnwrappedServer", BindingFlags.NonPublic | BindingFlags.Instance);
+            //     obj = mi.Invoke(proxy, null);
+            // }
             myObject = obj;
             myInfo = info;
         }

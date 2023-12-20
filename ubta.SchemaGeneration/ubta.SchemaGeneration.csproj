@@ -1,15 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1A38E1ED-1742-48D4-9858-BBEEE8C00045}</ProjectGuid>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ubta.SchemaGeneration</RootNamespace>
-    <AssemblyName>ubta.SchemaGeneration</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -18,86 +10,19 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <OutputPath>..\Deployment\bin\$(Configuration)</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\Deployment\bin\$(Configuration)</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DeployRelease|AnyCPU'">
     <OutputPath>..\Deployment\bin\$(Configuration)</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <ProjectReference Include="..\ubta.Common\ubta.Common.csproj" />
+    <ProjectReference Include="..\ubta.Reflection\ubta.Reflection.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AssemblyAnalyzer.cs" />
-    <Compile Include="constants.cs" />
-    <Compile Include="Descriptor.cs" />
-    <Compile Include="EventDescriptor.cs" />
-    <Compile Include="FieldDescriptor.cs" />
-    <Compile Include="IAssemblyAnalyzer.cs" />
-    <Compile Include="ISchemaWriter.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="MethodDescriptor.cs" />
-    <Compile Include="NamespaceInfo.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyDescriptor.cs" />
-    <Compile Include="SchemaWriter.cs" />
-    <Compile Include="TypeDescriptor.cs" />
-    <Compile Include="TypeInformation.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ubta.Common\ubta.Common.csproj">
-      <Project>{9C6696FF-DC18-43B1-815F-8DBAB49A0F62}</Project>
-      <Name>ubta.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ubta.Reflection\ubta.Reflection.csproj">
-      <Project>{0B55485E-8417-4F79-B7C4-438CDE337596}</Project>
-      <Name>ubta.Reflection</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

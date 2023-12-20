@@ -65,11 +65,13 @@ namespace ubta.Assert
         }
     }
 
-    public class Record
+    public delegate void Recorder();
+
+    public class Records
     {
         private List<string> myParameterNames;
-        private record[] myRecords;
-        public Record(params record[] r)
+        private Recorder[] myRecords;
+        public Records(params Recorder[] r)
         {
             myRecords = r;
         }
@@ -77,7 +79,7 @@ namespace ubta.Assert
         public string report()
         {
             System.Text.StringBuilder ret = new System.Text.StringBuilder();
-            foreach(record r in myRecords)
+            foreach(Recorder r in myRecords)
             {
                 try {
                     r.Invoke();
@@ -90,8 +92,6 @@ namespace ubta.Assert
             return ret.ToString();
         }
     }
-
-    public delegate void record();
 
     internal enum OpType
     {
@@ -419,9 +419,9 @@ namespace ubta.Assert
             return ubta.Assert.Assert.That(arg_in);
         }
 
-        public static string Record(params record[] r)
+        public static string Record(params Recorder[] r)
         {
-            return new ubta.Assert.Record(r).report();
+            return new ubta.Assert.Records(r).report();
         }
 
     }

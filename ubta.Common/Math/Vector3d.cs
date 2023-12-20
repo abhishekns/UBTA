@@ -15,9 +15,10 @@ using System;
 
 namespace ubta.Common.Maths
 {
+    
     public class Vector3d 
     {
-        public System.Windows.Point my2DPoint;
+        public Point2D my2DPoint;
         public Vector3d()
         {
         }
@@ -718,7 +719,7 @@ namespace ubta.Common.Maths
             // first try for Newton's method
             double Try = height * (this.my2DPoint.Y - height);
 
-            // solve via Newton’s method maximum 1000 iterations
+            // solve via Newtonï¿½s method maximum 1000 iterations
             for (cycle = 0; cycle < max_cycle + 1; cycle++)
             {
                 double TpWidthSqr = Try + width * width;
