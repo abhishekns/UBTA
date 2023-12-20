@@ -16,7 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ubta.Common\ubta.Common.csproj" />
     <ProjectReference Include="..\ubta.Logging\ubta.Logging.csproj" />
-    <PackageReference Include="System.Runtime.Loader" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.0.0" />
   </ItemGroup>
 
 </Project>
