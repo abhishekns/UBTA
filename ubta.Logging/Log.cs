@@ -13,12 +13,13 @@ namespace ubta
         public static string GetHomeDir()
         {
             string homeDir = Environment.ExpandEnvironmentVariables(@"%UBTA_HOME%");
-            if (homeDir.Contains("%UBTA_HOME%"))
+            System.Console.WriteLine("UBTA_HOME : " + homeDir);
+            if (homeDir.Contains("UBTA_HOME"))
             {
-                homeDir = Assembly.GetExecutingAssembly().Location + @"..\..\..\..\..\";
+                homeDir = Assembly.GetExecutingAssembly().Location + string.Format("..{0}..{0}..{0}..{0}..{0}..{0}", Path.DirectorySeparatorChar);
                 homeDir = Path.GetFullPath(homeDir);
                 Environment.SetEnvironmentVariable("UBTA_HOME", homeDir);
-                var sw = File.CreateText(@"c:\temp\ubta.init.log");
+                var sw = File.CreateText(@"ubta.init.log");
                 sw.Write("UBTA_HOME : " + homeDir);
                 sw.Close();
                 sw.Dispose();

@@ -8,9 +8,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ubta.Logic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("sisl")]
 [assembly: AssemblyProduct("ubta.Logic")]
-[assembly: AssemblyCopyright("Copyright © sisl 2010")]
+
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

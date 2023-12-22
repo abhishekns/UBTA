@@ -45,11 +45,11 @@ namespace ubta.Common
         public static string RELEASE_TYPE_DEBUG = "Debug";
         public static string RELEASE_TYPE_RELEASE = "Release";
         public static string HOME = ubta.Util.GetHomeDir();
-        public static string DEPLOYMENT_DIR = string.Format(@"{0}\Deployment", HOME);
+        public static string DEPLOYMENT_DIR = string.Format(@"{0}{1}Deployment", HOME, Path.DirectorySeparatorChar);
         public static string RELEASE_TYPE = Assembly.GetExecutingAssembly().CodeBase.Contains(RELEASE_TYPE_DEBUG) ? RELEASE_TYPE_DEBUG : RELEASE_TYPE_RELEASE;
-        public static string CONFIG_DIR = string.Format(@"{0}\Config", DEPLOYMENT_DIR);
-        public static string DEFAULT_SCHEMA_DIR = string.Format(@"{0}\Schemas\", DEPLOYMENT_DIR);
-        public static string ASSEMBLY_DIR = string.Format(@"{0}\bin\{1}\", DEPLOYMENT_DIR, RELEASE_TYPE);
+        public static string CONFIG_DIR = string.Format(@"{0}{1}Config", DEPLOYMENT_DIR, Path.DirectorySeparatorChar);
+        public static string DEFAULT_SCHEMA_DIR = string.Format(@"{0}{1}Schemas{1}", DEPLOYMENT_DIR, Path.DirectorySeparatorChar);
+        public static string ASSEMBLY_DIR = string.Format(@"{0}{2}bin{2}{1}{2}", DEPLOYMENT_DIR, RELEASE_TYPE, Path.DirectorySeparatorChar);
 
         public static string HOME_PATH = HOME;
         public static string METHOD_INFO_NODE_NAME_PREFIX = "Methods_";

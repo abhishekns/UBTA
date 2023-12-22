@@ -60,3 +60,14 @@ ClassGeneratorOutput/
 ClassGeneratorOutput/*
 *.log
 *.db
+
+# local 
+
+# User-specific files
+logFile.txt
+*.suo
+*.user
+obj/
+bin/
+ClassGeneratorOutput/
+home/

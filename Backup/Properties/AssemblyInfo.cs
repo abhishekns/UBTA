@@ -21,9 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ubta.AssertTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("sisl")]
 [assembly: AssemblyProduct("ubta.AssertTest")]
-[assembly: AssemblyCopyright("Copyright © sisl 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

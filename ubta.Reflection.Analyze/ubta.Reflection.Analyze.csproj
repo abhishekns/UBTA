@@ -1,22 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <OutputType>Library</OutputType>
+    <RootNamespace>ubta.Reflection.Analyze</RootNamespace>
     <StartupObject>
     </StartupObject>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <OutputPath>..\Deployment\bin\$(Configuration)</OutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="ILInserter.cs" />
-    <Compile Include="LogInserter.cs" />
-    <Compile Include="TraceInserter.cs" />
-    <Compile Include="MethodBodyReWriter.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ubta.Common\ubta.Common.csproj" />
-    <ProjectReference Include="..\ubta.Reflection\ubta.Reflection.csproj" />
-  </ItemGroup>
 
 </Project>

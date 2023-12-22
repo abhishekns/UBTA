@@ -23,11 +23,15 @@ namespace ubta.SchemaGenTest
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine(Constants.HOME);
+            System.Console.WriteLine(Constants.DEPLOYMENT_DIR);
+            System.Console.WriteLine(Constants.ASSEMBLY_DIR);
             if(args == null || args.Length == 0)
             {
-                WriteSchema(Constants.ASSEMBLY_DIR + @"\SampleLib.dll");
-                WriteSchema(Constants.ASSEMBLY_DIR + @"\ubta.Assert.dll");
-                WriteSchema(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll");
+                WriteSchema(Constants.ASSEMBLY_DIR + string.Format("{0}net7.0{0}SampleLib.dll", Path.DirectorySeparatorChar));
+                WriteSchema(Constants.ASSEMBLY_DIR + string.Format("{0}net7.0{0}ubta.Assert.dll", Path.DirectorySeparatorChar));
+                //WriteSchema(@"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\system.dll");
+                WriteSchema("/usr/share/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.dll");
             }
             else
             {

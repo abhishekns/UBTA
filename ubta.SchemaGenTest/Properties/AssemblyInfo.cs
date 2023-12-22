@@ -23,7 +23,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Abhishek N Sharma")]
 [assembly: AssemblyProduct("SchemaGenTest")]
-[assembly: AssemblyCopyright("Copyright © sisl 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

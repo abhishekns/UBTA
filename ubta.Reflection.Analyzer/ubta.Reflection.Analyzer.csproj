@@ -1,9 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <OutputPath>..\Deployment\bin\$(Configuration)</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ubta.Common\ubta.Common.csproj" />
+    <ProjectReference Include="..\ubta.Reflection\ubta.Reflection.csproj" />
+    <ProjectReference Include="..\ubta.Reflection.Analyze\ubta.Reflection.Analyze.csproj" />
+  </ItemGroup>
 
 </Project>

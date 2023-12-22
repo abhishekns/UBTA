@@ -16,12 +16,12 @@ namespace ubta.Reflection.Analyzer
     {
         static void Main(string[] args)
         {
-            TraceInserter ti = new TraceInserter();
-            ti.Init();
+            //TraceInserter ti = new TraceInserter();
+            //ti.Init();
 
             Type t = typeof(TraceTest);
             MethodInfo mi = t.GetMethod("DoSomething", BindingFlags.Public | BindingFlags.Instance);
-            ti.InsertTraceInOut(t, mi);
+            //ti.InsertTraceInOut(t, mi);
             TraceTest tt = new TraceTest();
             tt.DoSomething();
             //MethodBodyParser mbp = new MethodBodyParser();

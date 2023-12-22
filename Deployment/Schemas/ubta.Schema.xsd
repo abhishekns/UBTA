@@ -61,6 +61,18 @@
   <xs:element name="System.Object" type="u:System.Object" />
   <xs:complexType name="System.Object">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GetType">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element minOccurs="0" name="GetType_rv">
+              <xs:complexType>
+                <xs:attribute name="Name" type="u:System.String" use="required" />
+                <xs:attribute fixed="u:System.Type" name="Type" type="u:System.String" use="optional" />
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="Equals">
         <xs:complexType>
           <xs:sequence>
@@ -89,18 +101,6 @@
               <xs:complexType>
                 <xs:attribute name="Name" type="u:System.String" use="required" />
                 <xs:attribute fixed="u:System.Int32" name="Type" type="u:System.String" use="optional" />
-              </xs:complexType>
-            </xs:element>
-          </xs:choice>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetType">
-        <xs:complexType>
-          <xs:choice>
-            <xs:element minOccurs="0" name="GetType_rv">
-              <xs:complexType>
-                <xs:attribute name="Name" type="u:System.String" use="required" />
-                <xs:attribute fixed="u:System.Type" name="Type" type="u:System.String" use="optional" />
               </xs:complexType>
             </xs:element>
           </xs:choice>

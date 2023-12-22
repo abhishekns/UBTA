@@ -16,6 +16,10 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+
 namespace ubta.Assert
 {
     public interface ICondition
@@ -31,7 +35,7 @@ namespace ubta.Assert
         public AssertFailedException(String message) : base(message) { }
     }
 
-    public interface IValueChecker 
+    public interface IValueChecker
     {
         bool DelayedEvaluation { get; set; }
         bool EvaluationResult { get; }
@@ -40,28 +44,38 @@ namespace ubta.Assert
         ICondition IsNotNull();
         ICondition IsNull();
         ICondition Is(Type type);
-        ICondition IsEqualTo(object p);
-        ICondition IsNotEqualTo(object p);
-        ICondition IsGreaterThan<T>(T p) where T : IComparable;
-        ICondition IsLessThan<T>(T p) where T : IComparable;
+        ICondition IsEqualTo(object p, [CallerArgumentExpression("o")] string objName = null);
+        ICondition IsNotEqualTo(object p, [CallerArgumentExpression("o")] string objName = null);
+        ICondition IsGreaterThan<T>(T p, [CallerArgumentExpression("o")] string objName = null) where T : IComparable;
+        ICondition IsLessThan<T>(T p, [CallerArgumentExpression("o")] string objName = null) where T : IComparable;
         ICondition AreNotNull();
         ICondition AreNull();
         ICondition Are(Type type);
-        ICondition AreEqualTo(object p);
-        ICondition AreNotEqualTo(object p);
-        ICondition AreGreaterThan<T>(T p) where T : IComparable;
-        ICondition AreLessThan<T>(T p) where T : IComparable;
+        ICondition AreEqualTo(object p, [CallerArgumentExpression("p")] string objName = null);
+        ICondition AreNotEqualTo(object p, [CallerArgumentExpression("p")] string objName = null);
+        ICondition AreGreaterThan<T>(T p, [CallerArgumentExpression("p")] string objName = null) where T : IComparable;
+        ICondition AreLessThan<T>(T p, [CallerArgumentExpression("p")] string objName = null) where T : IComparable;
 
-        IValueChecker And(object o);
-        IValueChecker Or(object o);
-        IValueChecker Nand(object o);
+        IValueChecker And(object o, [CallerArgumentExpression("o")] string objName = null);
+        IValueChecker Or(object o, [CallerArgumentExpression("o")] string objName = null);
+        IValueChecker Nand(object o, [CallerArgumentExpression("o")] string objName = null);
+
+        string Name { get; }
     }
-    
+
     public class Assert
     {
-        public static IValueChecker That(object arg_in)
+        public static IValueChecker That(object arg_in, string objName)
         {
-            return new MultiValueChecker(arg_in);
+            return new MultiValueChecker(arg_in, objName);
+        }
+    }
+
+    public static class ObjectExtension
+    {
+        public static string Name(this object obj, [CallerArgumentExpression("obj")] string objName = null)
+        {
+            return objName;
         }
     }
 
@@ -75,13 +89,14 @@ namespace ubta.Assert
         {
             myRecords = r;
         }
-        
+
         public string report()
         {
             System.Text.StringBuilder ret = new System.Text.StringBuilder();
-            foreach(Recorder r in myRecords)
+            foreach (Recorder r in myRecords)
             {
-                try {
+                try
+                {
                     r.Invoke();
                 }
                 catch (Exception e)
@@ -148,6 +163,8 @@ namespace ubta.Assert
     internal class MultiValueChecker : IValueCheckerInternal
     {
         private object myValue;
+        private string myObjName;
+        private string mySuffix;
         private System.Text.StringBuilder myStatement = new System.Text.StringBuilder();
         private bool myDelayedEvaluation = false;
         private bool myEvaluationResult = false;
@@ -158,26 +175,37 @@ namespace ubta.Assert
 
         public MultiValueChecker() { }
 
-        public MultiValueChecker(object arg_in)
+        public MultiValueChecker(object arg_in, string objName)
         {
             myOpType = OpType.None;
             myValue = arg_in;
             myParent = null;
-            myStatement.AppendFormat("obj_{0}", myRecursion);
+            myObjName = objName;
+            string suffixFormat = (myRecursion > 0) ? "({0})" : "";
+            mySuffix = string.Format(suffixFormat, myRecursion);
+            myStatement.AppendFormat("{0}{1}", myObjName, mySuffix);
         }
 
-        private MultiValueChecker(IValueChecker parent_in, object other_in, OpType opType_in)
-            : this(other_in)
+        private MultiValueChecker(IValueChecker parent_in, object other_in, OpType opType_in, string objName)
+            : this(other_in, objName)
         {
             myParent = parent_in as IValueCheckerInternal;
             myParent.DelayedEvaluation = true;
             myOpType = opType_in;
             myRecursion = myParent.Recursion;
             myRecursion++;
-            if(myOpType != OpType.None)
+            if (myOpType != OpType.None)
             {
-                myStatement.AppendFormat(" {0} obj_{1}", myOpType.ToString(), myParent.Recursion);
-            }           
+                myStatement.AppendFormat(" {0} {1}", myOpType.ToString(), myParent.Name);
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return string.Format("{0}{1}", myObjName, mySuffix);
+            }
         }
 
         public string Statement
@@ -188,11 +216,12 @@ namespace ubta.Assert
             }
         }
 
-        public MultiValueChecker that(object arg_in)
+        public MultiValueChecker that(object arg_in, string objName)
         {
             myOpType = OpType.None;
             myValue = arg_in;
             myParent = null;
+            myObjName = objName;
             return this;
         }
 
@@ -212,9 +241,9 @@ namespace ubta.Assert
 
         public ICondition IsNotNull()
         {
-            myCondition = new Condition(new ConditionDel(delegate()
+            myCondition = new Condition(new ConditionDel(delegate ()
             {
-                myStatement.Append("is null");
+                myStatement.AppendFormat(" {0} is null.{1}", Name, Environment.NewLine);
                 return (myValue != null);
             }
                 ));
@@ -223,8 +252,9 @@ namespace ubta.Assert
 
         public ICondition IsNull()
         {
-            myCondition = new Condition(new ConditionDel(delegate() {
-                myStatement.Append("is not null");
+            myCondition = new Condition(new ConditionDel(delegate ()
+            {
+                myStatement.AppendFormat(" {0} is not null.{1}", Name, Environment.NewLine);
                 return (myValue == null);
             }
                 ));
@@ -233,20 +263,20 @@ namespace ubta.Assert
 
         public ICondition Is(Type type)
         {
-            myCondition = new Condition(new ConditionDel(delegate()
+            myCondition = new Condition(new ConditionDel(delegate ()
             {
-                myStatement.Append("is not of type ").Append(type.ToString());
+                myStatement.AppendFormat("{0} is not of type {1}.{2}", Name, type.ToString(), Environment.NewLine);
                 return (null != myValue && myValue.GetType().IsAssignableFrom(type));
             }));
             return AssertCondition();
         }
 
-        public ICondition IsEqualTo(object o)
+        public ICondition IsEqualTo(object o, [CallerArgumentExpression("o")] string objName = null)
         {
 
-            myCondition = new Condition(new ConditionDel(delegate()
+            myCondition = new Condition(new ConditionDel(delegate ()
             {
-                myStatement.Append(" o1 is not equal to o2");
+                myStatement.AppendFormat(" {0}={1} is not equal to {2}=3.{4}", Name, myValue, objName, o, Environment.NewLine);
                 if (null != myValue)
                 {
                     Type t = myValue.GetType();
@@ -261,49 +291,49 @@ namespace ubta.Assert
             return AssertCondition();
         }
 
-        public ICondition IsNotEqualTo(object o)
+        public ICondition IsNotEqualTo(object o, [CallerArgumentExpression("o")] string objName = null)
         {
-            myCondition = new Condition(new ConditionDel(delegate() 
+            myCondition = new Condition(new ConditionDel(delegate ()
             {
-                myStatement.Append(" o1 is equal to o2");
+                myStatement.AppendFormat(" {0}={1} is equal to {2}={3}.{4}", Name, myValue, objName, o, Environment.NewLine);
                 return (myValue != o);
             }));
             return AssertCondition();
         }
 
-        public ICondition IsGreaterThan<T>(T o) where T : IComparable
+        public ICondition IsGreaterThan<T>(T o, [CallerArgumentExpression("o")] string objName = null) where T : IComparable
         {
-            myCondition = new Condition(new ConditionDel(delegate() 
+            myCondition = new Condition(new ConditionDel(delegate ()
             {
-                myStatement.Append(" o1 is not greater that o2");
+                myStatement.AppendFormat(" {0}={1} is not greater that {2}={3}.{4}", Name, myValue, objName, o, Environment.NewLine);
                 return (o.CompareTo(myValue) < 0);
             }));
             return AssertCondition();
         }
 
-        public ICondition IsLessThan<T>(T p) where T : IComparable
+        public ICondition IsLessThan<T>(T p, [CallerArgumentExpression("p")] string objName = null) where T : IComparable
         {
-            myCondition = new Condition(new ConditionDel(delegate() 
+            myCondition = new Condition(new ConditionDel(delegate ()
             {
-                myStatement.Append(" o1 is not less than o2");
+                myStatement.AppendFormat(" {0}={1} is not less than {2}={3}.{4}", Name, myValue, objName, p, Environment.NewLine);
                 return (p.CompareTo(myValue) > 0);
             }));
             return AssertCondition();
         }
 
-        public IValueChecker And(object o)
+        public IValueChecker And(object o, [CallerArgumentExpression("o")] string objName = null)
         {
-            return new MultiValueChecker(this, o, OpType.And);
+            return new MultiValueChecker(this, o, OpType.And, objName);
+        }
+        
+        public IValueChecker Or(object o, [CallerArgumentExpression("o")] string objName = null)
+        {
+            return new MultiValueChecker(this, o, OpType.Or, objName);
         }
 
-        public IValueChecker Or(object o)
+        public IValueChecker Nand(object o, [CallerArgumentExpression("o")] string objName = null)
         {
-            return new MultiValueChecker(this, o, OpType.Or);
-        }
-
-        public IValueChecker Nand(object o)
-        {
-            return new MultiValueChecker(this, o, OpType.Nand);
+            return new MultiValueChecker(this, o, OpType.Nand, objName);
         }
 
         private void dummy()
@@ -312,49 +342,49 @@ namespace ubta.Assert
 
         public ICondition AreNotNull()
         {
-            myStatement.Append(" are null.");
+            myStatement.AppendFormat(" are null.{0}", Environment.NewLine);
             object t = myParent != null ? myParent.AreNotNull() : null;
             return IsNotNull();
         }
 
         public ICondition AreNull()
         {
-            myStatement.Append(" are not null.");
+            myStatement.AppendFormat(" are not null.{0}", Environment.NewLine);
             object t = myParent != null ? myParent.AreNull() : null;
             return IsNull();
         }
 
         public ICondition Are(Type type)
         {
-            myStatement.AppendFormat(" are not of type {0}", type);
+            myStatement.AppendFormat(" are not of type {0}.{1}", type, Environment.NewLine);
             object t = myParent != null ? myParent.Are(type) : null;
             return Is(type);
         }
 
-        public ICondition AreEqualTo(object o)
+        public ICondition AreEqualTo(object o, [CallerArgumentExpression("o")] string objName = null)
         {
-            myStatement.AppendFormat(" are not equal to obj_{0}", myRecursion, ((o != null) ? o.ToString() : "null"));
+            myStatement.AppendFormat(" are not equal to {0}={1}.{2}", objName, o, Environment.NewLine);
             object t = myParent != null ? myParent.AreEqualTo(o) : null;
             return IsEqualTo(o);
         }
 
-        public ICondition AreNotEqualTo(object o)
+        public ICondition AreNotEqualTo(object o, [CallerArgumentExpression("o")] string objName = null)
         {
-            myStatement.AppendFormat(" are equal to obj_{0}", myRecursion, ((o != null) ? o.ToString() : "null"));
+            myStatement.AppendFormat(" are equal to {0}={1}.{2}", objName, o, Environment.NewLine);
             object t = myParent != null ? myParent.AreNotEqualTo(o) : null;
             return IsNotEqualTo(o);
         }
 
-        public ICondition AreGreaterThan<T>(T o) where T : IComparable
+        public ICondition AreGreaterThan<T>(T o, [CallerArgumentExpression("o")] string objName = null) where T : IComparable
         {
-            myStatement.AppendFormat(" are not greater than obj_{0} = {1}", myRecursion, ((o!=null) ? o.ToString() : "null"));
+            myStatement.AppendFormat(" are greater than {0}={1}.{2}", objName, o, Environment.NewLine);
             object t = myParent != null ? myParent.AreGreaterThan<T>(o) : null;
             return IsGreaterThan<T>(o);
         }
 
-        public ICondition AreLessThan<T>(T o) where T : IComparable
+        public ICondition AreLessThan<T>(T o, [CallerArgumentExpression("o")] string objName = null) where T : IComparable
         {
-            myStatement.AppendFormat(" are not less than to obj_{0} = {1}", myRecursion, ((o != null) ? o.ToString() : "null"));
+            myStatement.AppendFormat(" are less than {0}={1}.{2}", objName,  o, Environment.NewLine);
             object t = myParent != null ? myParent.AreLessThan<T>(o) : null;
             return IsLessThan<T>(o);
         }
@@ -394,7 +424,7 @@ namespace ubta.Assert
             }
             return myCondition;
         }
-        
+
         #region IMultiValueChecker Members
 
 
@@ -414,9 +444,9 @@ namespace ubta.Assert
 
     public class TestRecorder
     {
-        public static ubta.Assert.IValueChecker That(object arg_in)
+        public static ubta.Assert.IValueChecker That(object arg_in, [CallerArgumentExpression("arg_in")] string objName = null)
         {
-            return ubta.Assert.Assert.That(arg_in);
+            return ubta.Assert.Assert.That(arg_in, objName);
         }
 
         public static string Record(params Recorder[] r)
@@ -424,14 +454,12 @@ namespace ubta.Assert
             return new ubta.Assert.Records(r).report();
         }
 
-    }
-
-    public static class MemberInfoGetting
-    {
         public static string GetMemberName<T>(Expression<Func<T>> memberExpression)
         {
             MemberExpression expressionBody = (MemberExpression)memberExpression.Body;
             return expressionBody.Member.Name;
         }
+
     }
+
 }
